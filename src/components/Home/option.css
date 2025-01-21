@@ -1,0 +1,66 @@
+.searchtabs {
+  background-color: #eaf9d6;
+}
+
+.inputclass {
+  background-color: #eaf9d6;
+  color: #749d1c;
+  border: 0;
+  width: 372px;
+}
+
+.inputclass:hover {
+  background-color: #eaf9d6;
+}
+
+
+.labelclass {
+  color: #1a4402;
+}
+
+
+
+
+@media only screen and (max-width: 769px) {
+  .searchtabs {
+    flex-direction: column;
+    display: block;
+  }
+  .inputclass{
+    width: auto;
+  }
+  .labelclass{
+    display:contents !important;
+  }
+
+}
+
+@media only screen and (max-width: 640px) {
+  .searchtabs div {
+    margin-bottom: 10px;
+  }
+  .inputclass{
+    width: auto;
+  }
+  .labelclass{
+    display: contents !important;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* Targeting large screens */
+  .searchtabs {
+    /* Example: Increase padding */
+    padding: 20px;
+  }
+
+}
+
+@media only screen and (min-width: 1280px) {
+  /* Targeting extra-large screens (xl) */
+  .searchtabs {
+    /* Example: Adjusting margin */
+    margin: 0 auto;
+    max-width: 1200px; /* Example: Limiting maximum width */
+  }
+}

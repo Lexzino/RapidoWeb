@@ -1,0 +1,19 @@
+import React from "react";
+import "./CustomModal.css"; // Import CSS for styling
+
+const CustomModal = ({ isOpen, onClose, children }) => {
+  if (!isOpen) return null; // Do not render if modal is closed
+
+  return (
+    <div className="modal-overlay">
+      <div className="modal-content">
+        <button className="modal-close" onClick={onClose}>
+          &times;
+        </button>
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export default CustomModal;

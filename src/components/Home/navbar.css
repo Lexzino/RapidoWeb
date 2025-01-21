@@ -1,0 +1,13 @@
+.squeezing {
+  animation: squeeze 0.3s ease-in-out;
+}
+
+@keyframes squeeze {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.8);
+  }
+}
+

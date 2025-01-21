@@ -1,0 +1,132 @@
+.main-wrapper {
+  /* background-color: #194401; */
+  /* background-color: #F6FCF3; */
+  background-image: url(../../assets/pageImages/blog-hero.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;  
+}
+
+.dicoverHeading {
+  align-self: center;
+}
+
+.ant-card-body {
+  padding: 0 !important;
+}
+
+.single-blog {
+  display: flex;
+  justify-content: center;
+}
+
+.suggested-blogs {
+  font-size: large;
+  font-weight: 600;
+}
+.heading-css{
+    font-size: larger;
+    font-weight: 600;
+}
+
+
+@media only screen and (max-width: 640px) {
+    /* Small screens */
+    .single-blog {
+      grid-gap: 1rem;
+    }
+    .smallscreen{
+        width: 40px !important;
+    }
+    .smscreen{
+        padding-left: 0 !important;
+    }
+    .suggested-blogs{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .dash-line{
+      width: 60px !important;
+    }
+    .small-screen-heading{
+      font-size: 15px !important;
+      padding-left: 15px !important;
+    }
+    .small-screen-text{
+      font-size: 15px !important;
+      padding-left: 10px !important;
+    }
+    .for-small-screen{
+      display: none !important;
+    }
+    .small-screen-single-blog{
+      font-size: 20px !important;
+      display: flex;
+      color: white;
+      text-align: center;
+    }
+    .small-screen-author{
+      color: white;
+      font-size: 12px;
+      align-self: center;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {
+    /* Medium screens */
+    .single-blog {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .dash-line{
+      width: 60px !important;
+    }
+    .small-screen-heading{
+      font-size: 15px !important;
+      padding-left: 15px !important;
+    }
+    .small-screen-text{
+      font-size: 15px !important;
+      padding-left: 10px !important;
+    }
+    .for-small-screen{
+      display: none !important;
+    }
+    .small-screen-single-blog{
+      font-size: 20px !important;
+      display: flex;
+      color: white;
+      text-align: center;
+    }
+    .small-screen-author{
+      color: white;
+      font-size: 12px;
+      align-self: center;
+    }
+
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    /* Large screens */
+    .single-blog {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .small-screen-heading{
+      font-size: 25px !important;
+      padding-left: 15px !important;
+    }
+    .small-screen-single-blog{
+      font-size: 40px !important;
+      display: flex;
+      color: white;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+  }
+  
+  @media only screen and (min-width: 1280px) {
+    /* Extra-large screens */
+    .single-blog {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  
