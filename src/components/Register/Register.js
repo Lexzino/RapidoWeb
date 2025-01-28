@@ -1,27 +1,35 @@
 import React, { useState } from "react";
 import Loginmobile from "../../assets/images/Loginmobile.svg";
-import Googlered from "../../assets/images/Googlered.svg";
-import Appleblack from "../../assets/images/Appleblack.svg";
-import Facebookblue from "../../assets/images/Facebookblue.svg";
-import { useAuth } from "../services/authService";
 import { message } from "antd";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
-  const { signup } = useAuth();
   const navigate = useNavigate();
+
+  // State variables
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [fullName, setFullName] = useState("");
-  const [title, setTitle] = useState("Dr"); // Default title
+  const [title, setTitle] = useState("Dr");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [activeTab, setActiveTab] = useState("Super Admin");
+  const [activeTab, setActiveTab] = useState("superadmin");
   const [acceptTerms, setAcceptTerms] = useState(false);
-  const [specialty, setSpecialty] = useState(""); // Practice Specialty or Pharmacy Store Name
+  const [specialty, setSpecialty] = useState("");
 
+  // Base URL for the backend
+  const BASE_URL = "http://localhost:3020/api/superadmin-signup";
+
+  // Signup handler
   const handleSignup = async () => {
+    // Validate input
+    if (!email || !password || !firstName || !lastName || (activeTab === "provider" && !specialty)) {
+      message.error("Please fill in all required fields");
+      return;
+    }
+
     if (password !== confirmPassword) {
       message.error("Passwords do not match");
       return;
@@ -32,30 +40,42 @@ export default function Signup() {
       return;
     }
 
+    // Prepare credentials
     const credentials = {
       firstName,
       lastName,
-      fullName,
+      fullName: activeTab === "provider" ? fullName : `${firstName} ${lastName}`,
       title,
       email,
       password,
-      activeTab,
-      specialty,
+      role: activeTab,
+      specialty: activeTab === "provider" ? specialty : undefined,
+      userType: activeTab.toLowerCase(),
     };
 
+    // API Call to backend
     try {
-      await signup(credentials)
-        .then((res) => {
-          if (res) {
-            message.success("Sign-up successful");
-            navigate("/dashboard");
-          } else {
-            message.error("Error during sign-up");
+      const response = await axios.post(BASE_URL, credentials);
+
+      if (response.status === 201 || response.data.success) {
+        message.success("Sign-up successful");
+        sessionStorage.setItem("user", JSON.stringify(response.data));
+        // Navigate to the correct folder based on the role
+        setTimeout(() => {
+          if (response.data.userType  === "superadmin") {
+            navigate("/superadmin"); 
+          } else if (response.data.userType === "provider") {
+            navigate("/provider");
           }
-        })
-        .catch(() => {});
+        }, 100);
+      } else {
+        message.error(response.data.message || "Error during sign-up");
+      }
     } catch (error) {
       console.error("Sign-up failed:", error.message);
+      message.error(
+        error.response?.data?.message || "An unexpected error occurred"
+      );
     }
   };
 
@@ -71,23 +91,22 @@ export default function Signup() {
         <div className="ext-center lg:text-start w-full">
           <ul className="inline-flex items-center mt-3 space-x-4 flex-col lg:flex-row">
             <li className="text-green-dark lg:text-5xl lg:w-[180px] sm:text-5xl font-bold">Create Account</li>
-            {/* Stacked buttons on small screens */}
             <li className="w-[260px] border-[2px] border-green-dark rounded-md p-[6px] inline-flex space-x-2 items-center flex-col lg:flex-row mt-4 lg:mt-0">
               <button
-                className={`hover:bg-green-dark hover:text-white w-full lg:w-[140px]  h-[25px] rounded-[5px] text-lg ${
-                  activeTab === "Super Admin" ? "bg-green-dark text-white" : "bg-transparent text-green-dark"
+                className={`hover:bg-green-dark hover:text-white w-full lg:w-[140px] h-[25px] rounded-[5px] text-lg ${
+                  activeTab === "superadmin" ? "bg-green-dark text-white" : "bg-transparent text-green-dark"
                 }`}
-                onClick={() => setActiveTab("Super Admin")}
+                onClick={() => setActiveTab("superadmin")}
               >
                 Super Admin
               </button>
               <button
                 className={`hover:bg-green-dark hover:text-white w-full lg:w-[100px] h-[25px] rounded-[5px] text-lg ${
-                  activeTab === "Provider" ? "bg-green-dark text-white" : "bg-transparent text-green-dark"
+                  activeTab === "provider" ? "bg-green-dark text-white" : "bg-transparent text-green-dark"
                 }`}
-                onClick={() => setActiveTab("Provider")}
+                onClick={() => setActiveTab("provider")}
               >
-                Provider
+                provider
               </button>
             </li>
           </ul>
@@ -95,85 +114,77 @@ export default function Signup() {
 
         {/* Sign-up Form */}
         <div className="mt-8 w-full max-w-md">
-          {activeTab === "Super Admin" ? (
-            <>
-              <div className="flex space-x-4">
-                <div className="flex-1">
-                  <h1 className="text-lg text-green-dark">First Name</h1>
-                  <input
-                    type="text"
-                    className="rounded-[5px] border-[1px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
-                    placeholder="First Name"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                  />
-                  <p className="text-tiny text-red-vlight">Required</p>
-                </div>
-                <div className="flex-1">
-                  <h1 className="text-lg text-green-dark">Last Name</h1>
-                  <input
-                    type="text"
-                    className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
-                    placeholder="Last Name"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                  />
-                  <p className="text-tiny text-red-vlight">Required</p>
-                </div>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="flex space-x-4">
-                <div className="flex-1">
-                  <h1 className="text-lg text-green-dark">Full Name</h1>
-                  <input
-                    type="text"
-                    className="rounded-[5px] border-[1px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
-                    placeholder="Full Name"
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                  />
-                  <p className="text-tiny text-red-vlight">Required</p>
-                </div>
-                <div className="flex-1">
-                  <h1 className="text-lg text-green-dark">Title</h1>
-                  <select
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    className="rounded-[5px] border-[1px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
-                  >
-                    <option value="Dr">Dr</option>
-                    <option value="Mr">Mr</option>
-                    <option value="Mrs">Mrs</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <h1 className="text-lg text-green-dark">Practice Specialty or Pharmacy Store Name</h1>
+          {activeTab === "superadmin" ? (
+            <div className="flex space-x-4">
+              <div className="flex-1">
+                <h1 className="text-lg text-green-dark">First Name</h1>
                 <input
                   type="text"
-                  className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
-                  placeholder="Practice Specialty or Pharmacy Store Name"
-                  value={specialty}
-                  onChange={(e) => setSpecialty(e.target.value)}
+                  className="rounded-[5px] border-[1px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
+                  placeholder="First Name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
                 />
-                <p className="text-tiny text-red-vlight">Required</p>
               </div>
-            </>
+              <div className="flex-1">
+                <h1 className="text-lg text-green-dark">Last Name</h1>
+                <input
+                  type="text"
+                  className="rounded-[5px] border-[1px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
+                  placeholder="Last Name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="flex space-x-4">
+              <div className="flex-1">
+                <h1 className="text-lg text-green-dark">Full Name</h1>
+                <input
+                  type="text"
+                  className="rounded-[5px] border-[1px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
+                  placeholder="Full Name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                />
+              </div>
+              <div className="flex-1">
+                <h1 className="text-lg text-green-dark">Title</h1>
+                <select
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  className="rounded-[5px] border-[1px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
+                >
+                  <option value="Dr">Dr</option>
+                  <option value="Mr">Pharm</option>
+                </select>
+              </div>
+            </div>
+          )}
+
+          {activeTab === "provider" && (
+            <div className="mt-6">
+              <h1 className="text-lg text-green-dark">Practice Specialty or Pharmacy Store Name</h1>
+              <input
+                type="text"
+                className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
+                placeholder="Practice Specialty or Pharmacy Store Name"
+                value={specialty}
+                onChange={(e) => setSpecialty(e.target.value)}
+              />
+            </div>
           )}
 
           <div className="mt-6">
-            <h1 className="text-lg text-green-dark">Email Address/Phone Number</h1>
+            <h1 className="text-lg text-green-dark">Email Address</h1>
             <input
               type="text"
               className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
-              placeholder="Email Address/Phone Number"
+              placeholder="Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <p className="text-tiny text-red-vlight">Required</p>
           </div>
 
           <div className="mt-6 flex space-x-4">
@@ -186,7 +197,6 @@ export default function Signup() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <p className="text-tiny text-red-vlight">Required</p>
             </div>
             <div className="flex-1">
               <h1 className="text-lg text-green-dark">Confirm Password</h1>
@@ -197,41 +207,30 @@ export default function Signup() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
-              <p className="text-tiny text-red-vlight">Required</p>
             </div>
           </div>
 
-          {/* Custom Terms and Conditions Checkbox */}
           <div className="mt-4 flex items-center">
-            <div className="flex items-center h-5">
-              <input
-                id="helper-checkbox"
-                aria-describedby="helper-checkbox-text"
-                type="checkbox"
-                checked={acceptTerms}
-                onChange={() => setAcceptTerms(!acceptTerms)}
-                className="w-4 h-4 bg-white border border-green-dark rounded-[5px] subscribe-set"
-              />
-            </div>
-            <div className="ml-2 text-sm sm:text-base f-f-r text-red-vdark">
-              <label htmlFor="helper-checkbox">
-                I accept all{" "}
-                <a href="/terms-and-conditions" className="text-blue-500">
-                  terms and conditions
-                </a>
-              </label>
-            </div>
+            <input
+              type="checkbox"
+              checked={acceptTerms}
+              onChange={() => setAcceptTerms(!acceptTerms)}
+              className="mr-2"
+            />
+            <label className="text-green-dark text-base">
+              I accept the{" "}
+              <a href="/terms" className="text-green-dark underline">
+                Terms and Conditions
+              </a>
+            </label>
           </div>
 
-          {/* Centered Button and Account Text */}
-          <div className="flex flex-col items-center mt-6">
-            <button
-              className="w-[90px] h-9 rounded-[3px] bg-green-dark text-lg text-white mt-5"
-              onClick={handleSignup}
-            >
-              Sign Up
-            </button>
-          </div>
+          <button
+            onClick={handleSignup}
+            className="bg-green-dark hover:bg-green-darker text-white w-full py-3 rounded-lg text-lg font-bold mt-8"
+          >
+            Create Account
+          </button>
         </div>
       </div>
     </div>

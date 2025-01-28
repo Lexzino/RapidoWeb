@@ -5,6 +5,7 @@ import Appleblack from "../../assets/images/Appleblack.svg";
 import Facebookblue from "../../assets/images/Facebookblue.svg";
 import { useAuth } from "../services/authService";
 import { message } from "antd";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -12,23 +13,41 @@ export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [activeTab, setActiveTab] = useState("Super Admin");
+  const [activeTab, setActiveTab] = useState("Super Admin"); // Default active tab
 
   const handleLogin = async () => {
-    const credentials = { email, password, activeTab };
+    const credentials = {
+      email,
+      password,
+      userType: activeTab.toLowerCase(), // Convert tab to lowercase for consistency
+    };
+
     try {
-      await login(credentials)
-        .then((res) => {
-          if (res) {
-            message.success("Super Admin login successful");
-            navigate("/dashboard");
-          } else {
-            message.error("Invalid email or password");
-          }
-        })
-        .catch(() => {});
+      const response = await axios.post(
+        "http://localhost:3020/api/superadmin-login",
+        credentials
+      );
+
+      if (response.status === 200) {
+        // Login successful
+        const user = response.data;
+
+        sessionStorage.setItem("user", JSON.stringify(user));
+
+        message.success(`${user.userType} login successful`); 
+        if (user.userType === "superadmin") {
+          navigate("/superadmin");
+        } else if (user.userType === "provider") {
+          navigate("/provider");
+        } else {
+          message.error("Unknown user type");
+        }
+      } else {
+        message.error(response.data.message || "Invalid email or password");
+      }
     } catch (error) {
       console.error("Login failed:", error.message);
+      message.error("An error occurred during login. Please try again.");
     }
   };
 
