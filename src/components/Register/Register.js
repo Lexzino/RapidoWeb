@@ -56,15 +56,15 @@ export default function Signup() {
     // API Call to backend
     try {
       const response = await axios.post(BASE_URL, credentials);
-
-      if (response.status === 201 || response.data.success) {
+      console.log (response)
+      if (response.status === 201) {
         message.success("Sign-up successful");
         sessionStorage.setItem("user", JSON.stringify(response.data));
         // Navigate to the correct folder based on the role
         setTimeout(() => {
-          if (response.data.userType  === "superadmin") {
+          if (response.data.data.userType  === "SuperAdmin") {
             navigate("/superadmin"); 
-          } else if (response.data.userType === "provider") {
+          } else if (response.data.data.userType === "provider") {
             navigate("/provider");
           }
         }, 100);

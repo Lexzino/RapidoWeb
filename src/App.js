@@ -57,7 +57,7 @@ function MainApp() {
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/dashboard" element={<AuthGuard adminRequired><Dashboard /></AuthGuard>} />
-              <Route path="/superadmin" element={<Dashboard />} />
+              <Route path="/superadmin" element={<SuperAdmin />} />
             </Routes>
           </div>
         </CSSTransition>
