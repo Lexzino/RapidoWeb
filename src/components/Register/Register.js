@@ -80,20 +80,20 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row items-stretch w-full h-full lg:h-[80vh] bg-[#EAF9D6]">
+    <div className="flex flex-col lg:flex-row items-stretch w-full h-full lg:h-[80vh] bg-[#EAF9D6] lg:overflow-y-hidden">
       {/* Left Section - Hidden on small screens */}
-      <div className="flex-1 hidden lg:flex justify-center items-center bg-green-dark py-10">
+      <div className="flex-1 hidden lg:flex justify-center items-center bg-green-dark h-full">
         <img src={Loginmobile} className="w-[250px] h-auto" alt="Signup Mobile" />
       </div>
 
       {/* Right Section */}
-      <div className="flex flex-1 flex-col justify-center items-center lg:items-start px-6 sm:px-12">
-        <div className="ext-center lg:text-start w-full">
-          <ul className="inline-flex items-center mt-3 space-x-4 flex-col lg:flex-row">
+      <div className="flex flex-1 flex-col justify-center items-center lg:items-center px-6 sm:px-12">
+        <div className="text-center lg:text-start w-full">
+          <ul className="inline-flex items-center mt-3.5 space-x-4 flex-col lg:flex-row">
             <li className="text-green-dark lg:text-5xl lg:w-[180px] sm:text-5xl font-bold">Create Account</li>
-            <li className="w-[260px] border-[2px] border-green-dark rounded-md p-[6px] inline-flex space-x-2 items-center flex-col lg:flex-row mt-4 lg:mt-0">
+            <li className="lg:w-[260px] w-[525px] border-[2px] border-green-dark rounded-md p-[6px] inline-flex space-x-2 items-center flex-row lg:flex-row mt-4 lg:mt-2">
               <button
-                className={`hover:bg-green-dark hover:text-white w-full lg:w-[140px] h-[25px] rounded-[5px] text-lg ${
+                className={`hover:bg-green-dark hover:text-white w-full lg:w-[140px] py-1.5 rounded-[5px] text-lg ${
                   activeTab === "superadmin" ? "bg-green-dark text-white" : "bg-transparent text-green-dark"
                 }`}
                 onClick={() => setActiveTab("superadmin")}
@@ -101,26 +101,26 @@ export default function Signup() {
                 Super Admin
               </button>
               <button
-                className={`hover:bg-green-dark hover:text-white w-full lg:w-[100px] h-[25px] rounded-[5px] text-lg ${
+                className={`hover:bg-green-dark hover:text-white w-full lg:w-[100px] py-1.5 rounded-[5px] text-lg ${
                   activeTab === "provider" ? "bg-green-dark text-white" : "bg-transparent text-green-dark"
                 }`}
                 onClick={() => setActiveTab("provider")}
               >
-                provider
+                Provider
               </button>
             </li>
           </ul>
         </div>
 
         {/* Sign-up Form */}
-        <div className="mt-8 w-full max-w-md">
+        <div className="mt-5 w-full max-w-md">
           {activeTab === "superadmin" ? (
             <div className="flex space-x-4">
               <div className="flex-1">
                 <h1 className="text-lg text-green-dark">First Name</h1>
                 <input
                   type="text"
-                  className="rounded-[5px] border-[1px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
+                  className="rounded-[5px] border-[1px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
                   placeholder="First Name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
@@ -130,7 +130,7 @@ export default function Signup() {
                 <h1 className="text-lg text-green-dark">Last Name</h1>
                 <input
                   type="text"
-                  className="rounded-[5px] border-[1px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
+                  className="rounded-[5px] border-[1px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
                   placeholder="Last Name"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
@@ -143,7 +143,7 @@ export default function Signup() {
                 <h1 className="text-lg text-green-dark">Full Name</h1>
                 <input
                   type="text"
-                  className="rounded-[5px] border-[1px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
+                  className="rounded-[5px] border-[1px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
                   placeholder="Full Name"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
@@ -154,7 +154,7 @@ export default function Signup() {
                 <select
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                  className="rounded-[5px] border-[1px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
+                  className="rounded-[5px] border-[1px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
                 >
                   <option value="Dr">Dr</option>
                   <option value="Mr">Pharm</option>
@@ -164,11 +164,11 @@ export default function Signup() {
           )}
 
           {activeTab === "provider" && (
-            <div className="mt-6">
+            <div className="mt-3.5">
               <h1 className="text-lg text-green-dark">Practice Specialty or Pharmacy Store Name</h1>
               <input
                 type="text"
-                className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
+                className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
                 placeholder="Practice Specialty or Pharmacy Store Name"
                 value={specialty}
                 onChange={(e) => setSpecialty(e.target.value)}
@@ -176,23 +176,23 @@ export default function Signup() {
             </div>
           )}
 
-          <div className="mt-6">
+          <div className="mt-3.5">
             <h1 className="text-lg text-green-dark">Email Address</h1>
             <input
               type="text"
-              className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
+              className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
               placeholder="Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
-          <div className="mt-6 flex space-x-4">
+          <div className="mt-3.5 flex space-x-4">
             <div className="flex-1">
               <h1 className="text-lg text-green-dark">Password</h1>
               <input
                 type="password"
-                className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
+                className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -202,7 +202,7 @@ export default function Signup() {
               <h1 className="text-lg text-green-dark">Confirm Password</h1>
               <input
                 type="password"
-                className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[45px] text-base pl-4 mt-2"
+                className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
                 placeholder="Confirm Password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
@@ -210,7 +210,7 @@ export default function Signup() {
             </div>
           </div>
 
-          <div className="mt-4 flex items-center">
+          <div className="mt-2.5 flex items-center">
             <input
               type="checkbox"
               checked={acceptTerms}
@@ -227,7 +227,7 @@ export default function Signup() {
 
           <button
             onClick={handleSignup}
-            className="bg-green-dark hover:bg-green-darker text-white w-full py-3 rounded-lg text-lg font-bold mt-8"
+            className="bg-green-dark hover:bg-green-darker text-white w-full py-2.5 rounded-lg text-lg font-bold mt-3.5"
           >
             Create Account
           </button>
