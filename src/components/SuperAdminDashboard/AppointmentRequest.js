@@ -1,4 +1,5 @@
 import React from "react";
+import { FaCheck, FaTimes } from "react-icons/fa";
 
 const requests = [
   { name: "Nitin Verma", disease: "Child Care", date: "01/27", approved: false },
@@ -6,18 +7,34 @@ const requests = [
 ];
 
 const AppointmentRequests = () => (
-  <div className="card">
-    <h3>Appointment Requests</h3>
-    <ul>
-      {requests.map((req, index) => (
-        <li key={index}>
-          {req.name} - {req.disease} ({req.date}){" "}
-          <button style={{ background: req.approved ? "#4CAF50" : "#F44336", color: "#fff", marginLeft: "10px" }}>
-            {req.approved ? "Approved" : "Reject"}
-          </button>
-        </li>
-      ))}
-    </ul>
+  <div className="w-full shadow-md rounded-md mt-4 flex flex-col justify-start items-center px-4 py-4 bg-white">
+    <h3 className="text-[#1A4700] font-bold text-left w-full">Appointment Requests</h3>
+
+    <div className="w-full py-2">
+      <table className="w-full">
+          <thead>
+            <tr>
+              <td className="px-3 py-2 text-sm text-center font-bold text-[#555555]">Name</td>
+              <td className="px-3 py-2 text-sm text-center font-bold text-[#555555]">Disease</td>
+              <td className="px-3 py-2 text-sm text-center font-bold text-[#555555]">Date</td>
+              <td className="px-3 py-2 text-sm text-center font-bold text-[#555555]">Approval</td>
+            </tr>
+          </thead>
+          <tbody>
+            {requests.map((req, index) => (
+              <tr key={index} className="rounded-full shadow-md w-full mt-4">
+                <td className="px-3 py-3 font-bold text-sm text-[#1A4700] text-center">{req.name}</td>
+                <td className="px-3 py-3 font-bold text-sm text-[#1A4700] text-center">{req.disease}</td>
+                <td className="px-3 py-3 font-bold text-sm text-[#1A4700] text-center">{req.date}</td>
+                <td className="px-3 py-3 font-bold text-sm text-[#1A4700] flex flex-row justify-center items-center">
+                  <FaCheck className="bg-green-700 text-white text-2xl px-1 py-1 mx-1 rounded-3xl" /> 
+                  <FaTimes className="bg-red-700 text-white text-2xl px-1 py-1 mx-1 rounded-3xl" />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+      </table>
+    </div>
   </div>
 );
 

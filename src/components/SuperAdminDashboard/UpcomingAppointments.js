@@ -9,7 +9,7 @@ const UpcomingAppointment = () => {
   const countdown = null;
 
   return (
-    <div className="w-full bg-white my-5 py-1 shadow-md flex flex-col justify-around items-center px-5 rounded-xl">
+    <div className="w-full bg-white my-5 py-1 shadow-md flex flex-col justify-around items-center px-5 rounded-md">
       <div className="w-full flex flex-row justify-between items-center py-2 mb-2">
         <h3 className="font-bold text-green-dark text-base">Upcoming Appointment</h3>
         <button className="text-red-800 text-sm font-bold">View All</button>

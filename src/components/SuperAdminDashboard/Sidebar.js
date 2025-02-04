@@ -21,7 +21,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="w-full bg-[#1A4402] px-4 py-2.5 text-white flex flex-col fixed left-0 top-0 bottom-0">
+    <div className="w-1/6 bg-[#1A4402] px-4 py-2.5 text-white flex flex-col fixed left-0 top-0 bottom-0">
         {/* Logo */}
         <div className="px-3 py-1 mt-4 flex flex-row justify-center items-center border border-white rounded-md">
           <img src={logo} alt="Logo" className="w-10 h-8" />

@@ -12,9 +12,9 @@ html, body {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
 }
-section {
+/*section {
   scroll-snap-align: start;
-}
+}*/
 .herobg {
   background: conic-gradient(
     from 30deg at 66.96% 46.58%,

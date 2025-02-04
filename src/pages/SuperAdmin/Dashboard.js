@@ -20,7 +20,7 @@ const Dashboard = () => {
   return (
     <div className="w-screen h-full bg-['#E9FAD6'] overflow-y-auto flex flex-row justify-between items-start">
       {/* Sidebar */}
-      <div className="w-1/6">
+      <div className="w-1/6 flex flex-col justify-start items-center">
         <Sidebar />
       </div>
 
@@ -71,17 +71,12 @@ const Dashboard = () => {
               </div>
               <UpcomingAppointment />
               <WaitingList />
+              <AppointmentRequests />
           </div>
           <div className="1/3 flex flex-col justify-start items-center">
 
           </div>
         </div>
-
-        {/* Waiting List and Appointment Requests */}
-        <div className="w-full flex flex-col justify-around items-center">
-          <AppointmentRequests />
-        </div>
-
         {/* Users Role Management */}
         <div className="users-role-management card">
           <h3>Users Role Management</h3>

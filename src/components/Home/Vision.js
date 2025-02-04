@@ -3,6 +3,7 @@ import { useLanguage } from "../../LanguageContext"; // Import the context
 import { translations } from "../../translations"; // Import translations
 
 export default function Vision() {
+
   const { selectedLanguage, changeLanguage } = useLanguage(); // Use context for language
   const [langUpdated, setLangUpdated] = useState(false); // State to trigger re-render on language change
 
