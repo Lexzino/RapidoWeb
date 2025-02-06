@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import './App.css';
-import Home from './components/Home/Index';
+import Home from './components/Home/index';
 import Aboutus from './components/Aboutus/index';
 import Career from './pages/Career/index';
 import Login from './components/Login/index';
