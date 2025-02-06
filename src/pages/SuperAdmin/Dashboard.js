@@ -10,8 +10,8 @@ import IncomeStatistics from "../../components/SuperAdminDashboard/IncomeStatist
 import UpcomingAppointment from "../../components/SuperAdminDashboard/UpcomingAppointments";
 import { BiBell } from "react-icons/bi";
 import { FaInfoCircle, FaRegMoon } from "react-icons/fa";
-import doctors from '../../assets/images/Doctors.svg';
 import { stats } from "../../components/SuperAdminDashboard/components/StatItems";
+
 
 const Dashboard = () => {
 
@@ -49,7 +49,7 @@ const Dashboard = () => {
               <a href="#" className="social-icon mx-1">
                 <FaInfoCircle color="gray" size={16} />
               </a>
-              <img src={doctors} className="w-8 h-8 rounded-3xl border border-gray-50 ml-2" />
+              <img src="/images/Doctors.svg" className="w-8 h-8 rounded-3xl border border-gray-50 ml-2" />
             </div>
           </div>
         </div>
