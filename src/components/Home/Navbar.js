@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Modal } from "antd";
-import BlankImage from "../../assets/pageImages/blank-circle.svg";
 import MenuItem from "./menu-item";
 import aboutUs from '../Aboutus/index'
 import AccountCreate from "./account-create";

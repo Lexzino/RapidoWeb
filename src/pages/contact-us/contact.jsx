@@ -1,9 +1,4 @@
 import React, { useState } from 'react';
-import Gfacebook from "../../public/images/Gfacebook.svg";
-import Ginstagram from "../../public/images/Ginstagram.svg";
-import Gsocial from "../../public/images/Gsocial.svg";
-import Glinkedin from "../../public/images/Glinkedin.svg";
-import Gyoutube from "../../public/images/Gyoutube.svg";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -51,11 +46,11 @@ export default function ContactUs() {
           {/* Social Links */}
           <div className="mt-[70px] flex gap-4">
             {[
-              { href: 'https://web.facebook.com/RapidoReliefApp/', src: Gfacebook, alt: 'Facebook' },
-              { href: 'https://www.instagram.com/rapidreliefapp/', src: Ginstagram, alt: 'Instagram' },
-              { href: 'https://twitter.com/rapidoreliefapp', src: Gsocial, alt: 'Twitter' },
-              { href: 'https://www.linkedin.com/company/rapidreliefapp', src: Glinkedin, alt: 'LinkedIn' },
-              { href: 'https://www.linkedin.com/company/rapidreliefapp', src: Gyoutube, alt: 'YouTube' },
+              { href: 'https://web.facebook.com/RapidoReliefApp/', src: "/images/Gfacebook.svg", alt: 'Facebook' },
+              { href: 'https://www.instagram.com/rapidreliefapp/', src: "/images/Ginstagram.svg", alt: 'Instagram' },
+              { href: 'https://twitter.com/rapidoreliefapp', src: "/images/Gsocial.svg", alt: 'Twitter' },
+              { href: 'https://www.linkedin.com/company/rapidreliefapp', src: "/images/Glinkedin.svg", alt: 'LinkedIn' },
+              { href: 'https://www.linkedin.com/company/rapidreliefapp', src: "/images/Gyoutube.svg", alt: 'YouTube' },
             ].map(({ href, src, alt }) => (
               <li key={alt} className="h-10 w-10 flex justify-center items-center">
                 <a href={href}>

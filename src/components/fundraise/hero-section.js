@@ -2,14 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../LanguageContext"; // Import the context
 import { translations } from "../../translations"; // Import translations
 import { Link } from "react-router-dom";
-import Heroimg1 from "../../public/images/fandr.png";
-import Heroimg2 from "../../public/images/fandr.png";
-import Heroimg3 from "../../public/images/fandr.png";
 
 export default function HeroSection() {
   const { selectedLanguage } = useLanguage(); // Use context for language
   const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [Heroimg1, Heroimg2, Heroimg3];
+  const images = ["/images/fandr.png", "/images/fandr.png", "/images/fandr.png"];
 
   // Auto-sliding logic for carousel
   useEffect(() => {

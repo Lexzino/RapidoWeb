@@ -1,8 +1,4 @@
 import React from "react";
-// import contacts from "../../assets/icons/contacts-icon.svg";
-// import whined from "../../assets/icons/whined.svg";
-// import opportunity from "../../assets/icons/opportunity.svg";
-// import charts from "../../assets/icons/charts.svg";
 
 const BenefitsSection = () => {
   return (

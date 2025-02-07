@@ -3,30 +3,11 @@ import Slider from 'react-slick';
 import Navbar from '../../components/Home/Navbar';
 import './style.css';
 import { Button, Input } from 'antd';
-import WatchVideo from '../../public/icons/watch-video.svg';
-import Doctors from '../../public/pageImages/well-qualified-doctors.svg';
-import Appointment from '../../public/pageImages/book-appointment.svg';
-import Mental from '../../public/images/Mentalnew.svg';
-import SearchIcon from '../../public/pageImages/search-icon.svg';
-import LocationIcon from '../../public/pageImages/location-icon.svg';
-import SecurityIcon from '../../public/pageImages/security-icon.svg';
-import Consult from '../../public/images/Consultnew.svg';
-import Find from '../public/images/Findnew.svg';
-import Doctor from '../../public/images/Doctornew.svg';
-import Hospital from '../../public/images/hospitalnew.svg';
-import Ambulance from '../../public/images/Ambulancenew.svg';
 import Esg from '../../components/Home/Esg';
 import Footer from '../../components/Home/Footer';
 import Jobs from '../../components/Home/Travaltime';
 import DoctorProfileCard from '../../components/Reuseable/Cards/DoctorProfileCards';
-import ProfileImage from '../../public/pageImages/doctor-profile.svg';
-import Helpmobile from '../../public/images/how-it-works.svg'
-import PatientCare from '../../public/pageImages/primary-patient.svg';
-import WeightManagement from '../../public/pageImages/weight-management.svg';
-import UrgentCare from '../../public/pageImages/urgent-care.svg';
-import MentalHealth from '../../public/pageImages/mental-health.svg';
-import RightIcon from '../../public/icons/right-icon.svg';
-import BookAppointment from '../../public/images/book-appointment.svg';
+
 
 
 import "slick-carousel/slick/slick.css";
@@ -34,7 +15,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Explore = () => {
     const doctor = {
-        profileImage: ProfileImage,
+        profileImage: "/pageImages/doctor-profile.svg",
         name: 'Dr. Rapido Relief',
         country: 'Sao Paulo, Brazil',
         rating: 4.5,
@@ -70,24 +51,24 @@ const Explore = () => {
 
     const contentData = [
         {
-            imgSrc: PatientCare,
+            imgSrc: "/pageImages/primary-patient.svg",
             title: "Primary Care",
             tags: ["Type 2 diabetes", "Acid reflex", "Migrane"]
         },
         {
-            imgSrc: WeightManagement,
+            imgSrc: "/pageImages/weight-management.svg",
             author: "author name",
             title: "Weight Management",
             tags: ["Type 2 diabetes", "Acid reflex", "Migrane"]
         },
         {
-            imgSrc: UrgentCare,
+            imgSrc: "/pageImages/urgent-care.svg",
             author: "author name",
             title: "Urgent Care",
             tags: ["Type 2 diabetes", "Acid reflex", "Migrane"]
         },
         {
-            imgSrc: MentalHealth,
+            imgSrc: "/pageImages/mental-health.svg",
             title: "Mental Health",
             tags: ["Type 2 diabetes", "Acid reflex", "Migrane"]
         }
@@ -119,7 +100,7 @@ const Explore = () => {
                                 <div className=" mt-5 pb-5 sm:mt-[76px] f-f-m text-2xl text-white ">
                                     <div className='flex gap-5'>
                                         <Button className='explore-hero-button primary-color-bg'>Book Best Doctor Near You!</Button>
-                                        <img className='img-explore-watch' src={WatchVideo} width={130} height={100} alt='watch-video' />
+                                        <img className='img-explore-watch' src="/icons/watch-video.svg" width={130} height={100} alt='watch-video' />
                                     </div>
                                     <p className='subtitle-explore mt-3'>Become member of our community?</p>
                                 </div>
@@ -127,8 +108,8 @@ const Explore = () => {
                             </div>
                             <div className='col-span-12 xl:col-span-6 hero-text-card-explore hidden xl:block'>
                                 <div className='image-explores'>
-                                    <img src={Doctors} alt='well-qualified-doctors' width={270} />
-                                    <img src={Appointment} alt='book-online-appointment' width={270} />
+                                    <img src="/pageImages/well-qualified-doctors.svg" alt='well-qualified-doctors' width={270} />
+                                    <img src="/pageImages/book-appointment.svg" alt='book-online-appointment' width={270} />
                                 </div>
                             </div>
                         </div>
@@ -141,15 +122,15 @@ const Explore = () => {
                         <div className='pt-3 pb-5 px-5 flex flex-col sm:flex-row searchtabs'>
                             <div className='smClass'>
                                 <label className='ml-3 labelclass'>Search</label>
-                                <Input className='inputclass sm:text-sm' size="large" placeholder="Condition, Physician or Pharmacy" prefix={<img src={SearchIcon} alt="search-icon" />} />
+                                <Input className='inputclass sm:text-sm' size="large" placeholder="Condition, Physician or Pharmacy" prefix={<img src="/pageImages/search-icon.svg" alt="search-icon" />} />
                             </div>
                             <div className='smClass'>
                                 <label className='ml-3 labelclass'>Location</label>
-                                <Input className='inputclass sm:text-sm' size="large" placeholder="City, State or Zip/Post Code" prefix={<img src={LocationIcon} alt="search-icon" />} />
+                                <Input className='inputclass sm:text-sm' size="large" placeholder="City, State or Zip/Post Code" prefix={<img src="/pageImages/location-icon.svg" alt="search-icon" />} />
                             </div>
                             <div className='smClass'>
                                 <label className='ml-3 labelclass'>Have Insurance</label>
-                                <Input className='inputclass sm:text-sm' size="large" placeholder="Choose Insurance" prefix={<img src={SecurityIcon} alt="search-icon" />} />
+                                <Input className='inputclass sm:text-sm' size="large" placeholder="Choose Insurance" prefix={<img src="/pageImages/security-icon.svg"alt="search-icon" />} />
                             </div>
                         </div>
                         <div className="bg-green-vlight  pt-8  rounded-b-[25px]  ">
@@ -158,14 +139,14 @@ const Explore = () => {
 
                                     <div className="  col-span-6 md:col-span-4 xl:col-span-2">
                                         <div className="bg-white mt-[15px] h-[160px] mb-[25px]  py-3 px-5 optionsetting">
-                                            <img src={Consult} className='w-[61px] h-[50px] ml-auto ' alt="" />
+                                            <img src="/images/Consultnew.svg" className='w-[61px] h-[50px] ml-auto ' alt="" />
                                             <h5 className='f-f-r text-2xl text-green-dark mt-[35px] hover:text-white leading-normal '>Consult  Online</h5>
                                         </div>
                                     </div>
 
                                     <div className="  col-span-6 md:col-span-4 xl:col-span-2">
                                         <div className="bg-white mt-[15px] h-[160px] mb-[25px] py-3 px-5 optionsetting">
-                                            <img src={Find} className='w-[46px] h-[50px] ml-auto ' alt="" />
+                                            <img src="/images/Findnew.svg" className='w-[46px] h-[50px] ml-auto ' alt="" />
                                             <h5 className='f-f-r text-2xl text-green-dark mt-[35px] hover:text-white leading-normal '>Find
                                                 Pharmacy</h5>
                                         </div>
@@ -173,7 +154,7 @@ const Explore = () => {
 
                                     <div className="  col-span-6 md:col-span-4 xl:col-span-2">
                                         <div className="bg-white mt-[15px] h-[160px] mb-[25px] py-3 px-5 optionsetting">
-                                            <img src={Doctor} className='w-[49px] h-[50px] ml-auto ' alt="" />
+                                            <img src="/images/Doctornew.svg" className='w-[49px] h-[50px] ml-auto ' alt="" />
                                             <h5 className='f-f-r text-2xl text-green-dark mt-[35px] hover:text-white leading-normal '>Find a
                                                 Doctors</h5>
                                         </div>
@@ -181,7 +162,7 @@ const Explore = () => {
 
                                     <div className="  col-span-6 md:col-span-4 xl:col-span-2">
                                         <div className="bg-white mt-[15px] h-[160px] mb-[25px] py-3 px-5 optionsetting">
-                                            <img src={Hospital} className='w-[50px] h-[50px] ml-auto ' alt="" />
+                                            <img src="/images/hospitalnew.svg" className='w-[50px] h-[50px] ml-auto ' alt="" />
                                             <h5 className='f-f-r text-2xl text-green-dark mt-[35px] hover:text-white leading-normal '>Find a
                                                 Hospital</h5>
                                         </div>
@@ -189,7 +170,7 @@ const Explore = () => {
 
                                     <div className="  col-span-6 md:col-span-4 xl:col-span-2">
                                         <div className="bg-white mt-[15px] h-[160px] mb-[25px] py-3 px-5 optionsetting">
-                                            <img src={Ambulance} className='w-[54px] h-[50px] ml-auto  ' alt="" />
+                                            <img src="/images/Ambulancenew.svg" className='w-[54px] h-[50px] ml-auto  ' alt="" />
                                             <h5 className='f-f-r text-2xl text-green-dark mt-[35px] hover:text-white leading-normal '>Emergency
                                                 Ambulance</h5>
                                         </div>
@@ -197,7 +178,8 @@ const Explore = () => {
 
                                     <div className="  col-span-6 md:col-span-4 xl:col-span-2">
                                         <div className="bg-white mt-[15px] h-[160px] mb-[25px] py-3 px-5 optionsetting">
-                                            <img src={Mental} className='w-[51px] h-[50px] ml-auto ' alt="" />
+                                            <img src="
+                                            /images/Mentalnew.svg" className='w-[51px] h-[50px] ml-auto ' alt="" />
                                             <h5 className='f-f-r text-2xl text-green-dark mt-[35px] hover:text-white leading-normal '>Mental
                                                 Health</h5>
                                         </div>
@@ -232,7 +214,7 @@ const Explore = () => {
                     <div className='w-11/12 mx-auto 2xl:max-w-[1154px]'>
                         <div className="grid grid-cols-12 gap-5 pb-[70px] sm:pt-10 lg:py-[70px]  ">
                             <div className="col-span-12 lg:col-span-5">
-                                <img src={Helpmobile} className='w-full mb-5 lg:mb-0 h-[525px]' alt="" />
+                                <img src="/images/how-it-works.svg" className='w-full mb-5 lg:mb-0 h-[525px]' alt="" />
                             </div>
                             <div className="col-span-12 lg:col-span-7">
                                 <ul className='inline-flex items-center space-x-5'>
@@ -310,7 +292,7 @@ const Explore = () => {
                                                     <h2 className='primary-color'>LEARN MORE</h2>
                                                 </div>
                                                 <div className='right-arrow-down'>
-                                                    <img className='primary-color' src={RightIcon} alt='RightIcon' />
+                                                    <img className='primary-color' src="/icons/right-icon.svg" alt='RightIcon' />
                                                 </div>
 
                                             </div>
@@ -324,7 +306,7 @@ const Explore = () => {
 
                 {/* Book Appointmnet */}
                 <div className='flex justify-center mt-10'>
-                    <img src={BookAppointment} alt='' />
+                    <img src="/images/book-appointment.svg" alt='' />
                 </div>
             </div>
             <div className='mt-10'>

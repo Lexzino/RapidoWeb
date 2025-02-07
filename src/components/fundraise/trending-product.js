@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../LanguageContext"; // Import the context
 import { translations } from "../../translations"; // Import translations
-import img1 from "../../public/images/ayurvedic.svg";
-import img2 from "../../public/images/categories.svg";
-import img3 from "../../public/images/plant-powered.svg";
-import img4 from "../../public/images/health-drink.svg";
 
 export default function TrendingProduct() {
   const { selectedLanguage, changeLanguage } = useLanguage(); // Use context for language
@@ -15,22 +11,22 @@ export default function TrendingProduct() {
   const t = translations[selectedLanguage]; // Get the translation for the selected language
   const products = [
     {
-      img: img1,
+      img: "/images/ayurvedic.svg",
       subtitle: t.productSubtitle1,
       description: t.productDescription1,
     },
     {
-      img: img2,
+      img: "/images/categories.svg",
       subtitle: t.productSubtitle2,
       description: t.productDescription2,
     },
     {
-      img: img3,
+      img: "/images/plant-powered.svg",
       subtitle: t.productSubtitle3,
       description: t.productDescription3,
     },
     {
-      img: img4,
+      img: "/images/health-drink.svg",
       subtitle: t.productSubtitle4,
       description: t.productDescription4,
     },

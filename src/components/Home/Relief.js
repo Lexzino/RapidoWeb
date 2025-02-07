@@ -55,13 +55,18 @@ export default function Relief() {
                 <div className=" w-full text-center absolute -bottom-5 ">
                   <button
                     onClick={handleOpen}
-                    className="w-full sm:w-[356px] h-[50px] sm:h-[64px] bg-green-dark rounded-2xl  ">
+                    className="w-full sm:w-[356px] h-[50px] sm:h-[64px] bg-green-dark rounded-2xl  "
+                  >
                     <ul className="inline-flex items-center space-x-4">
                       <li className="f-f-m text-xl text-white">
                         Enlist your Store on RapidoRelief
                       </li>
                       <li>
-                        <img src={Button1} className="h-6 w-6" alt="" />
+                        <img
+                          src="/images/Button1.svg"
+                          className="h-6 w-6"
+                          alt=""
+                        />
                       </li>
                     </ul>
                   </button>
@@ -102,13 +107,18 @@ export default function Relief() {
                 <div className=" w-full text-center absolute -bottom-5 ">
                   <button
                     onClick={handleOpen}
-                    className="w-full sm:w-[356px] h-[50px] sm:h-[64px] bg-green-dark rounded-2xl  ">
+                    className="w-full sm:w-[356px] h-[50px] sm:h-[64px] bg-green-dark rounded-2xl  "
+                  >
                     <ul className="inline-flex items-center space-x-4">
                       <li className="f-f-m text-xl text-white">
                         Enlist your Practice on RapidoRelief
                       </li>
                       <li>
-                        <img src="/images/Button1.svg" className="h-6 w-6" alt="" />
+                        <img
+                          src="/images/Button1.svg"
+                          className="h-6 w-6"
+                          alt=""
+                        />
                       </li>
                     </ul>
                   </button>
@@ -120,5 +130,5 @@ export default function Relief() {
       </div>
       {/* <Partnerdlg open={open} setOpen={setOpen} handleOpen={handleOpen} /> */}
     </>
-  );
+  )
 }

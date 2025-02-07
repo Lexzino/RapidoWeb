@@ -1,5 +1,4 @@
 import React from 'react';
-import Helpmobile from '../../assets/images/how-it-works.svg';
 
 const MentalWellness = () => {
     const cards = [

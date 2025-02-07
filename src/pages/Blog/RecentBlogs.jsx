@@ -1,11 +1,4 @@
 import React, { useEffect } from "react";
-// import uxReview from "../../public/images/ux-review.svg";
-// import migrating from "../../public/images/migrating.svg";
-// import apiStack from "../../public/images/api-stack.svg";
-// import learnBanner from "../../public/images/learn-banner.svg";
-// import supBg from "../../public/images/supplement-bg.jpeg";
-// import amberGlass from "../../public/images/amber-glass.svg";
-// import pillBox from "../../public/images/pill-box.svg";
 import AOS from "aos"; // Import AOS
 
 export default function RecentBlogPosts() {

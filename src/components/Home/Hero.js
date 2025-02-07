@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../LanguageContext"; // Import the context
 import { translations } from "../../translations"; // Import translations
-import Heroimg1 from "../../assets/images/landing-hero.png";
-import Heroimg2 from "../../assets/images/landing-hero.png";
-import Heroimg3 from "../../assets/images/landing-hero.png";
 import { DialogDefault } from "./Dilogbox/individul";
 import DownloadButton from "./download-btn";
 import WatchVideo from "./watch-video";
@@ -15,7 +12,7 @@ export default function Hero() {
   const [langUpdated, setLangUpdated] = useState(false); // State to trigger re-render on language change
 
   // Array of images for the carousel
-  const images = [Heroimg1, Heroimg2, Heroimg3];
+  const images = ["/images/landing-hero.png", "/images/landing-hero.png", "/images/landing-hero.png"];
 
   // Change to selected slide
   const goToSlide = (index) => {

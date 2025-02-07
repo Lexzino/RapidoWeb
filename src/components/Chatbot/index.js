@@ -3,10 +3,6 @@ import { useLanguage } from "../../LanguageContext"; // Import the context
 import { chatbotTranslations } from "./ChatbotTranslation"; // Import translations
 import "./style.css";
 
-// Import images
-import chatbotIcon from '../../assets/icons/chatbot-icon.svg';
-import chatbotImg from '../../assets/images/chatbot-img.png';
-
 export default function RapidoReliefChatbot() {
   const { selectedLanguage } = useLanguage(); // Use context for language
   const [isOpen, setIsOpen] = useState(false);
@@ -102,7 +98,7 @@ export default function RapidoReliefChatbot() {
   return (
     <>
       <button className="chatbot-icon" onClick={toggleChat}>
-        <img src={chatbotIcon} alt="Chatbot Icon" />
+        <img src="/icons/chatbot-icon.svg" alt="Chatbot Icon" />
       </button>
       {isOpen && (
         <div className="chatbot-overlay">
@@ -110,7 +106,7 @@ export default function RapidoReliefChatbot() {
             <div className="chatbot-left">
               <div className="phone-image-wrapper">
                 <img
-                  src={chatbotImg}
+                  src="/images/chatbot-img.png"
                   alt="Phone"
                   className="chatbot-phone-image"
                 />

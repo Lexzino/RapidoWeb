@@ -1,5 +1,4 @@
 import React from "react";
-import smart from '../../assets/images/Smart.svg';
 import CountdownTimer2 from "./components/CountdownTimer";
 import { FaClock, FaWhatsapp, FaSearchLocation } from "react-icons/fa";
 import { BiCalendar, BiCurrentLocation, BiLocationPlus } from "react-icons/bi";
@@ -16,7 +15,7 @@ const UpcomingAppointment = () => {
       </div>
       <div className="w-full bg-green-dark flex flex-row justify-around items-center rounded-md py-2.5 mb-2.5">
         <div className="bg-white rounded-full px-2 py-2 w-1/12 flex flex-col justify-center items-start">
-          <img src={smart} className="w-10 h-10" />
+          <img src="/images/Smart.svg" className="w-10 h-10" />
         </div>
         <div className="w-1/3 flex flex-col justify-evenly items-start">
           <p className="text-white text-base leading-3"><strong>Dr. Alison Ogaga</strong></p>

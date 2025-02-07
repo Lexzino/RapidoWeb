@@ -1,5 +1,4 @@
 import React from 'react';
-import TrustedCareImage from '../../assets/images/trusted-care.svg';
 
 const TrustedCare = () => {
     return (

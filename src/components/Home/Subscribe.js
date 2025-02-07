@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../LanguageContext"; // Import the context
 import { translations } from "../../translations"; // Import translations
-import Rock from '../../assets/images/Rock.svg'
-import Grightarrow from '../../assets/images/Grightarrow.svg'
+
 
 export default function Subscribe() {
   const { selectedLanguage, changeLanguage } = useLanguage(); // Use context for language

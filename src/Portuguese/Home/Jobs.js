@@ -1,11 +1,4 @@
 import React from 'react'
-import Joinus from '../../assets/images/Joinus.svg'
-import Helathmedical from '../../assets/images/Helathmedical.svg'
-import Handmedical from '../../assets/images/Handmedical.svg'
-import Healthcaremedical from '../../assets/images/Healthcaremedical.svg'
-import Hearmedical from '../../assets/images/Hearmedical.svg'
-import Storagemedical from '../../assets/images/Storagemedical.svg'
-import Plusmedical from '../../assets/images/Plusmedical.svg'
 import Slider from "react-slick";
 
 

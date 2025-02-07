@@ -3,8 +3,6 @@ import { useParams, Link } from "react-router-dom" // Import Link
 import sanityClient from "../../client.js"
 import Navbar from "../Home/Navbar"
 import { Card, Spin } from "antd"
-import RightArrow from "../../assets/icons/right-arrow.svg"
-import UserProfile from "../../assets/icons/user-profile.svg"
 import BlockContent from "@sanity/block-content-to-react"
 import Subscribe from "../Home/Subscribe.js"
 import Footer from "../Home/Footer.js"

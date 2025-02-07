@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Individual from "../../../assets/images/Individual.svg";
 import { useAuth } from "../../services/authService";
 import { message } from "antd";
 import Joiningdlg from "./Joining";

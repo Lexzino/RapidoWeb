@@ -2,29 +2,20 @@ import React from 'react';
 import Slider from 'react-slick';
 import Navbar from '../../components/Home/Navbar';
 import { Button, Input } from 'antd';
-import WatchVideo from '../../public/icons/watch-video.svg';
-import Doctors from '../../public/pageImages/well-qualified-doctors.svg';
-import Appointment from '../../public/pageImages/book-appointment.svg';
-import Mental from '../../public/images/Mentalnew.svg';
-import SearchIcon from '../../public/pageImages/search-icon.svg';
-import LocationIcon from '../../public/pageImages/location-icon.svg';
-import SecurityIcon from '../../public/pageImages/security-icon.svg';
-import Consult from '../../public/images/Consultnew.svg';
-import Find from '../../public/images/Findnew.svg';
-import Doctor from '../../public/images/Doctornew.svg';
-import Hospital from '../../public/images/hospitalnew.svg';
-import Ambulance from '../../public/images/Ambulancenew.svg';
+// import Appointment from '../../public/pageImages/book-appointment.svg';
+// import Mental from '../../public/images/Mentalnew.svg';
+// import SearchIcon from '../../public/pageImages/search-icon.svg';
+// import LocationIcon from '../../public/pageImages/location-icon.svg';
+// import SecurityIcon from '../../public/pageImages/security-icon.svg';
+// import Consult from '../../public/images/Consultnew.svg';
+// import Find from '../../public/images/Findnew.svg';
+// import Doctor from '../../public/images/Doctornew.svg';
+// import Hospital from '../../public/images/hospitalnew.svg';
+// import Ambulance from '../../public/images/Ambulancenew.svg';
 import Esg from '../../components/Home/Esg';
 import Footer from '../../components/Home/Footer';
 import Jobs from '../../components/Home/Travaltime';
 import DoctorProfileCard from '../../components/Reuseable/Cards/DoctorProfileCards';
-import ProfileImage from '../../public/pageImages/doctor-profile.svg';
-import PatientCare from '../../public/pageImages/primary-patient.svg';
-import WeightManagement from '../../public/pageImages/weight-management.svg';
-import UrgentCare from '../../public/pageImages/urgent-care.svg';
-import MentalHealth from '../../public/pageImages/mental-health.svg';
-import RightIcon from '../../public/icons/right-icon.svg';
-import BookAppointment from '../../public/images/book-appointment.svg';
 import MentallWellness from './MentallWellness'
 import TrustedCare from './TrustedCare'
 import MentalHealthConditions from './MentalHealthConditins'
@@ -37,7 +28,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Explore = () => {
     const doctor = {
-        profileImage: ProfileImage,
+        profileImage: "/pageImages/doctor-profile.svg",
         name: 'Dr. Rapido Relief',
         country: 'Sao Paulo, Brazil',
         rating: 4.5,
@@ -73,24 +64,24 @@ const Explore = () => {
 
     const contentData = [
         {
-            imgSrc: PatientCare,
+            imgSrc: "/pageImages/primary-patient.svg",
             title: "Primary Care",
             tags: ["Type 2 diabetes", "Acid reflex", "Migrane"]
         },
         {
-            imgSrc: WeightManagement,
+            imgSrc: "/pageImages/weight-management.svg",
             author: "author name",
             title: "Weight Management",
             tags: ["Type 2 diabetes", "Acid reflex", "Migrane"]
         },
         {
-            imgSrc: UrgentCare,
+            imgSrc: "/pageImages/urgent-care.svg",
             author: "author name",
             title: "Urgent Care",
             tags: ["Type 2 diabetes", "Acid reflex", "Migrane"]
         },
         {
-            imgSrc: MentalHealth,
+            imgSrc: "/pageImages/mental-health.svg",
             title: "Mental Health",
             tags: ["Type 2 diabetes", "Acid reflex", "Migrane"]
         }
@@ -122,7 +113,7 @@ const Explore = () => {
                                 <div className=" mt-5 pb-5 sm:mt-[76px] f-f-m text-2xl text-white ">
                                     <div className='flex gap-5'>
                                         <Button className='explore-hero-button primary-color-bg'>Mental Health Counseling Near You!</Button>
-                                        <img className='img-explore-watch' src={WatchVideo} width={130} height={100} alt='watch-video' />
+                                        <img className='img-explore-watch' src="/icons/watch-video.svg" width={130} height={100} alt='watch-video' />
                                     </div>
                                     <p className='subtitle-explore mt-3'>Become member of our community?</p>
                                 </div>
@@ -130,8 +121,8 @@ const Explore = () => {
                             </div>
                             <div className='col-span-12 xl:col-span-6 hero-text-card-explore hidden xl:block'>
                                 <div className='image-explores'>
-                                    <img src={Doctors} alt='well-qualified-doctors' width={270} />
-                                    <img src={Appointment} alt='book-online-appointment' width={270} />
+                                    <img src="/pageImages/well-qualified-doctors.svg" alt='well-qualified-doctors' width={270} />
+                                    <img src="/pageImages/book-appointment.svg" alt='book-online-appointment' width={270} />
                                 </div>
                             </div>
                         </div>
@@ -261,7 +252,7 @@ const Explore = () => {
 
                 {/* Book Appointmnet 
                 <div className='flex justify-center mt-10'>
-                    <img src={BookAppointment} alt='' />
+                    <img src="/images/book-appointment.svg" alt='' />
                 </div>*/}
             </div>
             <div className='mt-10'>

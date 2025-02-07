@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Individual from "../../../assets/images/Individual.svg";
 import { useAuth } from "../../services/authService";
-
 import { Dialog, DialogBody } from "@material-tailwind/react";
 import Joiningdlg from "./Joining";
 import { getIPAndCountry } from "../../services/getRegion";

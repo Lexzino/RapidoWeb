@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import './App.css';
@@ -10,7 +10,6 @@ import Register from './components/Register/index';
 import Fundraise from './components/fundraise/index';
 import MentalHealthPage from './pages/mental-health/index.jsx';
 import { AuthProvider } from './components/services/authService';
-import AuthGuard from './components/services/authGuard';
 import Blogs from './components/Blogs';
 import SingleBlogPost from './components/Blogs/SingleBlog';
 import PrivacyPolicy from './pages/privacyPolicy';
@@ -18,7 +17,7 @@ import Explore from './pages/Explore';
 import ContactUs from './pages/contact-us';
 import Blog from './pages/Blog';
 import SuperAdmin from './pages/SuperAdmin/Dashboard';
-import Dashboard from './pages/Dashboard/index.js';
+
 
 function App() {
   return (
@@ -56,7 +55,6 @@ function MainApp() {
               <Route path="/mental-health" element={<MentalHealthPage />} />
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/blog" element={<Blog />} />
-              <Route path="/dashboard" element={<AuthGuard adminRequired><Dashboard /></AuthGuard>} />
               <Route path="/superadmin" element={<SuperAdmin />} />
             </Routes>
           </div>

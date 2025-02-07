@@ -2,7 +2,7 @@
   /* background-color: #194401; */
   /* background-color: #F6FCF3; */
   /* background-image: url(../..//pageImages/blog-hero.jpeg); */
-  background-image: url(../..//pageImages/blog-hero-transparent.png);
+  background-image: url('/public/pageImages/blog-hero-transparent.png');
   background-repeat: no-repeat;
   background-size: cover;
 }

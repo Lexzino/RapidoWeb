@@ -1,11 +1,6 @@
 import React, { useEffect } from "react";
-import eberhard from "../../public/images/eberhard.svg";
-import leon from "../../public/images/leon.svg";
-import nikolay from "../../public/images/nikolay.svg";
-import natali from "../../public/images/natali.svg";
-import drew from "../../public/images/drew.svg";
-import AOS from "aos"; // Import AOS
-import soundtrap from "../../public/images/soundtrap.svg";
+import AOS from "aos";  // Import AOS
+
 
 export default function AllBlogPosts() {
     useEffect(() => {
@@ -19,7 +14,7 @@ export default function AllBlogPosts() {
     const blogPosts = [
         {
             id: 1,
-            img: eberhard,
+            img: "/images/eberhard.svg",
             authorDate: "Alec Whitten • 1 Jan 2025",
             title: "Bill Walsh leadership lessons",
             description:
@@ -31,7 +26,7 @@ export default function AllBlogPosts() {
         },
         {
             id: 2,
-            img: leon,
+            img: "/images/leon.svg",
             authorDate: "Demi WIlkinson • 1 Jan 2025",
             title: "PM mental models",
             description:
@@ -44,7 +39,7 @@ export default function AllBlogPosts() {
         },
         {
             id: 3,
-            img: nikolay,
+            img: "/images/nikolay.svg",
             authorDate: "Candice Wu • 1 Jan 2025",
             title: "What is Wireframing?",
             description:
@@ -56,7 +51,7 @@ export default function AllBlogPosts() {
         },
         {
             id: 4,
-            img: natali,
+            img: "/images/natali.svg",
             authorDate: "Natali Craig • 1 Jan 2025",
             title: "How collaboration makes us better designers",
             description:
@@ -68,7 +63,7 @@ export default function AllBlogPosts() {
         },
         {
             id: 5,
-            img: drew,
+            img: "/images/drew.svg",
             authorDate: "Drew Cano • 1 Jan 2025",
             title: "Our top 10 Javascript frameworks to use",
             description:
@@ -81,7 +76,7 @@ export default function AllBlogPosts() {
         },
         {
             id: 6,
-            img: soundtrap,
+            img: "/images/soundtrap.svg",
             authorDate: "Orlando Diggs • 1 Jan 2025",
             title: "Podcast: Creating a better CX Community",
             description:

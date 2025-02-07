@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../LanguageContext"; // Import the context
 import { translations } from "../../translations"; // Import translations
-import Talkrapido from "../../assets/images/telehealth1.png";
 
 export default function Telehealth() {
   const { selectedLanguage, changeLanguage } = useLanguage(); // Use context for language

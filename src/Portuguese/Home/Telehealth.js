@@ -1,5 +1,4 @@
 import React from 'react'
-import Talkrapido from '../../assets/images/PTalk.svg'
 
 export default function Telehealth() {
   return (

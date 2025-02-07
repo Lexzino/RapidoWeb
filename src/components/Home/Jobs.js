@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../LanguageContext"; // Import the context
 import { translations } from "../../translations"; // Import translations
-import Helathmedical from "../../assets/images/Helathmedical.svg";
-import Handmedical from "../../assets/images/Handmedical.svg";
-import Healthcaremedical from "../../assets/images/Healthcaremedical.svg";
-import Hearmedical from "../../assets/images/Hearmedical.svg";
-import Storagemedical from "../../assets/images/Storagemedical.svg";
-import Plusmedical from "../../assets/images/Plusmedical.svg";
+
 
 export default function Jobs() {
   const images = [
-    Helathmedical,
-    Hearmedical,
-    Plusmedical,
-    Healthcaremedical,
-    Handmedical,
-    Storagemedical,
+    "/images/Helathmedical.svg",
+    "/images/Hearmedical.svg",
+    "/images/Plusmedical.svg",
+    "/images/Healthcaremedical.svg",
+    "/images/Handmedical.svg",
+    "/images/Storagemedical.svg",
   ];
   const { selectedLanguage, changeLanguage } = useLanguage(); // Use context for language
   const [open, setOpen] = React.useState(false);
