@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../LanguageContext"; // Import the context
 import { translations } from "../../translations"; // Import translations
-import Joinus from "../../assets/images/Joinus.svg";
+
 
 export default function Jobs() {
   const { selectedLanguage, changeLanguage } = useLanguage(); // Use context for language
@@ -42,7 +42,7 @@ export default function Jobs() {
             </div>
 
             <div className="col-span-12 lg:col-span-6">
-              <img src={Joinus} className="w-full h-auto lg:h-[400px]" alt="" />
+              <img src="/images/Joinus.svg" className="w-full h-auto lg:h-[400px]" alt="" />
             </div>
           </div>
         </div>

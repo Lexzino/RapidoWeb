@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../LanguageContext"; // Import the context
 import { translations } from "../../translations"; // Import translations
-import Helpmobile from "../../assets/images/help.png";
-import vectorimg1 from "../../assets/images/vectorimg1.svg"; 
-import vectorimg2 from "../../assets/images/vectorimg2.svg"; 
-import vectorimg3 from "../../assets/images/vectorimg3.svg"; 
 
 export default function Help() {
   const { selectedLanguage, changeLanguage } = useLanguage(); // Use context for language
@@ -29,7 +25,7 @@ export default function Help() {
         <div className="flex flex-col w-full lg:w-[33%] max-md:ml-0">
         <img
   loading="lazy"
-  src={Helpmobile}
+  src="/images/help.png"
   alt="Rapido Relief App illustration"
   className="object-contain mt-10 w-[100%] max-w-[200px] md:w-full md:max-w-none mx-auto"
 />
@@ -50,7 +46,7 @@ export default function Help() {
               {/* Card 1 */}
               <div className="flex flex-col border border-[#E1E1E1] p-[24px] rounded-[8px] rounded-b-[16px] w-[220px] h-[250px] shadow-[0px_3px_9.1px_-1px_#00000066] items-center justify-center max-md:w-[160px]">
                 <img
-                  src={vectorimg1}
+                  src="/images/vectorimg1.svg"
                   alt="Vector Image 1"
                   className="w-[145px] h-[125px] object-contain"
                 />
@@ -64,7 +60,7 @@ export default function Help() {
               {/* Card 2 */}
               <div className="flex flex-col border border-[#E1E1E1] p-[24px] rounded-[8px] rounded-b-[16px] w-[220px] h-[250px] shadow-[0px_3px_9.1px_-1px_#00000066] items-center justify-center max-md:w-[160px]">
                 <img
-                  src={vectorimg2}
+                  src="/images/vectorimg2.svg"
                   alt="Vector Image 2"
                   className="w-[145px] h-[125px] object-contain"
                 />
@@ -78,7 +74,7 @@ export default function Help() {
               {/* Card 3 */}
               <div className="flex flex-col border border-[#E1E1E1] p-[24px] rounded-[8px] rounded-b-[16px] w-[220px] h-[250px] shadow-[0px_3px_9.1px_-1px_#00000066] items-center justify-center max-md:w-[160px]">
                 <img
-                  src={vectorimg3}
+                  src="/images/vectorimg3.svg"
                   alt="Vector Image 3"
                   className="w-[145px] h-[125px] object-contain"
                 />

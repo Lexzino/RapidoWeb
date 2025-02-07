@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../LanguageContext"; // Import the context
 import { translations } from "../../translations"; // Import translations
-import Carimg from "../../assets/images/Carimg.svg";
-import Zeowaiting from "../../assets/images/Zeowaiting.svg";
-import Certifieddoctor from "../../assets/images/Certifieddoctor.svg";
+
 
 export default function Traveltime() {
   const { selectedLanguage, changeLanguage } = useLanguage(); // Use context for language
@@ -30,7 +28,7 @@ export default function Traveltime() {
             <div className="text-center">
               <ul className="sm:inline-flex items-center space-x-5 ">
                 <img
-                  src={Carimg}
+                  src="/images/Carimg.svg"
                   className="w-[91px] h-[76px] mx-auto sm:mx-0"
                   alt=""
                 />
@@ -44,7 +42,7 @@ export default function Traveltime() {
             <div className="text-center">
               <ul className="sm:inline-flex items-center space-x-5 ">
                 <img
-                  src={Zeowaiting}
+                  src="/images/Zeowaiting.svg"
                   className="w-[91px]  h-[76px] mx-auto sm:mx-06px]"
                   alt=""
                 />
@@ -58,7 +56,7 @@ export default function Traveltime() {
             <div className="text-center">
               <ul className="sm:inline-flex items-center space-x-5 ">
                 <img
-                  src={Certifieddoctor}
+                  src="/images/Certifieddoctor.svg"
                   className="w-[91px]  mx-auto sm:mx-0 h-[76px]"
                   alt=""
                 />

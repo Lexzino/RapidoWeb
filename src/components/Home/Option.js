@@ -1,10 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Consult from "../../assets/images/Consultnew.svg";
-import Find from "../../assets/images/Findnew.svg";
-import Doctor from "../../assets/images/Doctornew.svg";
-import Hospital from "../../assets/images/hospitalnew.svg";
-import Ambulance from "../../assets/images/Ambulancenew.svg";
-import Mental from "../../assets/images/Mentalnew.svg";
 import { useLanguage } from "../../LanguageContext"; // Import the context
 import { translations } from "../../translations"; // Import translations
 
@@ -129,12 +123,12 @@ export default function SeacrhTags() {
         </div>
 
         <div className="bg-[#C8EE98] px-10 pb-10 pt-5 grid gap-2 grid-cols-1 md:grid-cols-3 lg:grid-cols-6 ">
-          <Card imgSrc={Consult} name= {t.consultOnline} />
-          <Card imgSrc={Find} name= {t.findPharmacy}/>
-          <Card imgSrc={Doctor} name={t.findDoctors} />
-          <Card imgSrc={Hospital} name={t.findHospital} />
-          <Card imgSrc={Ambulance} name={t.emergencyAmbulance} />
-          <Card imgSrc={Mental} name={t.mentalHealth} />
+          <Card imgSrc="/images/Consultnew.svg" name= {t.consultOnline} />
+          <Card imgSrc="/images/Findnew.svg" name= {t.findPharmacy}/>
+          <Card imgSrc="/images/Doctornew.svg" name={t.findDoctors} />
+          <Card imgSrc="/images/Hospitalnew.svg" name={t.findHospital} />
+          <Card imgSrc="/images/Ambulancenew.svg" name={t.emergencyAmbulance} />
+          <Card imgSrc="/images/Mentalnew.svg" name={t.mentalHealth} />
         </div>
       </div>
     </div>

@@ -103,7 +103,7 @@ export default function DialogDefault({ open, setOpen, handleOpen }) {
           <div className="grid grid-cols-12  items-center">
             <div className="col-span-12 2xl:col-span-5">
               <img
-                src={Individual}
+                src="/images/Individual.svg"
                 className="w-auto 2xl:-mr-20 2xl:w-[548px] h-auto 2xl:h-full mx-auto"
                 alt=""
               />

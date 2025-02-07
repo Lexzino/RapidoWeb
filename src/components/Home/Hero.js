@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../LanguageContext"; // Import the context
 import { translations } from "../../translations"; // Import translations
-
-import Google from "../../assets/images/Google play2.svg";
-import Apple from "../../assets/images/Appss.svg";
 import Heroimg1 from "../../assets/images/landing-hero.png";
 import Heroimg2 from "../../assets/images/landing-hero.png";
 import Heroimg3 from "../../assets/images/landing-hero.png";
@@ -68,12 +65,13 @@ export default function Hero() {
 
           <div className="flex justify-start flex-wrap items-center gap-3 mt-6 xl:mt-[60px]">
             <DownloadButton
-              imageSrc={Google}
+              imageSrc="/images/Google play2.svg"
               primaryText="GET IT ON"
               secondaryText="Google Play"
             />
             <DownloadButton
-              imageSrc={Apple}
+              imageSrc="
+              /images/Appss.svg"
               primaryText="Download on the"
               secondaryText="App Store"
             />

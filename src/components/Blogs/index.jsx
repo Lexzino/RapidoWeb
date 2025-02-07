@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../Home/Navbar";
-import RightArrow from "../../assets/icons/right-arrow.svg";
-import DownArrow from "../../assets/icons/down-arrow.svg";
 import { Avatar, Card, Spin } from "antd";
 import Subscribe from "../../components/Home/Subscribe";
 import "./style.css";
@@ -74,7 +72,7 @@ const Blogs = () => {
                     <li>
                       <img
                         className="pl-4 small-screen-arrow"
-                        src={RightArrow}
+                        src="/icons/right-arrow.svg"
                         alt="right-arrow"
                       />
                     </li>
@@ -97,7 +95,11 @@ const Blogs = () => {
                   </div>
 
                   <h3 className=" mt-12 pb-5 sm:mt-[76px] f-f-m text-2xl text-white flex ">
-                    <img className="" src={DownArrow} alt="right-arrow" />
+                    <img
+                      className=""
+                      src="icons/down-arrow.svg"
+                      alt="right-arrow"
+                    />
                     <h3 className="pl-3 dicoverHeading">Discover</h3>
                   </h3>
                 </div>
@@ -108,7 +110,8 @@ const Blogs = () => {
           <div className="w-11/12 2xl:max-w-[1154px] mx-auto mt-10">
             <ul
               style={{ listStyleType: "disc" }}
-              className="flex flex-wrap justify-between w-12/12 mx-4">
+              className="flex flex-wrap justify-between w-12/12 mx-4"
+            >
               <li className="w-full sm:w-1/2 md:w-auto lg:w-auto">
                 Healthcare Trends
               </li>
@@ -192,7 +195,7 @@ const Blogs = () => {
         </>
       )}
     </>
-  );
+  )
 };
 
 export default Blogs;

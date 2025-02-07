@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../LanguageContext"; // Import the context
 import { translations } from "../../translations"; // Import translations
 import { Link } from "react-router-dom";
-import Heroimg1 from "../../assets/images/fandr.png";
-import Heroimg2 from "../../assets/images/fandr.png";
-import Heroimg3 from "../../assets/images/fandr.png";
+import Heroimg1 from "../../public/images/fandr.png";
+import Heroimg2 from "../../public/images/fandr.png";
+import Heroimg3 from "../../public/images/fandr.png";
 
 export default function HeroSection() {
   const { selectedLanguage } = useLanguage(); // Use context for language

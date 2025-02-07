@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Modal } from "antd";
-import logo from "../../assets/images/logo.svg";
-import globeIcon from "../../assets/icons/globe.svg";
 import BlankImage from "../../assets/pageImages/blank-circle.svg";
 import MenuItem from "./menu-item";
 import aboutUs from '../Aboutus/index'
@@ -100,7 +98,7 @@ export default function Navbar() {
           <div className="flex justify-between items-center w-full lg:w-auto">
             {/* Logo visible on both mobile and desktop */}
             <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src={logo} alt="Logo" className="h-10" />
+              <img src="/images/logo.svg" alt="Logo" className="h-10" />
             </Link>
 
             {/* Mobile view: Hamburger icon */}
@@ -153,7 +151,7 @@ export default function Navbar() {
                   aria-label="Select language"
                 >
                   <img
-                    src={globeIcon}
+                    src="/images/globe.svg"
                     alt="Globe"
                     className={`w-12 h-6 ${isGlobeDropdownOpen ? "squeezing" : ""}`}
                   />

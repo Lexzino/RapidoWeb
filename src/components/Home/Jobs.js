@@ -8,7 +8,6 @@ import Hearmedical from "../../assets/images/Hearmedical.svg";
 import Storagemedical from "../../assets/images/Storagemedical.svg";
 import Plusmedical from "../../assets/images/Plusmedical.svg";
 
-
 export default function Jobs() {
   const images = [
     Helathmedical,

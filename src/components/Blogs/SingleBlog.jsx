@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom"; // Import Link
-import sanityClient from "../../client.js";
-import Navbar from "../Home/Navbar";
-import { Card, Spin } from "antd";
-import RightArrow from "../../assets/icons/right-arrow.svg";
-import UserProfile from "../../assets/icons/user-profile.svg";
-import BlockContent from "@sanity/block-content-to-react";
-import Subscribe from "../Home/Subscribe.js";
-import Footer from "../Home/Footer.js";
-import CustomLoader from "../Loader/index.jsx";
+import React, { useEffect, useState } from "react"
+import { useParams, Link } from "react-router-dom" // Import Link
+import sanityClient from "../../client.js"
+import Navbar from "../Home/Navbar"
+import { Card, Spin } from "antd"
+import RightArrow from "../../assets/icons/right-arrow.svg"
+import UserProfile from "../../assets/icons/user-profile.svg"
+import BlockContent from "@sanity/block-content-to-react"
+import Subscribe from "../Home/Subscribe.js"
+import Footer from "../Home/Footer.js"
+import CustomLoader from "../Loader/index.jsx"
 
-const { Meta } = Card;
+const { Meta } = Card
 
 const SingleBlogPost = () => {
-  const { slug } = useParams();
-  const [isLoading, setIsLoading] = useState(false);
-  const [blog, setBlog] = useState(null);
-  const [suggestedBlogs, setSuggestedBlogs] = useState([]);
+  const { slug } = useParams()
+  const [isLoading, setIsLoading] = useState(false)
+  const [blog, setBlog] = useState(null)
+  const [suggestedBlogs, setSuggestedBlogs] = useState([])
 
   useEffect(() => {
-    setIsLoading(true);
+    setIsLoading(true)
     sanityClient
       .fetch(
         `*[_type == "post" && slug.current == $slug] {
@@ -41,13 +41,13 @@ const SingleBlogPost = () => {
       )
       .then((data) => {
         if (data.length > 0) {
-          setBlog(data[0]);
+          setBlog(data[0])
         } else {
-          console.error("Blog post not found");
+          console.error("Blog post not found")
         }
       })
       .catch(console.error)
-      .finally(() => setIsLoading(false));
+      .finally(() => setIsLoading(false))
 
     sanityClient
       .fetch(
@@ -65,10 +65,10 @@ const SingleBlogPost = () => {
         }[0...3]`
       )
       .then((data) => setSuggestedBlogs(data))
-      .catch(console.error);
-  }, [slug]);
+      .catch(console.error)
+  }, [slug])
 
-  const renderLoader = () => <CustomLoader />;
+  const renderLoader = () => <CustomLoader />
 
   const renderBlogContent = () => (
     <>
@@ -89,7 +89,7 @@ const SingleBlogPost = () => {
                 <li>
                   <img
                     className="pl-2 sm:pl-4"
-                    src={RightArrow}
+                    src="/icons/right-arrow.svg"
                     alt="right-arrow"
                   />
                 </li>
@@ -101,7 +101,7 @@ const SingleBlogPost = () => {
                 <li>
                   <img
                     className="pl-2 sm:pl-4"
-                    src={RightArrow}
+                    src="/icons/right-arrow.svg"
                     alt="right-arrow"
                   />
                 </li>
@@ -118,7 +118,7 @@ const SingleBlogPost = () => {
             </div>
           </div>
           <div className="flex justify-center mt-3 pb-8">
-            <img src={UserProfile} alt="user-img" />
+            <img src="/icons/user-profile.svg" alt="user-img" />
             <h3 className=" small-screen-author pl-3">
               Posted by {blog?.author?.name} on {formattedDate}{" "}
             </h3>
@@ -143,7 +143,8 @@ const SingleBlogPost = () => {
             {suggestedBlogs?.map((blog) => (
               <Link
                 key={blog?.slug?.current}
-                to={`/blog/${blog?.slug?.current}`}>
+                to={`/blog/${blog?.slug?.current}`}
+              >
                 <Card
                   style={{
                     width: "100%",
@@ -152,7 +153,8 @@ const SingleBlogPost = () => {
                   }}
                   cover={
                     <img alt="example" src={blog?.mainImage?.asset?.url} />
-                  }>
+                  }
+                >
                   <div className="px-4">
                     <div className="pt-5 primary-color">
                       {formatDate(blog._createdAt)}
@@ -168,20 +170,20 @@ const SingleBlogPost = () => {
       <Subscribe />
       <Footer />
     </>
-  );
+  )
 
   const formatDate = (dateString) => {
-    const date = new Date(dateString);
+    const date = new Date(dateString)
     return date.toLocaleDateString("en-US", {
       month: "long",
       day: "numeric",
       year: "numeric",
-    });
-  };
+    })
+  }
 
-  const formattedDate = blog ? formatDate(blog._createdAt) : "";
+  const formattedDate = blog ? formatDate(blog._createdAt) : ""
 
-  return <>{isLoading ? renderLoader() : renderBlogContent()}</>;
-};
+  return <>{isLoading ? renderLoader() : renderBlogContent()}</>
+}
 
-export default SingleBlogPost;
+export default SingleBlogPost

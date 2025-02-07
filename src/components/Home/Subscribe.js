@@ -29,7 +29,7 @@ export default function Subscribe() {
 
           <div className="grid grid-cols-12 items-center gap-4 xl:gap-16">
             <div className="col-span-12 lg:col-span-4">
-              <img src={Rock} className='w-[189px] h-[120px]' alt="" />
+              <img src="/images/Rock.svg" className='w-[189px] h-[120px]' alt="" />
 
             </div>
             <div className="col-span-12 lg:col-span-8">
@@ -44,7 +44,7 @@ export default function Subscribe() {
                   <button className='mt-3 sm:mt-0 w-full h-11 sm:h-[50px] f-f-m text-xl md:text-3xl text-green bg-green-dark rounded-[50px] sm:rounded-none sm:rounded-r-[50px] '>
                     <ul className='inline-flex items-center space-x-3'>
                       <li>{t.subscribe}</li>
-                      <li><img src={Grightarrow} className='w-[30px] h-[30px] ' alt="" /></li>
+                      <li><img src="/images/Grightarrow.svg" className='w-[30px] h-[30px] ' alt="" /></li>
                     </ul>
 
                   </button>

@@ -117,7 +117,7 @@ export const DialogDefault = ({ open, setOpen, handleOpen }) => {
               <div className="grid grid-cols-12 gap-5 items-center">
                 <div className="col-span-12 2xl:col-span-7">
                   <img
-                    src={Individual}
+                    src="/images/Individual.svg"
                     className="w-auto  2xl:w-[325px] h-auto 2xl:h-[385px] mx-auto"
                     alt=""
                   />

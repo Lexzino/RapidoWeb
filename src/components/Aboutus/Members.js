@@ -1,13 +1,5 @@
 import React from "react";
-// import insta from "../../assets/images/instagraram.svg";
-// import Twitter from '../../assets/images/twitter-logo-2429 1.svg'
-// import Indeed from '../../assets/images/Indeed.svg'
-// import Michel from "../../assets/images/image 29.svg";
-// import Isa from "../../assets/images/image 30.svg";
-// import Sergio from "../../assets/images/image 31.svg";
-// import facebook from "../../assets/images/facebook.svg";
-// import Vectorx from "../../assets/images/Vectorx.svg";
-// import linkedin from "../../assets/images/linkedin.svg";
+
 
 export default function Members() {
   return (
@@ -118,7 +110,7 @@ export default function Members() {
                   <li>
                     <button className="socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4">
                       <img
-                        src="/images/facebook.svg"
+                        src="/images/instagraram.svg"
                         className="w-5 h-5"
                         alt=""
                       />

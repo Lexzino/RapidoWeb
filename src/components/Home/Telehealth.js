@@ -47,7 +47,7 @@ export default function Telehealth() {
         {/* Image Section */}
         <div className="flex justify-center w-full mt-8 md:mt-0">
           <img
-            src={Talkrapido}
+            src="/images/telehealth1.png"
             className="max-w-[180px] sm:max-w-[220px] md:max-w-[262px] h-[300px] sm:h-[380px] md:h-[450px] object-cover"
             alt={t.telehealthChatbot}
           />

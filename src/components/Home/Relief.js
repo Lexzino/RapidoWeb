@@ -1,7 +1,4 @@
 import React from "react";
-import Pharmaciest from "../../assets/images/pharmacist.svg";
-import Professional from "../../assets/images/professional 01.svg";
-import Button1 from "../../assets/images/Button1.svg";
 import Partnerdlg from "./Dilogbox/Partner";
 
 export default function Relief() {
@@ -30,7 +27,7 @@ export default function Relief() {
                 <div className="grid grid-cols-12 gap-4 xl:gap-9">
                   <div className="col-span-12 xl:col-span-5">
                     <img
-                      src={Pharmaciest}
+                      src="/images/pharmacist.svg"
                       className="w-full h-[170px] -ml-[6px]"
                       alt=""
                     />
@@ -77,7 +74,7 @@ export default function Relief() {
                 <div className="grid grid-cols-12 gap-4 xl:gap-9">
                   <div className="col-span-12 xl:col-span-5">
                     <img
-                      src={Professional}
+                      src="/images/Professional.svg"
                       className="w-full h-[189px] -ml-[6px]"
                       alt=""
                     />
@@ -111,7 +108,7 @@ export default function Relief() {
                         Enlist your Practice on RapidoRelief
                       </li>
                       <li>
-                        <img src={Button1} className="h-6 w-6" alt="" />
+                        <img src="/images/Button1.svg" className="h-6 w-6" alt="" />
                       </li>
                     </ul>
                   </button>

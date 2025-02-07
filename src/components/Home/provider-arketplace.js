@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../LanguageContext"; // Import the context
 import { translations } from "../../translations"; // Import translations
-import ImageOne from "../../assets/images/market-1.png";
-import ImageTwo from "../../assets/images/market-2.png";
-import ImageThree from "../../assets/images/market-3.svg";
 
 export default function ProvideMarketplace() {
   const { selectedLanguage, changeLanguage } = useLanguage(); // Use context for language
@@ -64,12 +61,12 @@ export default function ProvideMarketplace() {
 
         {/* Images Section */}
         <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-          <img className="w-[180px] h-[140px] object-contain" src={ImageOne} alt="Image One" />
-          <img className="w-[180px] h-[140px] object-contain" src={ImageTwo} alt="Image Two" />
+          <img className="w-[180px] h-[140px] object-contain" src="/images/market-1.png" alt="Image One" />
+          <img className="w-[180px] h-[140px] object-contain" src="/images/market-2.png" alt="Image Two" />
         </div>
 
         {/* Decorative Image */}
-        <img className="absolute bottom-[-10px] right-[-5px]" src={ImageThree} alt="Decoration" />
+        <img className="absolute bottom-[-10px] right-[-5px]" src="/images/market-3.png" alt="Decoration" />
       </div>
     </div>
   );

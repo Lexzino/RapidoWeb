@@ -1,6 +1,4 @@
 import React from "react";
-import Chatmobile from '../../../assets/images/Chatmobile.svg'
-import Textareaimg from '../../../assets/images/Textareaimg.svg'
 import {
   Dialog,
   DialogBody,
@@ -20,7 +18,7 @@ export default function DialogDefault({ open, setOpen, handleOpen }) {
         <DialogBody className="  overflow-y-scroll  " style={{ height: "80vh" }} >
           <div className="grid grid-cols-12 gap-5 items-center">
             <div className="col-span-12 2xl:col-span-5">
-              <img src={Chatmobile} className="w-[75%]  2xl:w-full h-[50%] 2xl:h-full mx-auto" alt="" />
+              <img src="/images/Chatmobile.svg" className="w-[75%]  2xl:w-full h-[50%] 2xl:h-full mx-auto" alt="" />
 
             </div>
             <div className="col-span-12 2xl:col-span-7">
@@ -43,7 +41,7 @@ export default function DialogDefault({ open, setOpen, handleOpen }) {
               <div className="relative mt-3">
 
                 <textarea name="" id="" rows="6" className=" rounded-[20px] border border-green-dark bg-white pl-5 pt-2 outline-none w-full"></textarea>
-                <img src={Textareaimg} className="h-[70px] w-[70px] absolute bottom-3 right-2" alt="" />
+                <img src="/images/Textareaimg.svg" className="h-[70px] w-[70px] absolute bottom-3 right-2" alt="" />
 
               </div>
             </div>

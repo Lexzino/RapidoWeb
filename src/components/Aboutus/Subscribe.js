@@ -1,6 +1,4 @@
 import React from "react";
-import Rock from "../../assets/images/Rock.svg";
-import Grightarrow from "../../assets/images/Grightarrow.svg";
 
 export default function Subscribe() {
   return (
@@ -9,7 +7,7 @@ export default function Subscribe() {
         <div className="w-11/12 mx-auto 2xl:max-w-[964px]">
           <div className="grid grid-cols-12 items-center gap-4 xl:gap-16">
             <div className="col-span-12 lg:col-span-4">
-              <img src={Rock} className="w-[189px] h-[120px]" alt="" />
+              <img src="/images/Rock.svg" className="w-[189px] h-[120px]" alt="" />
             </div>
             <div className="col-span-12 lg:col-span-8">
               <div className="grid grid-cols-12">
@@ -33,7 +31,7 @@ export default function Subscribe() {
                       <li>SUBSCRIBE</li>
                       <li>
                         <img
-                          src={Grightarrow}
+                          src="/images/Grightarrows.svg"
                           className="w-[30px] h-[30px] "
                           alt=""
                         />
