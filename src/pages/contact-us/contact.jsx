@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Gfacebook from "../../assets/images/Gfacebook.svg";
-import Ginstagram from "../../assets/images/Ginstagram.svg";
-import Gsocial from "../../assets/images/Gsocial.svg";
-import Glinkedin from "../../assets/images/Glinkedin.svg";
-import Gyoutube from "../../assets/images/Gyoutube.svg";
+import Gfacebook from "../../public/images/Gfacebook.svg";
+import Ginstagram from "../../public/images/Ginstagram.svg";
+import Gsocial from "../../public/images/Gsocial.svg";
+import Glinkedin from "../../public/images/Glinkedin.svg";
+import Gyoutube from "../../public/images/Gyoutube.svg";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({

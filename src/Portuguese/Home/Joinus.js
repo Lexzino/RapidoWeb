@@ -1,6 +1,4 @@
 import React from 'react'
-import Joinus from '../../assets/images/Joinus.svg'
-
 
 
 export default function Jobs() {
@@ -28,7 +26,7 @@ saúde para todos</h2>
             </div>
 
             <div className="col-span-12 lg:col-span-6">
-              <img src={Joinus} className='w-full h-auto lg:h-[400px]' alt="" />
+              <img src="/images/Joinus.svg" className='w-full h-auto lg:h-[400px]' alt="" />
 
             </div>
           </div>

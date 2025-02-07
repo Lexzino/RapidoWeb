@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import uxReview from "../../assets/images/ux-review.svg";
-import migrating from "../../assets/images/migrating.svg";
-import apiStack from "../../assets/images/api-stack.svg";
-import learnBanner from "../../assets/images/learn-banner.svg";
-import supBg from "../../assets/images/supplement-bg.jpeg";
-import amberGlass from "../../assets/images/amber-glass.svg";
-import pillBox from "../../assets/images/pill-box.svg";
+// import uxReview from "../../public/images/ux-review.svg";
+// import migrating from "../../public/images/migrating.svg";
+// import apiStack from "../../public/images/api-stack.svg";
+// import learnBanner from "../../public/images/learn-banner.svg";
+// import supBg from "../../public/images/supplement-bg.jpeg";
+// import amberGlass from "../../public/images/amber-glass.svg";
+// import pillBox from "../../public/images/pill-box.svg";
 import AOS from "aos"; // Import AOS
 
 export default function RecentBlogPosts() {
@@ -25,7 +25,7 @@ export default function RecentBlogPosts() {
         {/* Left Side */}
         <div className="w-full lg:w-1/2" data-aos="fade-right">
           <div className="p-2 rounded-md">
-            <img src={uxReview} alt="UX Review" className="w-full h-[228px] mb-4 object-cover" />
+            <img src="/images/ux-review.svg" alt="UX Review" className="w-full h-[228px] mb-4 object-cover" />
             <p className="text-[#1A4402] text-sm mb-2">Olivia Rhye · Jan 2025</p>
             <h3 className="text-xl font-semibold text-[#1A1A1A] mb-2">UX Review Presentations</h3>
             <p className="text-[#667085] text-[16px] mb-4">
@@ -49,7 +49,7 @@ export default function RecentBlogPosts() {
         <div className="w-full lg:w-[592px] space-y-6">
           {/* First Post */}
           <div className="flex flex-col lg:flex-row items-start space-x-4 p-2" data-aos="fade-left">
-            <img src={migrating} alt="Blog Image" className="w-full lg:w-[320px] object-cover mb-4 lg:mb-0" />
+            <img src="/images/migrating.svg" alt="Blog Image" className="w-full lg:w-[320px] object-cover mb-4 lg:mb-0" />
             <div>
               <p className="text-[#1A4402] text-sm mb-2">Phoenix Baker • 1 Jan 2025</p>
               <h3 className="text-xl font-semibold text-[#1A1A1A] mb-2">Migrating to Linear 101</h3>
@@ -69,7 +69,7 @@ export default function RecentBlogPosts() {
 
           {/* Second Post */}
           <div className="flex flex-col lg:flex-row items-start space-x-4 p-2" data-aos="fade-up">
-            <img src={apiStack} loading="lazy" alt="Blog Image" className="w-full lg:w-[320px] object-cover mb-4 lg:mb-0" />
+            <img src="/images/api-stack.svg" loading="lazy" alt="Blog Image" className="w-full lg:w-[320px] object-cover mb-4 lg:mb-0" />
             <div>
               <p className="text-[#1A4402] text-sm mb-2">Lana Steiner • 1 Jan 2023</p>
               <h3 className="text-xl font-semibold text-[#1A1A1A] mb-2">Building your API Stack</h3>
@@ -92,7 +92,7 @@ export default function RecentBlogPosts() {
       {/* Third Post */}
       <div className="flex flex-col lg:flex-row items-start space-x-4 p-2 mt-14" data-aos="fade-up">
         <img
-          src={learnBanner}
+          src="/images/learn-banner.svg"
           loading="lazy"
           alt="Blog Image"
           className="w-full lg:w-[592px] object-cover mb-4 lg:mb-0"
@@ -120,7 +120,7 @@ export default function RecentBlogPosts() {
       {/* SupBg Section */}
       <div className="relative mt-[80px]" data-aos="zoom-in">
         <img
-          src={supBg}
+          src="/images/supplement-bg.jpeg"
           loading="lazy"
           alt="Supplement Background"
           className="w-full h-[296px] rounded-xl object-cover sm:h-[200px] lg:h-[296px]"
@@ -135,12 +135,12 @@ export default function RecentBlogPosts() {
 
         {/* Hidden on small screens */}
         <img
-          src={amberGlass}
+          src="/images/amber-glass.svg"
           alt="Amber Glass"
           className="absolute left-[5%] top-[50%] transform -translate-y-1/2 w-[382px] pb-8 hidden sm:block lg:w-[382px] h-auto"
         />
         <img
-          src={pillBox}
+          src="/images/pill-box.svg"
           alt="Pill Box"
           className="absolute right-[5%] top-[50%] transform -translate-y-1/2 w-[382px] pt-[100px] hidden sm:block lg:w-[382px] h-auto"
         />

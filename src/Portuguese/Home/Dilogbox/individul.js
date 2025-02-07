@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Individual from '../../../assets/images/Pindividual.svg'
 
 import {
   Dialog,
@@ -25,7 +24,7 @@ export default function DialogDefault({open,setOpen,handleOpen}) {
         <DialogBody className="  overflow-y-scroll  "  style={{ height: "80vh" }} >
     <div className="grid grid-cols-12 gap-4 items-center">
       <div className="col-span-12 2xl:col-span-7">
-        <img src={Individual} className="w-auto  2xl:w-[325px] h-auto 2xl:h-[385px] mx-auto" alt="" />
+        <img src="/images/Pindividual.svg" className="w-auto  2xl:w-[325px] h-auto 2xl:h-[385px] mx-auto" alt="" />
 
       </div>
       <div className="col-span-12 2xl:col-span-5">

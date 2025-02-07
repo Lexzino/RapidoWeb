@@ -51,31 +51,31 @@ export default function Jobs() {
 
           <Slider {...settings}>
       <div>
-      <img src={Helathmedical} className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
+      <img src="/images/Helathmedical.svg" className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
       </div>
       <div>
-      <img src={Hearmedical} className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
+      <img src="/images/Helathmedical.svg" className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
       </div>
       <div>
-      <img src={Plusmedical} className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
+      <img src="/images/Plusmedical.svg" className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
       </div>
       <div>
-      <img src={Healthcaremedical} className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
+      <img src="/images/Healthcaremedical.svg" className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
       </div>
       <div>
-      <img src={Handmedical} className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
+      <img src="/images/Handmedical.svg" className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
       </div>
       <div>
-      <img src={Storagemedical} className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
+      <img src="/images/Storagemedical.svg" className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
       </div>
       <div>
-      <img src={Helathmedical} className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
+      <img src="/images/Helathmedical.svg" className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
       </div>
       <div>
-      <img src={Helathmedical} className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
+      <img src="/images/Helathmedical.svg" className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
       </div>
       <div>
-      <img src={Helathmedical} className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
+      <img src="/images/Helathmedical.svg" className=' w-full sm:w-[90%] h-[121px] mx-auto  ' alt="" />
       </div>
 
     </Slider>

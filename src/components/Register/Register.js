@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Loginmobile from "../../assets/images/Loginmobile.svg";
+// import Loginmobile from "../../assets/images/Loginmobile.svg";
 import { message } from "antd";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -83,7 +83,7 @@ export default function Signup() {
     <div className="flex flex-col lg:flex-row items-stretch w-full h-full lg:h-[80vh] bg-[#EAF9D6] lg:overflow-y-hidden">
       {/* Left Section - Hidden on small screens */}
       <div className="flex-1 hidden lg:flex justify-center items-center bg-green-dark h-full">
-        <img src={Loginmobile} className="w-[250px] h-auto" alt="Signup Mobile" />
+        <img src="/images/Loginmobile.svg" className="w-[250px] h-auto" alt="Signup Mobile" />
       </div>
 
       {/* Right Section */}

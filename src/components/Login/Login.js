@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Loginmobile from "../../assets/images/Loginmobile.svg";
-import Googlered from "../../assets/images/Googlered.svg";
-import Appleblack from "../../assets/images/Appleblack.svg";
-import Facebookblue from "../../assets/images/Facebookblue.svg";
+// import Loginmobile from "../../assets/images/Loginmobile.svg";
+// import Googlered from "../../assets/images/Googlered.svg";
+// import Appleblack from "../../assets/images/Appleblack.svg";
+// import Facebookblue from "../../assets/images/Facebookblue.svg";
 import { useAuth } from "../services/authService";
 import { message } from "antd";
 import axios from "axios";
@@ -59,7 +59,7 @@ export default function Login() {
       {/* Left Section */}
       <div className="flex-1 hidden lg:flex justify-center items-center bg-green-dark py-10">
         <img
-          src={Loginmobile}
+          src="/images/Loginmobile.svg"
           className="w-[250px] h-auto"
           alt="Login Mobile"
         />
@@ -130,13 +130,13 @@ export default function Login() {
         <h2 className="connectset mt-[15px] text-tiny">Or connect with</h2>
         <div className="flex justify-center space-x-4 sm:space-x-[39px] items-center mt-5">
           <button className="w-[94px] h-[61px] rounded-[5px] bg-white-vdark shadow-md">
-            <img src={Googlered} className="w-6 h-6 mx-auto" alt="Google" />
+            <img src="/images/Googlered.svg" className="w-6 h-6 mx-auto" alt="Google" />
           </button>
           <button className="w-[94px] h-[61px] rounded-[5px] bg-white-vdark shadow-md">
-            <img src={Appleblack} className="w-6 h-6 mx-auto" alt="Apple" />
+            <img src="/images/Appleblack.svg" className="w-6 h-6 mx-auto" alt="Apple" />
           </button>
           <button className="w-[94px] h-[61px] rounded-[5px] bg-white-vdark shadow-md">
-            <img src={Facebookblue} className="w-6 h-6 mx-auto" alt="Facebook" />
+            <img src="/images/Facebookblue.svg" className="w-6 h-6 mx-auto" alt="Facebook" />
           </button>
         </div>
       </div>

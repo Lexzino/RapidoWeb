@@ -1,13 +1,4 @@
 import React from 'react'
-import insta from '../../assets/images/instagraram.svg'
-import Twitter from '../../assets/images/twitter-logo-2429 1.svg'
-import Indeed from '../../assets/images/Indeed.svg'
-import Michel from '../../assets/images/image 29.svg'
-import Isa from '../../assets/images/image 30.svg'
-import Sergio from '../../assets/images/image 31.svg'
-import facebook from '../../assets/images/facebook.svg'
-import Vectorx from '../../assets/images/Vectorx.svg'
-import linkedin from '../../assets/images/linkedin.svg'
 
 
 export default function Members() {
@@ -23,7 +14,7 @@ export default function Members() {
               {/* <div className="bg-red-light ">
                
               </div> */}
-              <img src={Michel} className=' rounded-b-[25px] w-full h-[215px] '  />
+              <img src="/images/image 29.svg" className=' rounded-b-[25px] w-full h-[215px] '  />
               <h2 className='mt-4 f-f-r-s font-semibold text-white text-center text-xl uppercase  '>Michael Tosin Adesanwo</h2>
 
               <div className="text-center">
@@ -33,22 +24,22 @@ export default function Members() {
               <ul className='inline-flex mt-[15px] space-x-2 md:space-x-4 items-center'>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={facebook} className='w-5 h-5' alt="" />
+                      <img src="/images/facebook.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={insta} className='w-5 h-5' alt="" />
+                      <img src="/images/instagraram.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={Vectorx} className='w-5 h-5' alt="" />
+                      <img src="/images/Vectorx.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={linkedin} className='w-5 h-5' alt="" />
+                      <img src="/images/linkedin.svg'" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                 </ul>
@@ -61,7 +52,7 @@ export default function Members() {
               {/* <div className="bg-red-light rounded-b-[25px] w-full h-[215px]">
                
               </div> */}
-                 <img src={Isa} className=' rounded-b-[25px] w-full h-[215px] '  />
+                 <img src="/images/image 30.svg" className=' rounded-b-[25px] w-full h-[215px] '  />
               <h2 className='mt-4 f-f-r-s font-semibold text-white text-center text-xl uppercase  '>Isa Isa Mariana Afonso Bigi</h2>
 
               <div className="text-center">
@@ -72,22 +63,22 @@ export default function Members() {
               <ul className='inline-flex mt-[15px] space-x-2 md:space-x-4 items-center'>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={facebook} className='w-5 h-5' alt="" />
+                      <img src="/images/facebook.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={insta} className='w-5 h-5' alt="" />
+                      <img src="/images/instagraram.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={Vectorx} className='w-5 h-5' alt="" />
+                      <img src="/images/Vectorx.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={linkedin} className='w-5 h-5' alt="" />
+                      <img src="/images/linkedin.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                 </ul>
@@ -109,22 +100,22 @@ export default function Members() {
               <ul className='inline-flex mt-[15px] space-x-2 md:space-x-4 items-center'>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={facebook} className='w-5 h-5' alt="" />
+                      <img src="/images/facebook.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={insta} className='w-5 h-5' alt="" />
+                      <img src="/images/instagraram.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={Vectorx} className='w-5 h-5' alt="" />
+                      <img src="/images/Vectorx.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={linkedin} className='w-5 h-5' alt="" />
+                      <img src="/images/linkedin.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                 </ul>
@@ -146,22 +137,22 @@ export default function Members() {
               <ul className='inline-flex mt-[15px] space-x-2 md:space-x-4 items-center'>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={facebook} className='w-5 h-5' alt="" />
+                      <img src="/images/facebook.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={insta} className='w-5 h-5' alt="" />
+                      <img src="/images/instagraram.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={Vectorx} className='w-5 h-5' alt="" />
+                      <img src="/images/Vectorx.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={linkedin} className='w-5 h-5' alt="" />
+                      <img src="/images/linkedin.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                 </ul>
@@ -183,22 +174,22 @@ export default function Members() {
               <ul className='inline-flex mt-[15px] space-x-2 md:space-x-4 items-center'>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={facebook} className='w-5 h-5' alt="" />
+                      <img src="/images/facebook.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={insta} className='w-5 h-5' alt="" />
+                      <img src="/images/instagraram.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={Vectorx} className='w-5 h-5' alt="" />
+                      <img src="/images/Vectorx.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={linkedin} className='w-5 h-5' alt="" />
+                      <img src="/images/linkedin.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                 </ul>
@@ -211,7 +202,7 @@ export default function Members() {
               {/* <div className="bg-red-light rounded-b-[25px] w-full h-[215px]">
                
               </div> */}
-                <img src={Sergio} className=' rounded-b-[25px] w-full h-[215px] '  />
+                <img src="/images/images 31.svg" className=' rounded-b-[25px] w-full h-[215px] '  />
               
               <h2 className='mt-4 f-f-r-s font-semibold text-white text-center text-xl uppercase  '>Sergio Maciel</h2>
 
@@ -222,22 +213,22 @@ export default function Members() {
               <ul className='inline-flex mt-[15px] space-x-2 md:space-x-4 items-center'>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={facebook} className='w-5 h-5' alt="" />
+                      <img src="/images/facebook.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={insta} className='w-5 h-5' alt="" />
+                      <img src="/images/instagraram.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={Vectorx} className='w-5 h-5' alt="" />
+                      <img src="/images/Vectorx.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                   <li>
                     <button className='socialbtn rounded-[66px] border border-grey-dark w-[52px] h-[52px] p-4'>
-                      <img src={linkedin} className='w-5 h-5' alt="" />
+                      <img src="/images/linkedin.svg" className='w-5 h-5' alt="" />
                     </button>
                   </li>
                 </ul>
