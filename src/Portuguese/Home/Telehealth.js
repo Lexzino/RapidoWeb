@@ -18,7 +18,7 @@ export default function Telehealth() {
             </div>
           </div>
           <div className="col-span-12 md:col-span-6 xl:col-span-3">
-            <img src={Talkrapido} className='w-full h-[450px]' alt="" />
+            <img src="/images/PTalk.svg" className='w-full h-[450px]' alt="" />
           </div>
           <div className="col-span-12 xl:col-span-5">
             <div className="text-center xl:text-start mt-4 lg:mt-0">

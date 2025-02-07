@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.css'; // Assuming you have some custom CSS
-import ProfileImage from '../../../assets/pageImages/doctor-profile.svg'
-import AvailableAvatar from '../../../assets/icons/available-avatar.svg'
-import RobotAvatar from '../../../assets/icons/robot-icon.svg'
-import LikeIcon from '../../../assets/icons/like-icon.svg'
-import JobIcon from '../../../assets/icons/job-icon.svg'
+// import ProfileImage from '../../../assets/pageImages/doctor-profile.svg'
+// import AvailableAvatar from '../../../assets/icons/available-avatar.svg'
+// import RobotAvatar from '../../../assets/icons/robot-icon.svg'
+// import LikeIcon from '../../../assets/icons/like-icon.svg'
+// import JobIcon from '../../../assets/icons/job-icon.svg'
 import { Button } from 'antd';
 
 const DoctorProfileCard = ({ doctor }) => {
@@ -12,12 +12,12 @@ const DoctorProfileCard = ({ doctor }) => {
         <div className="card">
             <div className="card-body text-center pb-5">
                 <div className='flex justify-between p-2'>
-                    <div className='left-avatar'><img src={AvailableAvatar} alt='available-avatar' /></div>
-                    <div><img src={RobotAvatar} alt='robot-avatar' /></div>
+                    <div className='left-avatar'><img src="/icons/available-avatar.svg" alt='available-avatar' /></div>
+                    <div><img src="/icons/robot-icon.svg" alt='robot-avatar' /></div>
                 </div>
                 <div className='flex justify-center'>
                     <img
-                        src={ProfileImage}
+                        src="/pageImages/doctor-profile.svg"
                         alt={`${doctor.name}'s profile`}
                         className="rounded-circle mb-3"
                         style={{ width: '100px', height: '100px' }}
@@ -34,11 +34,11 @@ const DoctorProfileCard = ({ doctor }) => {
             <div className=" w-full h-[2px] primary-color-bg"></div>
             <div className="card-footer flex bg-white justify-between p-3">
                 <div className='flex gap-2'>
-                    <img src={LikeIcon} alt="like-icon" className="like-icon" />
+                    <img src="/icons/like-icon.svg" alt="like-icon" className="like-icon" />
                     <p className='p-class-card'>95%</p>
                 </div>
                 <div className='flex gap-2'>
-                    <img src={JobIcon} alt="job-icon" className="job-icon" />
+                    <img src="/icons/job-icon.svg" alt="job-icon" className="job-icon" />
                     <p className='p-class-card'>4 Years</p>
                 </div>
             </div>

@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import logo from "../../assets/images/logo.svg";
-import flags from "../../assets/images/flags-pt-BR.svg";
-import engFlag from "../../assets/images/eng-flag.png";
 import Chatbot from "../Home/Dilogbox/Chatboot";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -62,7 +59,7 @@ export default function Navbar() {
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img
-              src={logo}
+              src="/images/logo.svg"
               className=" w-[50px] h-[50px]  "
               alt="Flowbite Logo"
             />
@@ -178,7 +175,7 @@ export default function Navbar() {
                   data-dropdown-toggle="dropdownNavbar"
                   className="flex items-center justify-between w-full py-2 px-3  lg:p-0 md:w-auto "
                 >
-                  <img src={flags} className=" w-[33px] h-[23px] " />
+                  <img src="/images/flags-pt-BR.svg" className=" w-[33px] h-[23px] " />
                   <svg
                     className=" ml-[9px] "
                     xmlns="http://www.w3.org/2000/svg"
@@ -201,7 +198,7 @@ export default function Navbar() {
                   onClick={toggleDropdown}
                   className="flex items-center justify-between w-full py-2 px-3 lg:p-0 md:w-auto"
                 >
-                  <img src={flags} className="w-[33px] h-[23px]" />
+                  <img src="/images/flags-pt-BR.svg" className="w-[33px] h-[23px]" />
                   <svg
                     className="ml-[9px]"
                     xmlns="http://www.w3.org/2000/svg"
@@ -224,7 +221,7 @@ export default function Navbar() {
                         onClick={() => handleLanguageChange("English")}
                       >
                         <img
-                          src={engFlag}
+                          src="/images/eng-flag.png"
                           className="w-[33px] h-[23px]"
                           alt="English"
                         />
@@ -236,7 +233,7 @@ export default function Navbar() {
                         onClick={() => handleLanguageChange("Portuguese")}
                       >
                         <img
-                          src={flags}
+                          src="/images/flags-pt-BR.svg"
                           className="w-[33px] h-[23px]"
                           alt="Portuguese"
                         />

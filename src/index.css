@@ -17,73 +17,73 @@ body {
 
 @font-face {
   font-family: Roboto-Bold;
-  src: url("./assets/fontfamily/Roboto-Bold.ttf");
+  src: url("./public/fontfamily/Roboto-Bold.ttf");
 }
 @font-face {
   font-family: General;
-  src: url("./assets/fontfamily/GeneralSans-Variable.ttf");
+  src: url("./public/fontfamily/GeneralSans-Variable.ttf");
 }
 @font-face {
   font-family: Roboto-Medium;
-  src: url("./assets/fontfamily/Roboto-Medium.ttf");
+  src: url("./public/fontfamily/Roboto-Medium.ttf");
 }
 @font-face {
   font-family: Roboto-Regular;
-  src: url("./assets/fontfamily/Roboto-Regular.ttf");
+  src: url("./public/fontfamily/Roboto-Regular.ttf");
 }
 
 @font-face {
   font-family: Roboto-Light;
-  src: url("./assets/fontfamily/Roboto-Light.ttf");
+  src: url("./public/fontfamily/Roboto-Light.ttf");
 }
 @font-face {
   font-family: Tinos-Bold;
-  src: url("./assets/fontfamily/Tinos-Bold.ttf");
+  src: url("./public/fontfamily/Tinos-Bold.ttf");
 }
 @font-face {
   font-family: Sora-Regular;
-  src: url("./assets/fontfamily/Sora-Regular.ttf");
+  src: url("./public/fontfamily/Sora-Regular.ttf");
 }
 @font-face {
   font-family: Dosis-SemiBold;
-  src: url("./assets/fontfamily/Dosis-SemiBold.ttf");
+  src: url("./public/fontfamily/Dosis-SemiBold.ttf");
 }
 
 @font-face {
   font-family: Waterfall-Regular;
-  src: url("./assets/fontfamily/Waterfall-Regular.ttf");
+  src: url("./public/fontfamily/Waterfall-Regular.ttf");
 }
 @font-face {
   font-family: Karla-Light;
-  src: url("./assets/fontfamily/Karla-Light.ttf");
+  src: url("./public/fontfamily/Karla-Light.ttf");
 }
 @font-face {
   font-family: Lato-Regular;
-  src: url("./assets/fontfamily/Lato-Regular.ttf");
+  src: url("./public/fontfamily/Lato-Regular.ttf");
 }
 @font-face {
   font-family: Poppins-Light;
-  src: url("./assets/fontfamily/Poppins-Light.ttf");
+  src: url("./public/fontfamily/Poppins-Light.ttf");
 }
 @font-face {
   font-family: Poppins-SemiBold;
-  src: url("./assets/fontfamily/Poppins-SemiBold.ttf");
+  src: url("./public/fontfamily/Poppins-SemiBold.ttf");
 }
 @font-face {
   font-family: Poppins-Medium;
-  src: url("./assets/fontfamily/Poppins-Medium.ttf");
+  src: url("./public/fontfamily/Poppins-Medium.ttf");
 }
 @font-face {
   font-family: Mulish-Medium;
-  src: url("./assets/fontfamily/Mulish-Medium.ttf");
+  src: url("./public/fontfamily/Mulish-Medium.ttf");
 }
 @font-face {
   font-family: Lato-Bold;
-  src: url("./assets/fontfamily/Lato-Bold.ttf");
+  src: url("./public/fontfamily/Lato-Bold.ttf");
 }
 @font-face {
   font-family: RockSalt-Regular;
-  src: url("./assets/fontfamily/RockSalt-Regular.ttf");
+  src: url("./public/fontfamily/RockSalt-Regular.ttf");
 }
 
 .f-f-b {

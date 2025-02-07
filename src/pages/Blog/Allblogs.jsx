@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import eberhard from "../../assets/images/eberhard.svg";
-import leon from "../../assets/images/leon.svg";
-import nikolay from "../../assets/images/nikolay.svg";
-import natali from "../../assets/images/natali.svg";
-import drew from "../../assets/images/drew.svg";
+import eberhard from "../../public/images/eberhard.svg";
+import leon from "../../public/images/leon.svg";
+import nikolay from "../../public/images/nikolay.svg";
+import natali from "../../public/images/natali.svg";
+import drew from "../../public/images/drew.svg";
 import AOS from "aos"; // Import AOS
-import soundtrap from "../../assets/images/soundtrap.svg";
+import soundtrap from "../../public/images/soundtrap.svg";
 
 export default function AllBlogPosts() {
     useEffect(() => {

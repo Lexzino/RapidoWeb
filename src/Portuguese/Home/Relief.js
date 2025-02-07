@@ -1,7 +1,4 @@
 import React from 'react'
-import Pharmaciest from '../../assets/images/pharmacist.svg'
-import Professional from '../../assets/images/professional 01.svg'
-import Button1 from '../../assets/images/Button1.svg'
 import Partnerdlg from './Dilogbox/Partner'
 
 
@@ -24,7 +21,7 @@ export default function Relief() {
               <div className="grid grid-cols-12 gap-4 xl:gap-9">
                 
                 <div className="col-span-12 xl:col-span-5">
-                  <img src={Pharmaciest} className='w-full h-[170px] -ml-[6px]' alt="" />
+                  <img src="/images/pharmacist.svg" className='w-full h-[170px] -ml-[6px]' alt="" />
 
                 </div>
                 <div className="col-span-12 xl:col-span-7">
@@ -43,7 +40,7 @@ export default function Relief() {
 <button onClick={handleOpen} className='w-full sm:w-[356px] h-[50px] sm:h-[64px] bg-green-dark rounded-2xl  '>
   <ul className='inline-flex items-center space-x-4'>
     <li className='f-f-m text-xl text-white'>Aliste sua loja no Rapido Relief</li>
-    <li><img src={Button1} className='h-6 w-6' alt="" /></li>
+    <li><img src="/images/Button1.svg" className='h-6 w-6' alt="" /></li>
   </ul>
 </button>
 </div>
@@ -55,7 +52,7 @@ export default function Relief() {
               <div className="grid grid-cols-12 gap-4 xl:gap-9">
                 
                 <div className="col-span-12 xl:col-span-5">
-                  <img src={Professional} className='w-full h-[189px] -ml-[6px]' alt="" />
+                  <img src="/images/professional 01.svg" className='w-full h-[189px] -ml-[6px]' alt="" />
 
                 </div>
                 <div className="col-span-12 xl:col-span-7">
@@ -73,7 +70,7 @@ export default function Relief() {
 <button onClick={handleOpen} className='w-full sm:w-[356px] h-[50px] sm:h-[64px] bg-green-dark rounded-2xl  '>
   <ul className='inline-flex items-center space-x-4'>
     <li className='f-f-m text-xl text-white'>Aliste sua prática no Rapido Relief</li>
-    <li><img src={Button1} className='h-6 w-6' alt="" /></li>
+    <li><img src="/images/Button1.svg" className='h-6 w-6' alt="" /></li>
   </ul>
 </button>
 </div>

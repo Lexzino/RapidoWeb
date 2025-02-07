@@ -59,7 +59,7 @@ const MentalWellness = () => {
                     {/* Image Section */}
                     <div className="lg:w-1/2 w-full">
                         <img
-                            src={Helpmobile}
+                            src="/images/how-it-works.svg"
                             className="w-[150px] sm:w-[250px] lg:w-[410px] object-cover mx-auto"
                             alt="How it Works"
                         />

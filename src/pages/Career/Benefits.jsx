@@ -1,8 +1,8 @@
 import React from "react";
-import contacts from "../../assets/icons/contacts-icon.svg";
-import whined from "../../assets/icons/whined.svg";
-import opportunity from "../../assets/icons/opportunity.svg";
-import charts from "../../assets/icons/charts.svg";
+// import contacts from "../../assets/icons/contacts-icon.svg";
+// import whined from "../../assets/icons/whined.svg";
+// import opportunity from "../../assets/icons/opportunity.svg";
+// import charts from "../../assets/icons/charts.svg";
 
 const BenefitsSection = () => {
   return (
@@ -30,7 +30,7 @@ const BenefitsSection = () => {
         {/* Row 1, Column 1 */}
         <div className="flex flex-col items-start mt-[60px]">
           <div className="bg-[#E7F2FF] p-2 mb-4">
-            <img src={contacts} alt="Teamwork Icon" className="w-8 h-8" />
+            <img src="/icons/contacts-icon.svg" alt="Teamwork Icon" className="w-8 h-8" />
           </div>
           <h4 className="text-xl font-semibold text-gray-800 text-left">
             Team Work
@@ -44,7 +44,7 @@ const BenefitsSection = () => {
         {/* Row 1, Column 2 */}
         <div className="flex flex-col items-start mt-[60px]">
           <div className="mb-4 p-2 bg-[#F1F7E8]">
-            <img src={whined} alt="Whined Icon" className="w-8 h-8" />
+            <img src="/icons/whined.svg" alt="Whined Icon" className="w-8 h-8" />
           </div>
           <h4 className="text-xl font-semibold text-gray-800 text-left">
             Whined Perks
@@ -58,7 +58,7 @@ const BenefitsSection = () => {
         {/* Row 2, Column 1 */}
         <div className="flex flex-col items-start mt-[60px]">
           <div className="mb-4 p-2 bg-[#EFF2F5]">
-            <img src={opportunity} alt="Opportunity Icon" className="w-10 h-10" />
+            <img src="/icons/opportunity.svg" alt="Opportunity Icon" className="w-10 h-10" />
           </div>
           <h4 className="text-xl font-semibold text-gray-800 text-left">
             Opportunities
@@ -72,7 +72,7 @@ const BenefitsSection = () => {
         {/* Row 2, Column 2 */}
         <div className="flex flex-col items-start mt-[60px]">
           <div className="mb-4 p-2 bg-[#FFEEED]">
-            <img src={charts} alt="Charts Icon" className="w-8 h-8" />
+            <img src="/icons/charts.svg" alt="Charts Icon" className="w-8 h-8" />
           </div>
           <h4 className="text-xl font-semibold text-gray-800 text-left">
             Data Insights

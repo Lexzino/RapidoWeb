@@ -1,16 +1,4 @@
 import React from 'react'
-import Rapidologo from '../../assets/images/Group 17155.svg'
-import Email from '../../assets/images/Email.svg'
-import Google from '../../assets/images/Google play2.svg'
-import Apple from '../../assets/images/Appss.svg'
-import Gfacebook from '../../assets/images/Gfacebook.svg'
-import Ginstagram from '../../assets/images/Ginstagram.svg'
-import Gsocial from '../../assets/images/Gsocial.svg'
-import Glinkedin from '../../assets/images/Glinkedin.svg'
-import Gyoutube from '../../assets/images/Gyoutube.svg'
-
-
-
 
 export default function Footer() {
   return (
@@ -20,7 +8,7 @@ export default function Footer() {
           <div className="col-span-12  xl:col-span-3">
             <div className="text-center xl:text-start ">
             <ul className='xl:inline-flex w-full  items-center space-x-2'>
-              <li><img src={Rapidologo} className='w-12 h-12 mx-auto' alt="" /></li>
+              <li><img src="/images/Group 17155.svg" className='w-12 h-12 mx-auto' alt="" /></li>
               <li>
                 <h1 className='f-f-r font-semibold text-white text-[32px]'>RapidoRelief</h1>
                
@@ -28,7 +16,7 @@ export default function Footer() {
             </ul>
 
             <ul className='xl:inline-flex w-full items-center space-x-4 md:space-x-4 mt-4 xl:mt-[47px]'>
-              <li><img src={Email} className='w-[38px] h-[35px] mx-auto ' alt="" /></li>
+              <li><img src="/images/Email.svg" className='w-[38px] h-[35px] mx-auto ' alt="" /></li>
               <div className="xl:w-[160px] ">
               <li>
                 <h1 className='f-f-r  text-white text-sm  mt-3 xl:mt-0'>
@@ -40,11 +28,11 @@ export default function Footer() {
             <div className=" px-6 mt-[17px] ">
 
             <ul className='inline-flex items-center space-x-[10px]  '>
-              <li><a href='https://web.facebook.com/RapidoReliefApp/' ><img src={Gfacebook} className='w-6 h-6' alt="" /></a></li>
-              <li><a href='https://www.instagram.com/rapidreliefapp/' ><img src={Ginstagram} className='w-6 h-6' alt="" /></a></li>
-              <li><a  ><img src={Gsocial} className='w-6 h-6' alt="" /></a></li>
-              <li><a href='https://www.linkedin.com/company/rapidreliefapp' ><img src={Glinkedin} className='w-6 h-6' alt="" /></a></li>
-              <li><a><img src={Gyoutube} className='w-6 h-6' alt="" /></a></li>
+              <li><a href='https://web.facebook.com/RapidoReliefApp/' ><img src="/images/Gfacebook.svg" className='w-6 h-6' alt="" /></a></li>
+              <li><a href='https://www.instagram.com/rapidreliefapp/' ><img src="/images/Ginstagram.svg" className='w-6 h-6' alt="" /></a></li>
+              <li><a  ><img src="/images/Gsocial.svg" className='w-6 h-6' alt="" /></a></li>
+              <li><a href='https://www.linkedin.com/company/rapidreliefapp' ><img src="/images/Glinkedin.svg" className='w-6 h-6' alt="" /></a></li>
+              <li><a><img src="/images/Gyoutube.svg" className='w-6 h-6' alt="" /></a></li>
             </ul>
             </div>
             </div>
@@ -84,7 +72,7 @@ export default function Footer() {
          
            <button className='w-full sm:w-[170px] h-[39px] mt-3  border border-green rounded-[10px] cursor-pointer'>
             <ul className='inline-flex items-center space-x-2'>
-              <li><img src={Google} className='w-[30px] h-[26px]' alt="" /></li>
+              <li><img src="/images/Google play2.svg" className='w-[30px] h-[26px]' alt="" /></li>
               <li>
                 <h5 className='f-f-r text-xs text-white text-start '>GET IT ON</h5>
                 <h3 className='f-f-m text-lg sm:text-2xl text-white leading-4'>Google Play</h3>
@@ -93,7 +81,7 @@ export default function Footer() {
             </button>
             <button className='w-full sm:w-[152px] h-[39px] border border-green rounded-[10px] cursor-pointer mt-[14px]'>
             <ul className='inline-flex items-center space-x-2'>
-              <li><img src={Apple} className='w-[35px] h-[30px]' alt="" /></li>
+              <li><img src="/images/Appss.svg" className='w-[35px] h-[30px]' alt="" /></li>
               <li>
                 <h5 className='f-f-r text-xs text-white text-start  '>Download on the</h5>
                 <h3 className='f-f-m text-lg sm:text-2xl text-white leading-4'>App Store</h3>

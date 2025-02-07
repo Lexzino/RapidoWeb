@@ -1,8 +1,4 @@
 import React from 'react'
-import Carimg from '../../assets/images/Carimg.svg'
-import Zeowaiting from '../../assets/images/Zeowaiting.svg'
-import Certifieddoctor from '../../assets/images/Certifieddoctor.svg'
-
 
 
 export default function Jobs() {
@@ -15,7 +11,7 @@ export default function Jobs() {
             <div className="col-span-12 sm:col-span-6 xl:col-span-4">
               <div className="text-center">
             <ul className="sm:inline-flex items-center space-x-5 ">
-              <img src={Carimg} className='w-[91px] h-[76px] mx-auto sm:mx-0' alt="" />
+              <img src="/images/Carimg.svg" className='w-[91px] h-[76px] mx-auto sm:mx-0' alt="" />
               <h1 className='f-f-r text-2xl lg:text-5xl text-white  text-center mt-2 sm:mt-0  sm:text-start'>Reduzir
 Tempo
 de viagem</h1>
@@ -27,7 +23,7 @@ de viagem</h1>
             <div className="col-span-12 sm:col-span-6 xl:col-span-4">
               <div className="text-center">
             <ul className="sm:inline-flex items-center space-x-5 ">
-              <img src={Zeowaiting} className='w-[91px]  h-[76px] mx-auto sm:mx-06px]' alt="" />
+              <img src="/images/Zeowaiting.svg" className='w-[91px]  h-[76px] mx-auto sm:mx-06px]' alt="" />
               <h1 className='f-f-r text-2xl lg:text-5xl text-white  text-center mt-2 sm:mt-0  sm:text-start'>Zero Espera
 Período </h1>
             </ul>
@@ -38,7 +34,7 @@ Período </h1>
             <div className="col-span-12 xl:col-span-4">
               <div className="text-center">
             <ul className="sm:inline-flex items-center space-x-5 ">
-              <img src={Certifieddoctor} className='w-[91px]  mx-auto sm:mx-0 h-[76px]' alt="" />
+              <img src="/images/Certifieddoctor.svg" className='w-[91px]  mx-auto sm:mx-0 h-[76px]' alt="" />
               <h1 className='f-f-r text-2xl lg:text-5xl text-white  text-center mt-2 sm:mt-0 sm:text-start'>Certificado
 Especialistas 
 </h1>

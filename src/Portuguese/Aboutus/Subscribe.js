@@ -1,6 +1,5 @@
 import React from 'react'
-import Group from '../../assets/images/Group1000001227.svg'
-import Grightarrow from '../../assets/images/Grightarrow.svg'
+// import Grightarrow from '../../assets/images/Grightarrow.svg'
 
 export default function Subscribe() {
   return (
@@ -11,7 +10,7 @@ export default function Subscribe() {
 
 <div className="grid grid-cols-12 items-center gap-4 xl:gap-16">
               <div className="col-span-12 lg:col-span-4">
-           <img src={Group} className='w-[329px] h-[127px]' alt="" />
+           <img src="/images/Group1000001227.svg" className='w-[329px] h-[127px]' alt="" />
                 
               </div>
               <div className="col-span-12 lg:col-span-8">

@@ -18,7 +18,7 @@ const TrustedCare = () => {
                     {/* Right-hand side: Image */}
                     <div className='lg:ml-20'>
                         <img
-                            src={TrustedCareImage}
+                            src="/images/trusted-care.svg"
                             alt="Trusted Care"
                             className="w-[500px] object-cover"
                         />

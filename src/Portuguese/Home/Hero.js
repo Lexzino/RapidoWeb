@@ -1,8 +1,4 @@
 import React from 'react'
-import Google from '../../assets/images/Google play2.svg'
-import Apple from '../../assets/images/Appss.svg'
-import Rapidologo from '../../assets/images/Group 17155.svg'
-import Heroimg from '../../assets/images/Phero.svg'
 import Indivial from './Dilogbox/individul'
 
 export default function Hero() {
@@ -40,7 +36,7 @@ solução de telemedicina</h5>
           <div className="col-span-6 sm:col-span-4">
             <button className='w-full h-auto border border-green rounded-[10px] cursor-pointer'>
             <ul className='inline-flex items-center space-x-2'>
-              <li><img src={Google} className='w-[30px] h-[26px]' alt="" /></li>
+              <li><img src="/images/Google play2.svg" className='w-[30px] h-[26px]' alt="" /></li>
               <li>
                 <h5 className='f-f-r text-xs text-white text-start '>GET IT ON</h5>
                 <h3 className='f-f-m text-lg sm:text-2xl text-white'>Google Play</h3>
@@ -51,7 +47,7 @@ solução de telemedicina</h5>
           <div className="col-span-6 sm:col-span-4">
             <button className='w-full h-auto border border-green rounded-[10px] cursor-pointer'>
             <ul className='inline-flex items-center space-x-2'>
-              <li><img src={Apple} className='w-[35px] h-[26px]' alt="" /></li>
+              <li><img src="/images/Appss.svg" className='w-[35px] h-[26px]' alt="" /></li>
               <li>
                 <h5 className='f-f-r text-xs text-white text-start '>Download on the</h5>
                 <h3 className='f-f-m text-lg sm:text-2xl text-white'>App Store</h3>
@@ -63,7 +59,7 @@ solução de telemedicina</h5>
             <div className="text-center sm:text-start mt-2 sm:mt-0">
             <button className='w-[50%]  sm:w-full h-auto border border-green rounded-[10px] cursor-pointer'>
             <ul className='inline-flex items-center space-x-2'>
-              <li><img src={Rapidologo} className='w-[30px] h-[26px]' alt="" /></li>
+              <li><img src="/images/Group 17155.svg" className='w-[30px] h-[26px]' alt="" /></li>
               <li>
                 <h5 className='f-f-r text-xs text-white text-start '>Use Web App</h5>
                 <h3 className='f-f-m text-lg sm:text-2xl text-white'>RapidoRelief</h3>
@@ -77,7 +73,7 @@ solução de telemedicina</h5>
 
         </div>
         <div className="col-span-12 xl:col-span-6">
-          <img src={Heroimg} className='w-full h-auto md:h-[600px] mt-3 sm:mt-6 xl:mt-0' alt="" />
+          <img src="/images/Phero.svg" className='w-full h-auto md:h-[600px] mt-3 sm:mt-6 xl:mt-0' alt="" />
         </div>
 
       </div>

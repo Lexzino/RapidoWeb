@@ -1,7 +1,4 @@
 import React from 'react'
-import Button1 from '../../assets/images/Button1.svg'
-import News from '../../assets/images/News.svg'
-import OslerPillow from '../../assets/images/OslerPillow.svg'
 
 export default function Esg() {
   return (
@@ -17,7 +14,7 @@ export default function Esg() {
           <button className='w-full sm:w-[274px] h-[50px] lg:h-[64px] bg-green-dark rounded-3xl  '>
   <ul className='inline-flex items-center space-x-4'>
     <li className='f-f-b font-extrabold text-xl text-white'>Ver todas as notícias</li>
-    <li><img src={Button1} className='h-6 w-6' alt="" /></li>
+    <li><img src="/images/Button1.svg" className='h-6 w-6' alt="" /></li>
   </ul>
 </button>
 </div>
@@ -28,11 +25,11 @@ export default function Esg() {
           <div className="col-span-12 md:col-span-6 xl:col-span-3">
             <div className="bg-grey-light p-[9px] rounded-b-[24px] h-auto md:h-[440px] xl:h-[430px]  ">
             <div className="w-full h-[256px] bg-white rounded-b-[25px] py-[91px]">
-                <img src={News} className='w-[72px] h-[72px] mx-auto' alt="" /> </div>
+                <img src="/images/News.svg" className='w-[72px] h-[72px] mx-auto' alt="" /> </div>
                 <div className="text-center mt-[15px]">
                   <ul className='inline-flex items-center space-x-3'>
                     <li className='f-f-b font-extrabold text-sm text-grey-dark uppercase'>Jun 25, 2024</li>
-                    <li><img src={OslerPillow} className='w-1 h-1' alt="" /></li>
+                    <li><img src="/images/OslerPillow.svg" className='w-1 h-1' alt="" /></li>
                     <li className='f-f-b font-extrabold text-sm text-grey-dark uppercase'>author name</li>
                   </ul>
                   <h1 className='f-f-m font-bold text-green-dark text-xl mt-[11px] leading-[18px]'>
@@ -55,11 +52,11 @@ IA transforma a saúde mental</h1>
           <div className="col-span-12 md:col-span-6 xl:col-span-3">
             <div className="bg-grey-light p-[9px] rounded-b-[24px] h-auto md:h-[440px] xl:h-[430px]  ">
             <div className="w-full h-[256px] bg-white rounded-b-[25px] py-[91px]">
-                <img src={News} className='w-[72px] h-[72px] mx-auto' alt="" /> </div>
+                <img src="/images/News.svg" className='w-[72px] h-[72px] mx-auto' alt="" /> </div>
                 <div className="text-center mt-[15px]">
                   <ul className='inline-flex items-center space-x-3'>
                     <li className='f-f-b font-extrabold text-sm text-grey-dark uppercase'>Jun 25, 2024</li>
-                    <li><img src={OslerPillow} className='w-1 h-1' alt="" /></li>
+                    <li><img src="/images/OslerPillow.svg" className='w-1 h-1' alt="" /></li>
                     <li className='f-f-b font-extrabold text-sm text-grey-dark uppercase'>author name</li>
                   </ul>
                   <h1 className='f-f-m font-bold text-green-dark text-xl mt-3 leading-[18px]'>
@@ -81,11 +78,11 @@ IA transforma a saúde mental</h1>
           <div className="col-span-12 md:col-span-6 xl:col-span-3">
             <div className="bg-grey-light p-[9px] rounded-b-[24px] h-auto md:h-[440px] xl:h-[430px]  ">
             <div className="w-full h-[256px] bg-white rounded-b-[25px] py-[91px]">
-                <img src={News} className='w-[72px] h-[72px] mx-auto' alt="" /> </div>
+                <img src="/images/News.svg" className='w-[72px] h-[72px] mx-auto' alt="" /> </div>
                 <div className="text-center mt-[15px]">
                   <ul className='inline-flex items-center space-x-3'>
                     <li className='f-f-b font-extrabold text-sm text-grey-dark uppercase'>Jun 25, 2024</li>
-                    <li><img src={OslerPillow} className='w-1 h-1' alt="" /></li>
+                    <li><img src="/images/OslerPillow.svg" className='w-1 h-1' alt="" /></li>
                     <li className='f-f-b font-extrabold text-sm text-grey-dark uppercase'>author name</li>
                   </ul>
                   <h1 className='f-f-m font-bold text-green-dark text-xl mt-3 leading-[18px]'>
@@ -107,11 +104,11 @@ IA transforma a saúde mental</h1>
           <div className="col-span-12 md:col-span-6 xl:col-span-3">
             <div className="bg-grey-light p-[9px] rounded-b-[24px] h-auto md:h-[440px] xl:h-[430px] ">
             <div className="w-full h-[256px] bg-white rounded-b-[25px] py-[91px]">
-                <img src={News} className='w-[72px] h-[72px] mx-auto' alt="" /> </div>
+                <img src="/images/News.svg" className='w-[72px] h-[72px] mx-auto' alt="" /> </div>
                 <div className="text-center mt-[15px]">
                   <ul className='inline-flex items-center space-x-3'>
                     <li className='f-f-b font-extrabold text-sm text-grey-dark uppercase'>Jun 25, 2024</li>
-                    <li><img src={OslerPillow} className='w-1 h-1' alt="" /></li>
+                    <li><img src="/images/OslerPillow.svg" className='w-1 h-1' alt="" /></li>
                     <li className='f-f-b font-extrabold text-sm text-grey-dark uppercase'>author name</li>
                   </ul>
                   <h1 className='f-f-m font-bold text-green-dark text-xl mt-3 leading-normal'>
