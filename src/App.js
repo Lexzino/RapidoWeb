@@ -17,6 +17,7 @@ import Explore from './pages/Explore';
 import ContactUs from './pages/contact-us';
 import Blog from './pages/Blog';
 import SuperAdmin from './pages/SuperAdmin/Dashboard';
+import Admin from "./pages/AllDashboards/SuperAdmin/index.jsx"
 
 
 function App() {
@@ -56,6 +57,7 @@ function MainApp() {
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/superadmin" element={<SuperAdmin />} />
+              <Route path="/admin" element={<Admin />} />
             </Routes>
           </div>
         </CSSTransition>

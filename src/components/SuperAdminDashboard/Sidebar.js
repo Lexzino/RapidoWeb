@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaHome, FaNewspaper, FaQuestionCircle, FaSignOutAlt, FaUser, FaUserGraduate } from "react-icons/fa";
-import { useNavigate } from "react-router-dom"; // Import useNavigate here
-// import logo from "../../assets/images/logo.svg";
+import { useNavigate } from "react-router-dom";
 import { menu, menu2 } from "./components/MenuItems";
 
 export default function Sidebar() {

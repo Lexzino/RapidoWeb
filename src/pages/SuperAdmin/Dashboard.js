@@ -13,6 +13,7 @@ import { FaInfoCircle, FaRegMoon } from "react-icons/fa";
 import { stats } from "../../components/SuperAdminDashboard/components/StatItems";
 
 
+
 const Dashboard = () => {
 
   const boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
@@ -20,7 +21,7 @@ const Dashboard = () => {
   return (
     <div className="w-screen h-full bg-['#E9FAD6'] overflow-y-auto flex flex-row justify-between items-start">
       {/* Sidebar */}
-      <div className="w-1/6 flex flex-col justify-start items-center">
+      <div className="w-1/6 flex flex-col justify-start items-center overflow-y-scroll " >
         <Sidebar />
       </div>
 
@@ -69,9 +70,11 @@ const Dashboard = () => {
                   ))
                   }
               </div>
+
               <UpcomingAppointment />
               <WaitingList />
               <AppointmentRequests />
+              
           </div>
           <div className="1/3 flex flex-col justify-start items-center">
 
