@@ -1,6 +1,7 @@
 import React from "react"
 import { FaBuilding, FaCalendar, FaEnvelope, FaHome, FaNewspaper, FaNotesMedical, FaShoppingBag, FaUser, FaUserAlt, FaUserGraduate, FaUserInjured } from "react-icons/fa"
 import { BiSolidDashboard, BiHelpCircle } from 'react-icons/bi';
+import { DollarSign, Building2, FileClock, Ticket, Video, FileBox } from 'lucide-react'
 
 export const menu = [
     {
@@ -68,7 +69,37 @@ export const menu = [
         name: 'Documents',
         icon: <FaNewspaper />,
         link: ''
+    },
+    {
+        name: 'Payment',
+        icon: <DollarSign />,
+        link: ''
+  },
+  {
+        name: 'Organization',
+        icon: <Building2 />,
+        link: ''
+    },{
+        name: 'Notice',
+        icon: <FileClock />,
+        link: ''
+    },
+    {
+        name: 'Tickets',
+        icon: <Ticket />,
+        link: ''
+    },
+    {
+        name: 'Meeting',
+        icon: <Video />,
+        link: ''
+    },
+    {
+        name: 'Project',
+        icon: <FileBox />,
+        link: ''
     }
+    
 ];
 
 export const menu2 = [
@@ -83,7 +114,17 @@ export const menu2 = [
     link: ''
   },
   {
-    name: 'Help',
+    name: 'Help & Support',
+    icon: <BiHelpCircle color="#1A4402" />,
+    link: ''
+  },
+  {
+    name: 'Settings',
+    icon: <BiHelpCircle color="#1A4402" />,
+    link: ''
+  },
+  {
+    name: 'Material Elements',
     icon: <BiHelpCircle color="#1A4402" />,
     link: ''
   }

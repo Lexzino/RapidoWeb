@@ -32,12 +32,12 @@ function Sidebar() {
     navigate("/"); // navigate to the login page
   }
     return (
-        <div className="fixed inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 bg-green-900 w-64 md:w-64 lg:w-72 min-h-screen p-4 text-white z-50">
+      <div className="fixed inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 bg-green-900 w-64 md:w-64 lg:w-72 h-auto flex flex-col p-4 text-white z-50">
             <div className="px-3 py-1 mt-4 flex flex-row justify-center items-center mb-8 border border-white rounded-md">
                  <img src="/images/logo.svg" alt="Logo" className="w-10 h-8" />
           <label className="text-lg ml-2">RapidoRelief</label>
             </div>
-
+        <div className="flex-1 overflow-y-auto p-4">
             <nav className="md:hidden">
                 <ul className="space-y-2">
                     {[
@@ -49,6 +49,11 @@ function Sidebar() {
                         { icon: Calendar, text: 'Calendar' },
                         { icon: MessageCircle, text: 'Message' },
                         { icon: DollarSign, text: 'Payments' },
+                        { icon: DollarSign, text: 'Organization' },
+                        { icon: DollarSign, text: 'Notice' },
+                        { icon: DollarSign, text: 'Ticket' },
+                        { icon: DollarSign, text: 'Meeting' },
+                        { icon: DollarSign, text: 'Project' },
                     ].map((item, index) => (
                         <li
                             key={index}
@@ -88,6 +93,7 @@ function Sidebar() {
               </button>
           ))
           }
+        </div>
         </div>
             {/* Logout */}
             <div className="mt-6">

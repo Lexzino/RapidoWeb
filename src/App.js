@@ -18,7 +18,7 @@ import ContactUs from './pages/contact-us';
 import Blog from './pages/Blog';
 import SuperAdmin from './pages/SuperAdmin/Dashboard';
 import Admin from "./pages/AllDashboards/SuperAdmin/index.jsx"
-
+import AdminDashboardLayout from './pages/AllDashboards/components/Layouts/AdminDashboardLayout';
 
 function App() {
   return (
@@ -30,8 +30,21 @@ function App() {
   );
 }
 
+// Create a wrapper component for dashboard routes
+const AdminDashboardRoute = ({ children }) => (
+  <AdminDashboardLayout>
+    {children}
+  </AdminDashboardLayout>
+);
+
+
 function MainApp() {
   const location = useLocation(); // Use the hook here, inside the Router context
+
+  // Define which routes should use the dashboard layout
+  const isDashboardRoute = (pathname) => {
+    return ['/superadmin', '/admin'].includes(pathname);
+  };
 
   return (
     <div>
@@ -56,8 +69,12 @@ function MainApp() {
               <Route path="/mental-health" element={<MentalHealthPage />} />
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/blog" element={<Blog />} />
-              <Route path="/superadmin" element={<SuperAdmin />} />
-              <Route path="/admin" element={<Admin />} />
+              {/* AdminDashboard routes wrapped in AdminDashboardLayout */}
+              <Route path="/admin" element={
+                <AdminDashboardRoute>
+                  <Admin />
+                </AdminDashboardRoute>
+              } />
             </Routes>
           </div>
         </CSSTransition>

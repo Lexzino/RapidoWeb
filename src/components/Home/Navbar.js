@@ -7,7 +7,7 @@ import AccountCreate from "./account-create";
 import ComingSoon from "../ComingSoon";
 import { translations } from "../../../src/translations"; // Import translations
 import { useLanguage } from "../../LanguageContext"; // Import the custom hook
-import  "./navbar.css";
+import "./navbar.css";
 
 export default function Navbar() {
   const { selectedLanguage, changeLanguage } = useLanguage(); // Use the context here
@@ -87,7 +87,7 @@ export default function Navbar() {
     setPopupOpen(false); // Close popup
   };
 
-  
+
 
   return (
     <>
@@ -122,28 +122,28 @@ export default function Navbar() {
           <div className={`${navbar ? "block" : "hidden"} w-full lg:block lg:w-auto`} id="navbar-dropdown">
             <ul className="flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0 lg:space-x-8 text-left lg:border-0 border-2 border-green rounded-[8px] mt-[8px]">
               <MenuItem label={t.aboutUsNav} subItems={[{ label: t.ourStory, link: "/aboutUs" }, { label: t.careers, link: "/career" }, { label: t.contactUs, link: "/contact-us" }]} />
-              <MenuItem label={t.explore}  subItems={[{ label: t.ourProviders, onClick: openPopup  }, { label: t.blog, link: "/blog" }, { label: t.ourSolutions, onClick: openPopup }, { label: t.workWithUs, onClick: openPopup }, { label: t.whatItCost, onClick: openPopup }]} />
+              <MenuItem label={t.explore} subItems={[{ label: t.ourProviders, onClick: openPopup }, { label: t.blog, link: "/blog" }, { label: t.ourSolutions, onClick: openPopup }, { label: t.workWithUs, onClick: openPopup }, { label: t.whatItCost, onClick: openPopup }]} />
               <MenuItem label={t.mentalHealth} link="/mental-health" />
               <AccountCreate />
               <li className="hidden lg:block">
                 <p className="block py-2 px-3 border border-white h-[27px] lg:p-0 f-f-b"></p>
               </li>
               <MenuItem
-  label={
-    <button
-      onClick={() => (window.location.href = "/fundraise")}
-      className="block bg-[#58fd09] p-[2px] pr-[5px] rounded-[50px]"
-    >
-      <div className="f-f-r w-full flex items-center justify-between rounded-[50px] p-4 bg-[#1A4402] text-white text-[15px] font-normal leading-[1.5px]">
-        {t.getInvolved}
-      </div>
-    </button>
-  }
-/>
-           
+                label={
+                  <button
+                    onClick={() => (window.location.href = "/fundraise")}
+                    className="block bg-[#58fd09] p-[2px] pr-[5px] rounded-[50px]"
+                  >
+                    <div className="f-f-r w-full flex items-center justify-between rounded-[50px] p-4 bg-[#1A4402] text-white text-[15px] font-normal leading-[1.5px]">
+                      {t.getInvolved}
+                    </div>
+                  </button>
+                }
+              />
+
 
               {/* Globe button (desktop only) */}
-            <MenuItem label={  <li className="relative lg:block">
+              <MenuItem label={<li className="relative lg:block">
                 <button
                   onClick={toggleGlobeDropdown}
                   className="flex items-center space-x-2"
@@ -187,7 +187,7 @@ export default function Navbar() {
                   </li>
                   <li
                     className="flex items-center py-2 px-2 hover:bg-gray-200 rounded-lg transition duration-300 ease-in-out"
-                    onClick={() => handleLanguageChange("es")} 
+                    onClick={() => handleLanguageChange("es")}
                   >
                     <svg
                       width="24"
@@ -217,19 +217,18 @@ export default function Navbar() {
         </div>
       </nav>
 
-     {/* Custom Popup for Our Providers */}
-{popupOpen && (
-  <div
-    className={`fixed inset-0 z-[99999999] bg-black bg-opacity-50 flex items-center justify-center transition-opacity duration-300 ease-in-out ${
-      popupOpen ? "opacity-100 visible" : "opacity-0 invisible"
-    }`}
-    onClick={handleClosePopup} // To close when clicking outside
-  >
-    <ComingSoon />
-  </div>
-)}
+      {/* Custom Popup for Our Providers */}
+      {popupOpen && (
+        <div
+          className={`fixed inset-0 z-[99999999] bg-black bg-opacity-50 flex items-center justify-center transition-opacity duration-300 ease-in-out ${popupOpen ? "opacity-100 visible" : "opacity-0 invisible"
+            }`}
+          onClick={handleClosePopup} // To close when clicking outside
+        >
+          <ComingSoon />
+        </div>
+      )}
 
-      
+
     </>
   );
 }
