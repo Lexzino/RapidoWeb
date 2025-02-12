@@ -48,7 +48,7 @@ const AudienceMap = () => {
 
                 <div className="w-full md:w-2/3">
                     <img
-                        src="/api/placeholder/600/300"
+                        src="/images/MAP.svg"
                         alt="World Map"
                         className="w-full h-auto rounded-lg"
                     />

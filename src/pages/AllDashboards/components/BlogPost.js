@@ -6,50 +6,50 @@ const BlogAndAnnouncements = () => {
     {
       id: 1,
       text: "Meeting has been reschedule for 28 may....",
-      image: "/api/placeholder/32/32"
+      image: "/images/announcement(1).png"
     },
     {
       id: 2,
       text: "We request our doctor to use our website....",
-      image: "/api/placeholder/32/32"
+      image: "/images/announcement(2).png"
     },
     {
       id: 3,
       text: "Dr Faisal has completed 400 surgery. Congrat....",
-      image: "/api/placeholder/32/32"
+      image: "/images/announcement(3).png"
     }
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3">
       <div className="bg-white rounded-lg overflow-hidden shadow-sm">
         <div className="p-6">
         <span className="w-3 h-3 inline-flex border rounded-full bg-green-300"></span>
         <span className="inline-flex items-center text-sm font-xl text-green-800">
             BLOG POST
           </span>
-          <h2 className="text-md font-semibold mt-4 text-gray-800">
+          <h2 className="text-base font-semibold mt-4 text-green-800">
             Equitable medical education with efforts toward real change
           </h2>
         </div>
         <img
-          src="/api/placeholder/600/300"
+          src="/images/Blogpost.png"
           alt="Medical supplies"
           className="w-full h-48 object-cover"
         />
       </div>
 
-      <div className="bg-white rounded-lg p-6 shadow-sm">
+      <div className="bg-white rounded-lg p-4 shadow-sm">
         <h2 className="text-lg font-semibold text-green-800 mb-4">Announcements</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {announcements.map((announcement) => (
             <div key={announcement.id} className="flex items-center gap-3 border rounded-full p-2 bg-white shadow-md">
               <img
                 src={announcement.image}
                 alt=""
-                className="w-8 h-8 rounded-full"
+                className="w-5 h-5 rounded-full"
               />
-              <p className="text-gray-600 text-xs">{announcement.text}</p>
+              <p className="text-black text-xs">{announcement.text}</p>
             </div>
           ))}
         </div>

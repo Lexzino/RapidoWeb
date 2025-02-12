@@ -12,16 +12,16 @@ const IncomeStatistics = () => {
 
   return (
     <div className="bg-white rounded-lg p-6 shadow-sm">
-      <div className="flex justify-between items-start mb-6">
+      <div className="flex justify-between items-start mb-3">
         <h2 className="text-lg font-semibold text-gray-800">Income Statistics</h2>
         <button className="p-2 hover:bg-gray-100 rounded-full">
           <MoreVertical size={20} className="text-gray-600" />
         </button>
       </div>
 
-      <div className="flex justify-center mb-8">
+      <div className="flex justify-center mb-5">
         <div className="w-48 h-48">
-          <PieChart width={192} height={192}>
+          <PieChart width={180} height={180}>
             <Pie
               data={data}
               cx="50%"
@@ -42,10 +42,10 @@ const IncomeStatistics = () => {
       <div className="grid grid-cols-3 gap-4">
         {data.map((item) => (
           <div key={item.name} className="text-center">
-            <p className="text-2xl font-semibold mb-1" style={{ color: item.color }}>
+            <p className="text-lg font-semibold mb-1" style={{ color: item.color }}>
               {item.value}%
             </p>
-            <p className="text-sm text-gray-600">{item.name}</p>
+            <p className="text-xs text-gray-600">{item.name}</p>
           </div>
         ))}
       </div>

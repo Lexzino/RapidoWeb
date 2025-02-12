@@ -1,112 +1,179 @@
-import React, { useState }  from 'react';
-import { FaSignOutAlt} from "react-icons/fa";
-import {
-    Home,
-    Users,
-    Pill,
-    Stethoscope,
-    FileText,
-    Calendar,
-    MessageCircle,
-    DollarSign,
-    Settings,
-    LogOut
-} from 'lucide-react';
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { menu, menu2 } from "../components/MenuItems";
+import {
+  Home,
+  Users,
+  Building2,
+  FileText,
+  Calendar,
+  MessageCircle,
+  DollarSign,
+  Settings,
+  HelpCircle,
+  LogOut,
+  ChevronRight,
+  Layout,
+  User,
+  Hexagon,
+  Ticket,
+  Video,
+  FolderKanban,
+  AlertCircle,
+  Database
+} from 'lucide-react';
 
-
-function Sidebar() {
-     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+const Sidebar = () => {
+  const [expandedMenus, setExpandedMenus] = useState({});
   const navigate = useNavigate();
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const mainMenuItems = [
+    {
+      icon: Home,
+      text: 'Dashboard',
+      submenu: [
+        { text: 'Super Admin', icon: User },
+        { text: 'Doctors', icon: Users },
+        { text: "Pharmacy's", icon: Building2 },
+        { text: 'Patients', icon: Users },
+        { text: 'Therapists', icon: Users },
+        { text: 'Other Staff', icon: Users },
+      ]
+    },
+    { icon: Building2, text: 'Hospitals' },
+    { icon: Hexagon, text: 'Deals', hasSubmenu: true },
+    { icon: Users, text: 'Contacts' },
+    { icon: FileText, text: 'Reports', hasSubmenu: true },
+    { icon: Calendar, text: 'Calendar' },
+    { icon: MessageCircle, text: 'Message', badge: 8 },
+    { icon: FileText, text: 'Documents' },
+    { icon: DollarSign, text: 'Payments' },
+    { icon: Users, text: 'Organization' },
+    { icon: AlertCircle, text: 'Notice' },
+    { icon: Ticket, text: 'Ticket' },
+    { icon: Video, text: 'Meeting' },
+    { icon: FolderKanban, text: 'Project' }
+  ];
+
+  const bottomMenuItems = [
+    { icon: Layout, text: 'Articles' },
+    { icon: User, text: 'Profile' },
+    { icon: HelpCircle, text: 'Help & Support' },
+    { icon: Settings, text: 'Settings' },
+    { icon: Database, text: 'Material Elements', hasSubmenu: true }
+  ];
+
+  const integrations = [
+    { text: 'Google Drive', icon: '/images/google-drive.png' },
+    { text: 'Paypal', icon: '/images/paypal.png' }
+  ];
+
+  const toggleSubmenu = (text) => {
+    setExpandedMenus(prev => ({
+      ...prev,
+      [text]: !prev[text]
+    }));
   };
+
   const handleLogout = () => {
-    // Clear the session or any authentication-related data
-    localStorage.removeItem("userToken"); // or sessionStorage, depending on how you store user data
+    localStorage.removeItem("userToken");
     sessionStorage.removeItem("userToken");
+    navigate("/");
+  };
 
-    // Redirect to login page
-    navigate("/"); // navigate to the login page
-  }
-    return (
-      <div className="fixed inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 bg-green-900 w-64 md:w-64 lg:w-72 h-auto flex flex-col p-4 text-white z-50">
-            <div className="px-3 py-1 mt-4 flex flex-row justify-center items-center mb-8 border border-white rounded-md">
-                 <img src="/images/logo.svg" alt="Logo" className="w-10 h-8" />
-          <label className="text-lg ml-2">RapidoRelief</label>
-            </div>
-        <div className="flex-1 overflow-y-auto p-4">
-            <nav className="md:hidden">
-                <ul className="space-y-2">
-                    {[
-                        { icon: Home, text: 'Dashboard', active: true },
-                        { icon: Users, text: 'Doctors' },
-                        { icon: Pill, text: "Pharmacy's" },
-                        { icon: Stethoscope, text: 'Patients' },
-                        { icon: FileText, text: 'Reports' },
-                        { icon: Calendar, text: 'Calendar' },
-                        { icon: MessageCircle, text: 'Message' },
-                        { icon: DollarSign, text: 'Payments' },
-                        { icon: DollarSign, text: 'Organization' },
-                        { icon: DollarSign, text: 'Notice' },
-                        { icon: DollarSign, text: 'Ticket' },
-                        { icon: DollarSign, text: 'Meeting' },
-                        { icon: DollarSign, text: 'Project' },
-                    ].map((item, index) => (
-                        <li
-                            key={index}
-                            className={`flex items-center p-2 rounded ${item.active ? 'bg-green-700' : 'hover:bg-green-700'}`}
-                        >
-                            <item.icon className="mr-3" size={20} />
-                            <span>{item.text}</span>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
-            <div className="border border-white rounded-md mt-10">
-          {menu.map((item, index) => (
-            <div key={index} className="w-auto px-3 py-2 flex flex-col justify-around items-start">
-              <button className="flex flex-row justify-around items-center" onClick={() => toggleDropdown()}>
-                {item.icon ? item.icon : ''}
-                <label className="text-white text-base mx-2">{item.name}</label>
-              </button>
-              {(item.submenu?.length > 0 && isDropdownOpen) &&
-                item?.submenu.map((item, index) => (
-                  <button className="ml-6 flex flex-row justify-around items-center py-1" key={index}>
-                    {item.icon ? item.icon : <img src="/images/logo.svg" alt="Rapido" className="w-4 h-4" />}
-                    <label className="ml-2">{item.name}</label>
-                  </button> 
-                ))
-              }
-            </div>
-          ))
-          }
-        </div>
+  return (
+    <aside className="h-screen w-64 lg:w-72 flex-shrink-0 fixed left-0 top-0 bottom-0 bg-green-900 flex flex-col p-4 overflow-hidden shadow-xl">
+      {/* Logo */}
+      <div className="px-4 py-3 flex items-center space-x-2 bg-green-800/50 rounded-md border border-white mb-6">
+        <img src="/images/logo.svg" alt="Logo" className="w-10 h-8" />
+        <span className="text-lg font-medium text-white">RapidoRelief</span>
+      </div>
 
-             <div className="border border-white rounded-md mt-6 bg-white py-2 px-3">
-                {menu2.map((item, index) => (
-              <button key={index} className="bg-transparent flex flex-row justify-around items-center py-1">
-                {item.icon ? item.icon : ''}
-                <label className="text-[#1A4402] font-bold text-base mx-2">{item.name}</label>
-              </button>
-          ))
-          }
-        </div>
-        </div>
-            {/* Logout */}
-            <div className="mt-6">
-                <div onClick={handleLogout} className="flex items-center px-4 py-2 bg-white text-[#1A4402] cursor-pointer rounded-md">
-                    <FaSignOutAlt className="mr-3" />
-                    <label className="text-base">Logout</label>
+      {/* Main Navigation - Scrollable */}
+      <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-green-800 scrollbar-track-transparent ">
+        <div className="bg-green-800/50 rounded-lg p-3 mb-4 border border-white">
+          {mainMenuItems.map((item, index) => (
+            <div key={index}>
+              <button
+                onClick={() => item.submenu ? toggleSubmenu(item.text) : null}
+                className="w-full flex items-center justify-between p-2 hover:bg-green-800 rounded-md group transition-colors"
+              >
+                <div className="flex items-center space-x-3">
+                  <item.icon size={18} className="text-white" />
+                  <span className="text-sm text-white">{item.text}</span>
                 </div>
+                {item.badge && (
+                  <span className="bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {item.badge}
+                  </span>
+                )}
+                {item.hasSubmenu && <ChevronRight size={16} className="text-white" />}
+              </button>
+              {item.submenu && expandedMenus[item.text] && (
+                <div className="ml-8 space-y-1 mt-1">
+                  {item.submenu.map((subItem, subIndex) => (
+                    <button
+                      key={subIndex}
+                      className="w-full flex items-center space-x-3 p-2 hover:bg-green-800 hover:text-white rounded-md transition-colors"
+                    >
+                      <subItem.icon size={16} className="text-white" />
+                      <span className="text-sm text-white">{subItem.text}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
-            <div className="md:hidden absolute top-4 right-4">
-                <button className="text-white">Close</button>
-            </div>
+          ))}
         </div>
-    );
-}
+
+        {/* User Satisfaction Card */}
+        <div className="bg-white rounded-lg p-4 mb-4 mt-10 text-center">
+          <div className="flex justify-center -space-x-2 mb-2">
+            <img src="/images/navbar(1).png" alt="User" className="w-8 h-8 rounded-full border-2 border-green-600" />
+            <img src="/images/navbar(2).png" alt="User" className="w-8 h-8 rounded-full border-2 border-green-600" />
+            <img src="/images/navbar(3).png" alt="User" className="w-8 h-8 rounded-full border-2 border-green-600" />
+          </div>
+          <div className="text-xl font-bold text-green-800">100K+</div>
+          <div className="text-sm text-green-900">SATISFIED USERS</div>
+        </div>
+
+        {/* Bottom Menu */}
+        <div className="bg-white rounded-lg p-3 space-y-1 mb-4 mt-10">
+          {bottomMenuItems.map((item, index) => (
+            <button
+              key={index}
+              className="w-full flex items-center justify-between p-2 hover:bg-green-800 hover:text-white rounded-md transition-colors"
+            >
+              <div className="flex items-center space-x-3">
+                <item.icon size={18} className="text-green-400 hover:text-white " />
+                <span className="text-sm text-green-800 hover:text-white">{item.text}</span>
+              </div>
+              {item.hasSubmenu && <ChevronRight size={16} className="text-white" />}
+            </button>
+          ))}
+          
+          {/* Integrations */}
+          {integrations.map((item, index) => (
+            <button
+              key={index}
+              className="w-full flex items-center space-x-3 p-2 hover:bg-green-800 hover:text-white rounded-md"
+            >
+              <img src={item.icon} alt={item.text} className="w-5 h-5" />
+              <span className="text-sm text-green-800">{item.text}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Logout Button */}
+      <button
+        onClick={handleLogout}
+        className="flex items-center space-x-3 p-3 bg-white text-green-800 rounded-lg hover:bg-green-800 hover:text-white mt-4"
+      >
+        <LogOut size={18} className="text-green-800" />
+        <span className="text-base text-green-800 uppercase hover:text-white">Log out</span>
+      </button>
+    </aside>
+  );
+};
 
 export default Sidebar;
