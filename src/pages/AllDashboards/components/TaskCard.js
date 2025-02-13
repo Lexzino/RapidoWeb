@@ -80,13 +80,13 @@ const TaskDashboard = () => {
         <div className="w-full px-2 py-2 bg-none">
             {/* Header */}
             <div className="flex items-center justify-between gap-3 mb-2">
-                <div className="flex flex-row items-center gap-2 bg-white rounded-lg px-2 py-1 border border-black shadow-md">
-                    <ClockIcon />
-                    <span className="text-[10px] text-gray-800">11:30-12:00 (GMT -3 Brazil)</span>
+                <div className="w-full flex flex-row items-center gap-1 bg-white rounded-md px-1 py-1 border border-black shadow-md">
+                    <ClockIcon className="" />
+                    <span className="text-[10px] text-gray-800  whitespace-nowrap">11:30-12:00 (GMT -3 Brazil)</span>
                 </div>
-                <div className="flex flex-row items-center gap-2 bg-white rounded-md px-2 py-1 border border-black shadow-md">
+                <div className="w-full flex flex-row items-center gap-2 bg-white rounded-md px-2 py-1 border border-black shadow-md">
                     <CalendarIcon />
-                    <span className="text-[10px] text-gray-600">19.12.2020 - 25.12.2020</span>
+                    <span className="text-[10px] text-gray-600 whitespace-nowrap">19.12.2020 - 25.12.2020</span>
                 </div>
             </div>
 
