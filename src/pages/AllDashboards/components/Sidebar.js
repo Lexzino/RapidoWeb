@@ -169,7 +169,8 @@ const Sidebar = () => {
         onClick={handleLogout}
         className="flex items-center space-x-3 p-3 bg-white text-green-800 rounded-lg hover:bg-green-800 hover:text-white mt-4"
       >
-        <LogOut size={18} className="text-green-800" />
+        {/* <LogOut size={18} className="text-green-800" /> */}
+        <img src="/images/logout.png" alt="Logout" className="w-7 h-7" />
         <span className="text-base text-green-800 uppercase hover:text-white">Log out</span>
       </button>
     </aside>

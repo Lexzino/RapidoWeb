@@ -16,9 +16,11 @@ import PrivacyPolicy from './pages/privacyPolicy';
 import Explore from './pages/Explore';
 import ContactUs from './pages/contact-us';
 import Blog from './pages/Blog';
-import SuperAdmin from './pages/SuperAdmin/Dashboard';
-import Admin from "./pages/AllDashboards/SuperAdmin/index.jsx"
+import Admin from "./pages/AllDashboards/SuperAdmin/index.jsx";
 import AdminDashboardLayout from './pages/AllDashboards/components/Layouts/AdminDashboardLayout';
+import Partners from "./pages/AllDashboards/PartnersDashboard/Index.jsx";
+import PartnersDashboardLayout from './pages/AllDashboards/components/Layouts/PartnersDashboardLayout';
+
 
 function App() {
   return (
@@ -35,6 +37,12 @@ const AdminDashboardRoute = ({ children }) => (
   <AdminDashboardLayout>
     {children}
   </AdminDashboardLayout>
+);
+
+const PartnersDashboardRoute = ({ children }) => (
+  <PartnersDashboardLayout>
+    {children}
+  </PartnersDashboardLayout>
 );
 
 
@@ -69,13 +77,18 @@ function MainApp() {
               <Route path="/mental-health" element={<MentalHealthPage />} />
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/blog" element={<Blog />} />
-              {/* AdminDashboard routes wrapped in AdminDashboardLayout */}
+              {/* Dashboard routes wrapped in DashboardLayouts */}
               <Route path="/admin" element={
                 <AdminDashboardRoute>
                   <Admin />
                 </AdminDashboardRoute>
               } />
-            </Routes>
+              <Route path="/partners" element={
+                <PartnersDashboardRoute>
+                  <Partners />
+                </PartnersDashboardRoute>
+              } />
+            </Routes>             
           </div>
         </CSSTransition>
       </TransitionGroup>

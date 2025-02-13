@@ -12,31 +12,36 @@ const WaitingList = () => {
         name: "Leslie Alexander",
         email: "leslie.alexander@example.com",
         date: "10/10/2020",
-        visitTime: "09:15-09:45am"
+        visitTime: "09:15-09:45am",
+        image: "/images/lesile.png",
       },
       {
         name: "Ronald Richards",
         email: "ronald.richards@example.com",
         date: "10/12/2020",
-        visitTime: "12:00-12:45pm"
+        visitTime: "12:00-12:45pm",
+        image: "/images/icon.png",
       },
       {
         name: "Jane Cooper",
         email: "jane.cooper@example.com",
         date: "10/13/2020",
-        visitTime: "01:15-01:45pm"
+        visitTime: "01:15-01:45pm",
+        image: "/images/icon.png",
       },
       {
         name: "Robert Fox",
         email: "robert.fox@gmail.com",
         date: "10/14/2020",
-        visitTime: "02:00-02:45pm"
+        visitTime: "02:00-02:45pm",
+        image: "/images/icon.png",
       },
       {
         name: "Jenny Wilson",
         email: "jenny.wilson@example.com",
         date: "10/15/2020",
-        visitTime: "12:00-12:45pm"
+        visitTime: "12:00-12:45pm",
+        image: "/images/icon.png",
       }
     ],
     "Doctors": [],
@@ -86,7 +91,9 @@ const WaitingList = () => {
               <tr key={index} className="border-t border-gray-50 gap-3">
                 <td className="py-4 pl-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-gray-100 flex-shrink-0" />
+                    <div className="w-8 h-8 rounded-full bg-gray-100 flex-shrink-0">
+                      <img src={item.image} alt="User" className="w-full h-full rounded-full" />
+                      </div> 
                     <span className="text-sm text-gray-900">{item.name}</span>
                   </div>
                 </td>

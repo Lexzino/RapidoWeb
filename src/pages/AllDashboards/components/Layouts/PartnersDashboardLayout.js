@@ -1,13 +1,15 @@
-import React from 'react';
-import TopBar from "../TopBar";
-import Sidebar from "../Sidebar";
+import React from "react"
 import MobileMenuToggle from '../MobileMenuToggle';
+import PartnerTopbar from "../PartnerTopbar";
+import PartnerSidebar from "../PartnerSidebar";
 
-const DashboardLayout = ({ children }) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
-  return (
-    <div className="flex flex-col md:flex-row min-h-screen">
+const PartnersDashboardLayout = ({ children }) => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+    
+    return (
+        <>
+        <div className="flex flex-col md:flex-row min-h-screen">
       {/* Mobile Menu Toggle */}
       <MobileMenuToggle
         isOpen={isMobileMenuOpen}
@@ -20,14 +22,14 @@ const DashboardLayout = ({ children }) => {
         transition-transform duration-300 ease-in-out md:sticky md:translate-x-0 top-0
         z-40 md:z-auto md:h-screen md:w-64 lg:w-72
         `}>
-        <Sidebar className="" />
+        <PartnerSidebar className="" />
       </div>
 
       {/* Main Content Area */}
       <div className="">
         {/* Fixed TopBar */}
         <div className="sticky top-0 z-30 bg-white">
-          <TopBar />
+          <PartnerTopbar />
         </div>
 
         {/* Scrollable Content Area */}
@@ -36,7 +38,8 @@ const DashboardLayout = ({ children }) => {
         </div>
       </div>
     </div>
-  );
+        </>
+    );
 };
 
-export default DashboardLayout;
+export default PartnersDashboardLayout;
