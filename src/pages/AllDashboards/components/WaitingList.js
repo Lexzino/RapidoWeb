@@ -14,6 +14,8 @@ const WaitingList = () => {
         date: "10/10/2020",
         visitTime: "09:15-09:45am",
         image: "/images/lesile.png",
+        visitTime: "09:15-09:45am",
+        image: "/images/lesile.png",
       },
       {
         name: "Ronald Richards",
@@ -91,6 +93,9 @@ const WaitingList = () => {
               <tr key={index} className="border-t border-gray-50 gap-3">
                 <td className="py-4 pl-4">
                   <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-gray-100 flex-shrink-0">
+                      <img src={item.image} alt="User" className="w-full h-full rounded-full" />
+                      </div> 
                     <div className="w-8 h-8 rounded-full bg-gray-100 flex-shrink-0">
                       <img src={item.image} alt="User" className="w-full h-full rounded-full" />
                       </div> 
