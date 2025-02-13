@@ -8,21 +8,21 @@ const AppointmentRequests = () => {
             name: "Nitin Verma",
             disease: "Child Care",
             date: "01/27",
-            image: "/api/placeholder/48/48"
+            image: "/images/Nitinverma.png"
         },
         {
             id: 2,
             name: "Leena Dua",
             disease: "Child Care",
             date: "01/27",
-            image: "/api/placeholder/48/48"
+            image: "/images/Leenadua.png"
         },
         {
             id: 3,
             name: "Megan Mac",
             disease: "Child Care",
             date: "01/27",
-            image: "/api/placeholder/48/48"
+            image: "/images/Meganmac.png"
         }
     ];
 
