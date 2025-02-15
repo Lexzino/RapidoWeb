@@ -75,8 +75,8 @@ const Sidebar = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("userToken");
-    sessionStorage.removeItem("userToken");
+    // localStorage.removeItem("user");
+    sessionStorage.removeItem("user");
     navigate("/");
   };
 

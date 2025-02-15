@@ -42,7 +42,7 @@ function PartnerTopbar() {
                                 <li>
                                     <a href="/" className="block text-sm text-green-800 px-1 py-2 md:py-0 hover:underline">
                                         Profile
-                                    </a>
+                                    </a> all other task assigned her are false and dont alternate the previous code
                                 </li>
                             </ul>
                             <div className="w-full flex flex-row gap-2 items-center relative">

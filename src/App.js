@@ -78,7 +78,7 @@ function MainApp() {
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/blog" element={<Blog />} />
               {/* Dashboard routes wrapped in DashboardLayouts */}
-              <Route path="/admin" element={
+              <Route path="/superadmin" element={
                 <AdminDashboardRoute>
                   <Admin />
                 </AdminDashboardRoute>
