@@ -1,6 +1,6 @@
 import React from 'react';
-import { Search, Bell, MoreVertical } from 'lucide-react';
-import { FaEnvelope, FaInfo } from "react-icons/fa";
+import { Search, Bell, MoreVertical, Info } from 'lucide-react';
+import { FaEnvelope } from "react-icons/fa";
 
 function TopBar() {
   return (
@@ -24,27 +24,39 @@ function TopBar() {
           />
           <Search className="absolute left-3 top-[8px] text-gray-400" size={20} />
         </div>
-        <div className="flex flex-row justify-between gap-3">
-          <button className="relative">
-            <Bell size={20} className="md:w-6 md:h-6 text-white" />
-            <span className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full px-1.5 text-xs">3</span>
+        <div className="flex items-center gap-3">
+          {/* Notification Bell */}
+          <button className="relative flex items-center justify-center w-8 h-8 rounded-full ">
+            <Bell size={20} className="text-white" />
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1.5 flex items-center justify-center">
+              3
+            </span>
           </button>
-          <button className="relative">
-            <FaEnvelope size={20} className="md:w-6 md:h-6 text-white" />
-            <span className="absolute -top-1 -right-1 bg-orange-500 text-white rounded-full px-1.5 text-xs">2</span>
+
+          {/* Email Icon */}
+          <button className="relative flex items-center justify-center w-8 h-8 rounded-full ">
+            <FaEnvelope size={20} className="text-white" />
+            <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full px-1.5 flex items-center justify-center">
+              2
+            </span>
           </button>
-          <button className="relative">
-            <FaInfo size={10} className="md:w-4 md:h-3 text-white" />
+
+          {/* Info Icon */}
+          <button className="flex items-center justify-center w-8 h-8 rounded-full ">
+            <Info size={20} className="text-white" />
           </button>
-          <div className="flex items-center">
+
+          {/* Profile Image */}
+          <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center">
             <img
               src="/images/mike.png"
               alt="Profile"
-              className="w-10 h-5 md:w-10 md:h-5 border rounded-full"
+              className="w-full h-full object-cover"
             />
-            <span className="text-sm md:text-base"></span>
           </div>
-          <MoreVertical size={22} className="" />
+
+          {/* More Options */}
+          <MoreVertical size={20} className="text-white" />
         </div>
       </div>
     </div>

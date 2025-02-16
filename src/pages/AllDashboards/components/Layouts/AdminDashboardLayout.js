@@ -15,16 +15,15 @@ const DashboardLayout = ({ children }) => {
       />
 
       {/* Sidebar */}
-      <div className={`
+      <aside className={`
         fixed inset-y-0 left-0 transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
         transition-transform duration-300 ease-in-out md:sticky md:translate-x-0 top-0
-        z-40 md:z-auto md:h-screen md:w-64 lg:w-72
-        `}>
+        z-40 md:z-auto md:h-screen md:w-64 lg:w-72 hidden md:block`}>
         <Sidebar className="" />
-      </div>
+      </aside>
 
       {/* Main Content Area */}
-      <div className="">
+      <div className="flex-1 flex flex-col">
         {/* Fixed TopBar */}
         <div className="sticky top-0 z-30 bg-white">
           <TopBar />

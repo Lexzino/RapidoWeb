@@ -345,6 +345,13 @@ body {
   grid-column: span 3;
 }
 
+/* .bg-spiral {
+  background-image: url('/images/spirals.png');
+  background-size: cover;
+  background-position: center;
+} */
+
+
 /* Responsive Design */
 @media screen and (max-width: 1024px) {
   .dashboard-grid {

@@ -17,9 +17,11 @@ import Explore from './pages/Explore';
 import ContactUs from './pages/contact-us';
 import Blog from './pages/Blog';
 import Admin from "./pages/AllDashboards/SuperAdmin/index.jsx";
-import AdminDashboardLayout from './pages/AllDashboards/components/Layouts/AdminDashboardLayout';
+import AdminDashboardRoute from './pages/AllDashboards/Routes/AdminDashboardroute';
 import Partners from "./pages/AllDashboards/PartnersDashboard/Index.jsx";
 import PartnersDashboardLayout from './pages/AllDashboards/components/Layouts/PartnersDashboardLayout';
+import WaitingList from './pages/AllDashboards/components/WaitingListPage';
+import DoctorsList from './pages/AllDashboards/components/DoctorsListPage';
 
 
 function App() {
@@ -32,12 +34,6 @@ function App() {
   );
 }
 
-// Create a wrapper component for dashboard routes
-const AdminDashboardRoute = ({ children }) => (
-  <AdminDashboardLayout>
-    {children}
-  </AdminDashboardLayout>
-);
 
 const PartnersDashboardRoute = ({ children }) => (
   <PartnersDashboardLayout>
@@ -78,11 +74,11 @@ function MainApp() {
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/blog" element={<Blog />} />
               {/* Dashboard routes wrapped in DashboardLayouts */}
-              <Route path="/admin" element={
-                <AdminDashboardRoute>
-                  <Admin />
-                </AdminDashboardRoute>
-              } />
+              <Route path="/admin" element={<AdminDashboardRoute />}>
+              <Route index element={<Admin />} />
+                <Route path="waitinglist" element={<WaitingList />} />
+                <Route path="doctorslist" element={<DoctorsList />} />
+              </Route>
               <Route path="/partners" element={
                 <PartnersDashboardRoute>
                   <Partners />

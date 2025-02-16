@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Pen, Trash2 } from 'lucide-react';
 
 const WaitingList = () => {
-  const tabs = ["Waiting List", "Doctors", "Pharmacy's", "Therapist's", "Patient's"];
+  // const tabs = ["Waiting List", "Doctors", "Pharmacy's", "Therapist's", "Patient's"];
+ const tabs = [
+  { name: "Waiting List", path: "/admin/waitinglist" },
+  { name: "Doctors", path: "/admin/doctorslist" },
+  { name: "Pharmacists", path: "/admin/pharmaciest" },
+  { name: "Therapists", path: "/admin/therapist" },
+  { name: "Patients", path: "/admin/patient" }
+];
   const [activeTab, setActiveTab] = useState("Waiting List");
 
   // Restructured data object with arrays for each tab
@@ -12,8 +20,6 @@ const WaitingList = () => {
         name: "Leslie Alexander",
         email: "leslie.alexander@example.com",
         date: "10/10/2020",
-        visitTime: "09:15-09:45am",
-        image: "/images/lesile.png",
         visitTime: "09:15-09:45am",
         image: "/images/lesile.png",
       },
@@ -47,9 +53,9 @@ const WaitingList = () => {
       }
     ],
     "Doctors": [],
-    "Pharmacy's": [],
-    "Therapist's": [],
-    "Patient's": []
+    "Pharmacists": [],
+    "Therapists": [],
+    "Patients": []
   };
 
   return (
@@ -58,8 +64,8 @@ const WaitingList = () => {
       <div className="relative flex justify-center -mb-[1px]">
         {tabs.map((tab, index) => (
           <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
+            key={tab.name}
+            onClick={() => setActiveTab(tab.name)}
             className={`
               relative z-${10 - index} 
               px-8 py-2.5 
@@ -68,16 +74,21 @@ const WaitingList = () => {
               -ml-3 first:ml-0
               text-sm font-medium
               shadow-[0_-1px_2px_rgba(0,0,0,0.05)]
-              ${activeTab === tab ? 'text-gray-900' : 'text-gray-400'}
+              ${activeTab === tab.name ? 'text-gray-900' : 'text-gray-400'}
             `}
           >
-            {tab}
+            {tab.name}
           </button>
         ))}
       </div>
 
       {/* Content Panel */}
       <div className="bg-white w-auto rounded-b-2xl rounded-tr-2xl px-1 shadow-sm overflow-x-scroll">
+        <Link to={`/admin/${activeTab.toLowerCase().replace(/\s/g, '')}`}>
+          <span className='flex items-end justify-end mr-4 py-3 text-sm text-green-800 cursor-pointer hover:underline'>
+            View All
+          </span>
+        </Link>
         <table className="w-full border-spacing-x-4 border-separate">
           <thead>
             <tr>
@@ -95,10 +106,7 @@ const WaitingList = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-gray-100 flex-shrink-0">
                       <img src={item.image} alt="User" className="w-full h-full rounded-full" />
-                      </div> 
-                    <div className="w-8 h-8 rounded-full bg-gray-100 flex-shrink-0">
-                      <img src={item.image} alt="User" className="w-full h-full rounded-full" />
-                      </div> 
+                    </div>
                     <span className="text-sm text-gray-900">{item.name}</span>
                   </div>
                 </td>

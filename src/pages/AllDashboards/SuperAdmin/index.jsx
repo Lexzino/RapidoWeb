@@ -15,7 +15,7 @@ import IncomeStatistics from "../components/IncomeStatistics";
 function Index() {
   return (
     <div className="p-4 md:p-6">
-      <div className="min-w-[700px] flex flex-col md:flex-row gap-3 md:justify-between md:gap-5">
+      <div className="flex flex-col md:flex-row gap-3 md:justify-between md:gap-5">
         <div className="flex-grow md:w-2/3 space-y-4 md:space-y-4">
           <DashboardCards />
           <UpComingAppointment />
