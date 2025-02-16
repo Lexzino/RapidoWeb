@@ -13,47 +13,55 @@ export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [activeTab, setActiveTab] = useState("Super Admin"); // Default active tab
+  const [activeTab, setActiveTab] = useState("SuperAdmin"); // Default active tab
 
-  const handleLogin = async () => {
-    const credentials = {
-      email,
-      password,
-      userType: activeTab.toLowerCase(), // Convert tab to lowercase for consistency
-    };
+ // Base URL for the backend
+ const BASE_URL = "http://localhost:3020/api/superadmin-login";
 
-    sessionStorage.setItem("user", JSON.stringify(credentials));
-    navigate("/superadmin");
+ // Signup handler
+ const handleLogin = async () => {
+   // Validate input
+   if (!email || !password ||  (activeTab === "provider" )) {
+     message.error("Please fill in all required fields");
+     return;
+   }
 
-    /*try {
-      const response = await axios.post(
-        "http://localhost:3020/api/superadmin-login",
-        credentials
-      );
+  
+   // Prepare credentials
+   const credentials = {
+     
+     email,
+     password,
+     role: activeTab,
+    //  specialty: activeTab === "provider" ? specialty : undefined,
+     userType: activeTab
+   };
 
-      if (response.status === 200) {
-        // Login successful
-        const user = response.data;
-
-        sessionStorage.setItem("user", JSON.stringify(user));
-
-        message.success(`${user.userType} login successful`); 
-        if (user.userType === "superadmin") {
-          navigate("/superadmin");
-        } else if (user.userType === "provider") {
-          navigate("/provider");
-        } else {
-          message.error("Unknown user type");
-        }
-      } else {
-        message.error(response.data.message || "Invalid email or password");
-      }
-    } catch (error) {
-      console.error("Login failed:", error.message);
-      message.error("An error occurred during login. Please try again.");
-    }*/
-  };
-
+   // API Call to backend
+   try {
+     const response = await axios.post(BASE_URL, credentials);
+     console.log (response)
+     if (response.status === 201) {
+       message.success("login successful");
+      //  sessionStorage.setItem("user", JSON.stringify(response.data));
+       // Navigate to the correct folder based on the role
+       setTimeout(() => {
+         if (response.data.data.userType  === "SuperAdmin") {
+           navigate("/superadmin"); 
+         } else if (response.data.data.userType === "Provider") {
+           navigate("/partners");
+         }
+       }, 100);
+     } else {
+       message.error(response.data.message || "Error during sign-up");
+     }
+   } catch (error) {
+     console.error("Sign-up failed:", error.message);
+     message.error(
+       error.response?.data?.message || "An unexpected error occurred"
+     );
+   }
+ };
   return (
     <div className="flex flex-col lg:flex-row items-stretch w-full h-[80vh] bg-[#EAF9D6] lg:overflow-y-hidden">
       {/* Left Section */}
@@ -73,7 +81,7 @@ export default function Login() {
             <li className="w-[260px] sm:w-[280px]  border-[2px] border-green-dark rounded-md p-[6px] inline-flex space-x-2 items-center flex-col lg:flex-row mt-4 lg:mt-0">
               <button
                 className={`hover:bg-green-dark hover:text-white w-full lg:w-[140px] py-2.5 rounded-[5px] text-lg ${activeTab === "Super Admin" ? "bg-green-dark text-white" : "bg-transparent text-green-dark"}`}
-                onClick={() => setActiveTab("Super Admin")}
+                onClick={() => setActiveTab("SuperAdmin")}
               >
                 Super Admin
               </button>

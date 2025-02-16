@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import Loginmobile from "../../assets/images/Loginmobile.svg";
 import { message } from "antd";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -7,25 +6,52 @@ import { useNavigate } from "react-router-dom";
 export default function Signup() {
   const navigate = useNavigate();
 
-  // State variables
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [fullName, setFullName] = useState("");
-  const [title, setTitle] = useState("Dr");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [activeTab, setActiveTab] = useState("superadmin");
-  const [acceptTerms, setAcceptTerms] = useState(false);
-  const [specialty, setSpecialty] = useState("");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    fullName: "",
+    title: "Dr",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    activeTab: "SuperAdmin",
+    acceptTerms: false,
+    specialty: "",
+  });
 
-  // Base URL for the backend
+  const {
+    firstName,
+    lastName,
+    fullName,
+    title,
+    email,
+    password,
+    confirmPassword,
+    activeTab,
+    acceptTerms,
+    specialty
+  } = formData;
+
   const BASE_URL = "http://localhost:3020/api/superadmin-signup";
 
-  // Signup handler
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const setActiveTab = (tab) => {
+    setFormData(prev => ({
+      ...prev,
+      activeTab: tab
+    }));
+  };
+
   const handleSignup = async () => {
-    // Validate input
-    if (!email || !password || !firstName || !lastName || (activeTab === "provider" && !specialty)) {
+    
+    if (!email || !password || !firstName || !lastName || (activeTab === "Provider" && !fullName) || (activeTab === "Provider" && !specialty)) {
       message.error("Please fill in all required fields");
       return;
     }
@@ -40,53 +66,40 @@ export default function Signup() {
       return;
     }
 
-    // Prepare credentials
     const credentials = {
       firstName,
       lastName,
-      fullName: activeTab === "provider" ? fullName : `${firstName} ${lastName}`,
+      fullName: activeTab === "Provider" ? fullName : `${firstName} ${lastName}`,
       title,
       email,
       password,
       role: activeTab,
-      specialty: activeTab === "provider" ? specialty : undefined,
-      userType: activeTab.toLowerCase(),
+      specialty: activeTab === "Provider" ? specialty : undefined,
+      userType: activeTab,
     };
 
-    // API Call to backend
     try {
       const response = await axios.post(BASE_URL, credentials);
-      console.log (response)
       if (response.status === 201) {
         message.success("Sign-up successful");
         sessionStorage.setItem("user", JSON.stringify(response.data));
-        // Navigate to the correct folder based on the role
         setTimeout(() => {
-          if (response.data.data.userType  === "SuperAdmin") {
-            navigate("/superadmin"); 
-          } else if (response.data.data.userType === "provider") {
-            navigate("/provider");
-          }
+          navigate(response.data.data.userType === "SuperAdmin" ? "/superadmin" : "/partners");
         }, 100);
       } else {
         message.error(response.data.message || "Error during sign-up");
       }
     } catch (error) {
-      console.error("Sign-up failed:", error.message);
-      message.error(
-        error.response?.data?.message || "An unexpected error occurred"
-      );
+      message.error(error.response?.data?.message || "An unexpected error occurred");
     }
   };
 
   return (
     <div className="flex flex-col lg:flex-row items-stretch w-full h-full lg:h-[80vh] bg-[#EAF9D6] lg:overflow-y-hidden">
-      {/* Left Section - Hidden on small screens */}
       <div className="flex-1 hidden lg:flex justify-center items-center bg-green-dark h-full">
         <img src="/images/Loginmobile.svg" className="w-[250px] h-auto" alt="Signup Mobile" />
       </div>
 
-      {/* Right Section */}
       <div className="flex flex-1 flex-col justify-center items-center lg:items-center px-6 sm:px-12">
         <div className="text-center lg:text-start w-full">
           <ul className="inline-flex items-center mt-3.5 space-x-4 flex-col lg:flex-row">
@@ -94,17 +107,17 @@ export default function Signup() {
             <li className="lg:w-[260px] w-[525px] border-[2px] border-green-dark rounded-md p-[6px] inline-flex space-x-2 items-center flex-row lg:flex-row mt-4 lg:mt-2">
               <button
                 className={`hover:bg-green-dark hover:text-white w-full lg:w-[140px] py-1.5 rounded-[5px] text-lg ${
-                  activeTab === "superadmin" ? "bg-green-dark text-white" : "bg-transparent text-green-dark"
+                  activeTab === "SuperAdmin" ? "bg-green-dark text-white" : "bg-transparent text-green-dark"
                 }`}
-                onClick={() => setActiveTab("superadmin")}
+                onClick={() => setActiveTab("SuperAdmin")}
               >
                 Super Admin
               </button>
               <button
                 className={`hover:bg-green-dark hover:text-white w-full lg:w-[100px] py-1.5 rounded-[5px] text-lg ${
-                  activeTab === "provider" ? "bg-green-dark text-white" : "bg-transparent text-green-dark"
+                  activeTab === "Provider" ? "bg-green-dark text-white" : "bg-transparent text-green-dark"
                 }`}
-                onClick={() => setActiveTab("provider")}
+                onClick={() => setActiveTab("Provider")}
               >
                 Provider
               </button>
@@ -112,28 +125,29 @@ export default function Signup() {
           </ul>
         </div>
 
-        {/* Sign-up Form */}
         <div className="mt-5 w-full max-w-md">
-          {activeTab === "superadmin" ? (
+          {activeTab === "SuperAdmin" ? (
             <div className="flex space-x-4">
               <div className="flex-1">
                 <h1 className="text-lg text-green-dark">First Name</h1>
                 <input
                   type="text"
+                  name="firstName"
                   className="rounded-[5px] border-[1px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
                   placeholder="First Name"
                   value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  onChange={handleChange}
                 />
               </div>
               <div className="flex-1">
                 <h1 className="text-lg text-green-dark">Last Name</h1>
                 <input
                   type="text"
+                  name="lastName"
                   className="rounded-[5px] border-[1px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
                   placeholder="Last Name"
                   value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -143,17 +157,19 @@ export default function Signup() {
                 <h1 className="text-lg text-green-dark">Full Name</h1>
                 <input
                   type="text"
+                  name="fullName"
                   className="rounded-[5px] border-[1px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
                   placeholder="Full Name"
                   value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
+                  onChange={handleChange}
                 />
               </div>
               <div className="flex-1">
                 <h1 className="text-lg text-green-dark">Title</h1>
                 <select
+                  name="title"
                   value={title}
-                  onChange={(e) => setTitle(e.target.value)}
+                  onChange={handleChange}
                   className="rounded-[5px] border-[1px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
                 >
                   <option value="Dr">Dr</option>
@@ -163,15 +179,16 @@ export default function Signup() {
             </div>
           )}
 
-          {activeTab === "provider" && (
+          {activeTab === "Provider" && (
             <div className="mt-3.5">
               <h1 className="text-lg text-green-dark">Practice Specialty or Pharmacy Store Name</h1>
               <input
                 type="text"
+                name="specialty"
                 className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
                 placeholder="Practice Specialty or Pharmacy Store Name"
                 value={specialty}
-                onChange={(e) => setSpecialty(e.target.value)}
+                onChange={handleChange}
               />
             </div>
           )}
@@ -180,10 +197,11 @@ export default function Signup() {
             <h1 className="text-lg text-green-dark">Email Address</h1>
             <input
               type="text"
+              name="email"
               className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
               placeholder="Email Address"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={handleChange}
             />
           </div>
 
@@ -192,20 +210,22 @@ export default function Signup() {
               <h1 className="text-lg text-green-dark">Password</h1>
               <input
                 type="password"
+                name="password"
                 className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
                 placeholder="Password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handleChange}
               />
             </div>
             <div className="flex-1">
               <h1 className="text-lg text-green-dark">Confirm Password</h1>
               <input
                 type="password"
+                name="confirmPassword"
                 className="rounded-[5px] border-[1.5px] border-green-dark w-full h-[40px] text-base pl-4 mt-1.5"
                 placeholder="Confirm Password"
                 value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -213,8 +233,9 @@ export default function Signup() {
           <div className="mt-2.5 flex items-center">
             <input
               type="checkbox"
+              name="acceptTerms"
               checked={acceptTerms}
-              onChange={() => setAcceptTerms(!acceptTerms)}
+              onChange={handleChange}
               className="mr-2"
             />
             <label className="text-green-dark text-base">

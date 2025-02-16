@@ -1,8 +1,17 @@
-import React from 'react';
 import { Search, Bell, MoreVertical, Info } from 'lucide-react';
 import { FaEnvelope } from "react-icons/fa";
+import { useState, useEffect } from 'react';
+
+
 
 function TopBar() {
+  const [firstName, setUserName] = useState('');
+  useEffect(() => {
+    const storedUserName = localStorage.getItem('firstName');
+    if (storedUserName) {
+      setUserName(storedUserName);
+    }
+    }, []);
   return (
     <div className="bg-[#EBF9D6] w-full shadow-sm p-2 md:p-4 flex flex-col md:flex-row justify-between items-start md:items-center space-y-2 md:space-y-3">
       <div className="">
@@ -11,7 +20,7 @@ function TopBar() {
           <h2 className="text-green-dark mt-2">
             <label className="font-bold text-gray-800"> Welcome, </label>
             <label className="font-bold text-green-dark">Super Admin - </label>
-            <label className="font-bold text-light-green-700">Michael Tosin Adesanwo</label>
+            <label className="font-bold text-light-green-700">{firstName}!</label>
           </h2>
         </div>
       </div>
