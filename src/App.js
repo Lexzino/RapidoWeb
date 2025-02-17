@@ -73,20 +73,11 @@ function MainApp() {
               <Route path="/mental-health" element={<MentalHealthPage />} />
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/blog" element={<Blog />} />
-              {/* Dashboard routes wrapped in DashboardLayouts */}
-<<<<<<< HEAD
               <Route path="/admin" element={<AdminDashboardRoute />}>
               <Route index element={<Admin />} />
                 <Route path="waitinglist" element={<WaitingList />} />
                 <Route path="doctorslist" element={<DoctorsList />} />
               </Route>
-=======
-              <Route path="/superadmin" element={
-                <AdminDashboardRoute>
-                  <Admin />
-                </AdminDashboardRoute>
-              } />
->>>>>>> 0f8f870cfb60abea1e334a76ee34f545e267f91d
               <Route path="/partners" element={
                 <PartnersDashboardRoute>
                   <Partners />

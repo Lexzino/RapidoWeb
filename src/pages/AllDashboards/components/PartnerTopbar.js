@@ -42,7 +42,7 @@ function PartnerTopbar() {
                                 <li>
                                     <a href="/" className="block text-sm text-green-800 px-1 py-2 md:py-0 hover:underline">
                                         Profile
-                                    </a> all other task assigned her are false and dont alternate the previous code
+                                    </a>
                                 </li>
                             </ul>
                             <div className="w-full flex flex-row gap-2 items-center relative">
@@ -50,7 +50,7 @@ function PartnerTopbar() {
                                     <Bell size={20} />
                                     <span className="absolute top-0 right-0 w-2 h-2 bg-red-800 rounded-full"></span>
                                 </div>
-                                <img src="" alt="" className="w-6 h-6 rounded-full bg-gray-200" />
+                                <img src="/images/Partnerframe.png" alt="" className="w-6 h-6 rounded-full bg-gray-200" />
                             </div>
 
                         </div>
