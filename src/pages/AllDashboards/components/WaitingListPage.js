@@ -19,14 +19,34 @@ const WaitingList = () => {
                 image: "/images/avatar1.png"
             },
             {
-                name: "Brooklyn Simmons",
+                name: "Kristin Watson",
                 id: "87364523",
                 email: "brooklyns@mail.com",
                 profession: "Dermatologists",
                 date: "21/12/2025",
                 time: "10:40 PM",
                 status: "Declined",
-                image: "/images/avatar1.png"
+                image: "/images/avatar2.png"
+            },
+            {
+                name: "Jacob Jones",
+                id: "87364523",
+                email: "brooklyns@mail.com",
+                profession: "Dermatologists",
+                date: "21/12/2025",
+                time: "10:40 PM",
+                status: "Approved",
+                image: "/images/avatar3.png"
+            },
+            {
+                name: "Cody Fisher",
+                id: "87364523",
+                email: "brooklyns@mail.com",
+                profession: "Dermatologists",
+                date: "21/12/2025",
+                time: "10:40 PM",
+                status: "Declined",
+                image: "/images/avatar4.png"
             },
             {
                 name: "Brooklyn Simmons",
@@ -39,44 +59,24 @@ const WaitingList = () => {
                 image: "/images/avatar1.png"
             },
             {
-                name: "Brooklyn Simmons",
+                name: "Kristin Watson",
                 id: "87364523",
                 email: "brooklyns@mail.com",
                 profession: "Dermatologists",
                 date: "21/12/2025",
                 time: "10:40 PM",
                 status: "Declined",
-                image: "/images/avatar1.png"
+                image: "/images/avatar2.png"
             },
             {
-                name: "Brooklyn Simmons",
+                name: "Jacob Jones",
                 id: "87364523",
                 email: "brooklyns@mail.com",
                 profession: "Dermatologists",
                 date: "21/12/2025",
                 time: "10:40 PM",
                 status: "Approved",
-                image: "/images/avatar1.png"
-            },
-            {
-                name: "Brooklyn Simmons",
-                id: "87364523",
-                email: "brooklyns@mail.com",
-                profession: "Dermatologists",
-                date: "21/12/2025",
-                time: "10:40 PM",
-                status: "Declined",
-                image: "/images/avatar1.png"
-            },
-            {
-                name: "Brooklyn Simmons",
-                id: "87364523",
-                email: "brooklyns@mail.com",
-                profession: "Dermatologists",
-                date: "21/12/2025",
-                time: "10:40 PM",
-                status: "Approved",
-                image: "/images/avatar1.png"
+                image: "/images/avatar3.png"
             }
         ],
         "Doctors": [],

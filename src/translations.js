@@ -16,7 +16,7 @@ export const translations = {
     whatItCost: "What it Cost",
     browseTopSpecialties: "Browse Top Specialties",
     heading: "REVOLUTIONIZING HEALTHCARE ACESS",
-    subheading: "ANYTIME",
+    subheading: "ANYTIME, ANYWHERE",
     description: "Rapido Relief connects you with top-rated healthcare professionals for fast, reliable medical support-whether it's for everday care, mental health, or emergencies.",
     subscribeNav: "SUBSCRIBE Now",
     becomeMember: "To become a community member",

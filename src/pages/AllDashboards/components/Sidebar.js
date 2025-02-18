@@ -29,7 +29,7 @@ const Sidebar = () => {
   const mainMenuItems = [
     {
       icon: Home,
-      text: 'Dashboard',
+      text: 'Dashboard', hasSubmenu: true,
       submenu: [
         { text: 'Super Admin', icon: User },
         { text: 'Doctors', icon: Users },
@@ -83,26 +83,26 @@ const Sidebar = () => {
   return (
     <aside className="h-screen w-64 lg:w-72 flex-shrink-0 fixed left-0 top-0 bottom-0 bg-green-900 flex flex-col p-4 overflow-hidden shadow-xl">
       {/* Logo */}
-      <div className="px-4 py-3 flex items-center space-x-2 bg-green-800/50 rounded-md border border-white mb-6">
+      <div className="px-4 py-3 flex items-center space-x-2 bg-#1A4402-800/50 rounded-md border border-white mb-6">
         <img src="/images/logo.svg" alt="Logo" className="w-10 h-8" />
         <span className="text-lg font-medium text-white">RapidoRelief</span>
       </div>
 
       {/* Main Navigation - Scrollable */}
       <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-green-800 scrollbar-track-transparent ">
-        <div className="bg-green-800/50 rounded-lg p-3 mb-4 border border-white">
+        <div className="bg-#1A4402-800/50 rounded-lg p-3 mb-4 border border-white">
           {mainMenuItems.map((item, index) => (
             <div key={index}>
               <button
                 onClick={() => item.submenu ? toggleSubmenu(item.text) : null}
-                className="w-full flex items-center justify-between p-2 hover:bg-green-800 rounded-md group transition-colors"
+                className="w-full flex items-center justify-between p-2 hover:bg-1A4402-800 rounded-md group transition-colors"
               >
                 <div className="flex items-center space-x-3">
                   <item.icon size={18} className="text-white" />
                   <span className="text-sm text-white">{item.text}</span>
                 </div>
                 {item.badge && (
-                  <span className="bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="bg-1A4402-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                     {item.badge}
                   </span>
                 )}
@@ -113,7 +113,7 @@ const Sidebar = () => {
                   {item.submenu.map((subItem, subIndex) => (
                     <button
                       key={subIndex}
-                      className="w-full flex items-center space-x-3 p-2 hover:bg-green-800 hover:text-white rounded-md transition-colors"
+                      className="w-full flex items-center space-x-3 p-2 hover:bg-1A4402-800 hover:text-white rounded-md transition-colors"
                     >
                       <subItem.icon size={16} className="text-white" />
                       <span className="text-sm text-white">{subItem.text}</span>

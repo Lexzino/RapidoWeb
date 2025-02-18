@@ -21,10 +21,10 @@ const AppointmentItem = ({ initials, name, type, time, status, textColor, bgColo
 export const TodayAppointments = () => {
     const appointments = [
         {
-            initials: "SM",
-            name: "Stacy Mitchell",
+            initials: "RD",
+            name: "Riya Doe",
             type: "Clinic Consulting",
-            time: "9:30 AM",
+            time: "12:00 PM",
             status: "Ongoing",
             bgColor: "bg-green-100",
             textColor: "text-green-200"
