@@ -19,7 +19,7 @@ export default function Login() {
   }, [])
 
   // Base URL for the backend
-  const BASE_URL = "http://localhost:10000/api/auth/superadmin-login";
+  const BASE_URL = "https://rapido-brb7.onrender.com/api/auth/superadmin-login";
 
   // Login handler
   const handleLogin = async () => {
