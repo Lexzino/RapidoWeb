@@ -32,7 +32,7 @@ export default function Signup() {
     specialty
   } = formData;
 
-  const BASE_URL = "http://localhost:3020/api/superadmin-signup";
+  const BASE_URL = "http://localhost:4000/api/auth/superadmin-signup";
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -50,8 +50,7 @@ export default function Signup() {
   };
 
   const handleSignup = async () => {
-    
-    if (!email || !password || !firstName || !lastName || (activeTab === "Provider" && !fullName) || (activeTab === "Provider" && !specialty)) {
+    if (!email || !password || (!firstName && activeTab === "SuperAdmin") || (!lastName && activeTab === "SuperAdmin") || (activeTab === "Provider" && !fullName) || (activeTab === "Provider" && !specialty)) {
       message.error("Please fill in all required fields");
       return;
     }
@@ -66,6 +65,8 @@ export default function Signup() {
       return;
     }
 
+    const displayName = activeTab === "Provider" ? `${title} ${fullName}` : `${firstName} ${lastName}`;
+
     const credentials = {
       firstName,
       lastName,
@@ -75,17 +76,30 @@ export default function Signup() {
       password,
       role: activeTab,
       specialty: activeTab === "Provider" ? specialty : undefined,
-      userType: activeTab,
+      displayName: displayName // Adding displayName to the credentials
     };
 
     try {
       const response = await axios.post(BASE_URL, credentials);
+      console.log("User Role:", response);
       if (response.status === 201) {
         message.success("Sign-up successful");
-        sessionStorage.setItem("user", JSON.stringify(response.data));
+        
+
         setTimeout(() => {
-          navigate(response.data.data.userType === "SuperAdmin" ? "/superadmin" : "/partners");
+          const userRole = credentials.role; // Adjust based on actual API response
+          console.log("User Role:", response); // Debugging
+        
+          if (userRole === "SuperAdmin") {
+            navigate("/login");
+          } else if (userRole === "Provider") {
+            navigate("/login?user=Provider");
+          } else {
+            message.error("Unexpected role from server");
+          }
         }, 100);
+        
+        
       } else {
         message.error(response.data.message || "Error during sign-up");
       }
@@ -94,6 +108,7 @@ export default function Signup() {
     }
   };
 
+  // Rest of the component remains the same
   return (
     <div className="flex flex-col lg:flex-row items-stretch w-full h-full lg:h-[80vh] bg-[#EAF9D6] lg:overflow-y-hidden">
       <div className="flex-1 hidden lg:flex justify-center items-center bg-green-dark h-full">

@@ -4,6 +4,7 @@ import { translations } from "../../translations"; // Import translations
 import { DialogDefault } from "./Dilogbox/individul";
 import DownloadButton from "./download-btn";
 import WatchVideo from "./watch-video";
+import wordrotator from "./wordrotator"
 
 export default function Hero() {
   const { selectedLanguage, changeLanguage } = useLanguage(); // Use context for language
@@ -50,7 +51,7 @@ export default function Hero() {
           </h1>
           <div className="w-full lg:max-w-[475px]">
             <div className="f-f-m text-[35px] xl:text-[40px] text-white leading-[46px]">
-              {t.subheading}
+              {t.subheading} <wordrotator />
             </div>
           </div>
 

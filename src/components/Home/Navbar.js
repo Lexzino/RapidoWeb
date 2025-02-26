@@ -150,7 +150,7 @@ export default function Navbar() {
                   aria-label="Select language"
                 >
                   <img
-                    src="/images/globe.svg"
+                    src="/images/World.png"
                     alt="Globe"
                     className={`w-12 h-6 ${isGlobeDropdownOpen ? "squeezing" : ""}`}
                   />

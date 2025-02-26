@@ -5,7 +5,7 @@ import { Pen, Trash2 } from 'lucide-react';
 const WaitingList = () => {
   // const tabs = ["Waiting List", "Doctors", "Pharmacy's", "Therapist's", "Patient's"];
  const tabs = [
-  { name: "Waiting List", path: "/admin/waitinglist" },
+  { name: "Waiting List", path: "/superadmin/waitinglist" },
   { name: "Doctors", path: "/admin/doctorslist" },
   { name: "Pharmacists", path: "/admin/pharmaciest" },
   { name: "Therapists", path: "/admin/therapist" },
@@ -84,7 +84,7 @@ const WaitingList = () => {
 
       {/* Content Panel */}
       <div className="bg-white w-auto rounded-b-2xl rounded-tr-2xl px-1 shadow-sm overflow-x-scroll">
-        <Link to={`/admin/${activeTab.toLowerCase().replace(/\s/g, '')}`}>
+        <Link to={`/superadmin/${activeTab.toLowerCase().replace(/\s/g, '')}`}>
           <span className='flex items-end justify-end mr-4 py-3 text-sm text-green-800 cursor-pointer hover:underline'>
             View All
           </span>

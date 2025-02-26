@@ -1,12 +1,8 @@
-import React, { useState } from "react";
-// import Loginmobile from "../../assets/images/Loginmobile.svg";
-// import Googlered from "../../assets/images/Googlered.svg";
-// import Appleblack from "../../assets/images/Appleblack.svg";
-// import Facebookblue from "../../assets/images/Facebookblue.svg";
+import React, { useState, useEffect } from "react";
 import { useAuth } from "../services/authService";
 import { message } from "antd";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 export default function Login() {
   const { login } = useAuth();
@@ -14,54 +10,83 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [activeTab, setActiveTab] = useState("SuperAdmin"); // Default active tab
+  const [params] =useSearchParams();
+  const user = params.get("user")
+  useEffect(() => {
+    if(user === "provider") {
+      setActiveTab("Provider")
+    }
+  }, [])
 
- // Base URL for the backend
- const BASE_URL = "http://localhost:3020/api/superadmin-login";
+  // Base URL for the backend
+  const BASE_URL = "http://localhost:4000/api/auth/superadmin-login";
 
- // Signup handler
- const handleLogin = async () => {
-   // Validate input
-   if (!email || !password ||  (activeTab === "provider" )) {
-     message.error("Please fill in all required fields");
-     return;
-   }
+  // Login handler
+  const handleLogin = async () => {
+    // Validate input
+    if (!email || !password) {
+      message.error("Please fill in all required fields");
+      return;
+    }
 
-  
-   // Prepare credentials
-   const credentials = {
-     
-     email,
-     password,
-     role: activeTab,
-    //  specialty: activeTab === "provider" ? specialty : undefined,
-     userType: activeTab
-   };
+    // Prepare credentials
+    const credentials = {
+      email,
+      password,
+      role: activeTab,
+    };
 
-   // API Call to backend
-   try {
-     const response = await axios.post(BASE_URL, credentials);
-     console.log (response)
-     if (response.status === 201) {
-       message.success("login successful");
-      //  sessionStorage.setItem("user", JSON.stringify(response.data));
-       // Navigate to the correct folder based on the role
-       setTimeout(() => {
-         if (response.data.data.userType  === "SuperAdmin") {
-           navigate("/superadmin"); 
-         } else if (response.data.data.userType === "Provider") {
-           navigate("/partners");
-         }
-       }, 100);
-     } else {
-       message.error(response.data.message || "Error during sign-up");
-     }
-   } catch (error) {
-     console.error("Sign-up failed:", error.message);
-     message.error(
-       error.response?.data?.message || "An unexpected error occurred"
-     );
-   }
- };
+    // API Call to backend
+    try {
+      const response = await axios.post(BASE_URL, credentials);
+      console.log(response);
+      const token = response.data?.token;
+      const userData = response.data.superAdmin
+      console.log(userData);
+      const userRole = userData.role; // Adjust based on actual API response
+      if (response.status === 200) { // Typically login uses 200, not 201 (201 is for creation)
+        message.success("Login successful");
+
+
+        // Store user data in sessionStorage
+        sessionStorage.setItem("user", JSON.stringify({
+          ...userData,
+          displayName: userRole === "SuperAdmin" 
+            ? `${userData.firstName} ${userData.lastName}`
+            : `${userData.title} ${userData.fullName}`
+        }));
+
+        
+if (token) {
+  sessionStorage.setItem("token", token);
+} else {
+  message.error("Token not received from server");
+}
+
+
+        // Navigate based on userType
+        setTimeout(() => {
+                  console.log("User Role:", userRole); // Debugging
+                
+                  if (userRole === "SuperAdmin") {
+                    navigate("/superadmin");
+                  } else if (userRole === "Provider") {
+                    navigate("/partners");
+                  } else {
+                    message.error("Unexpected role from server");
+                  }
+                }, 100);
+      } else {
+        message.error(response.data.message || "Error during login");
+      }
+    } catch (error) {
+      console.error("Login failed:", error.message);
+      message.error(
+        error.response?.data?.message || "An unexpected error occurred"
+      );
+    }
+  };
+
   return (
     <div className="flex flex-col lg:flex-row items-stretch w-full h-[80vh] bg-[#EAF9D6] lg:overflow-y-hidden">
       {/* Left Section */}
@@ -78,9 +103,9 @@ export default function Login() {
         <div className="text-center lg:text-start w-full">
           <ul className="inline-flex items-center mt-3 space-x-4 flex-col lg:flex-row">
             <li className="text-green-dark lg:text-5xl lg:w-[170px] sm:text-5xl font-bold">Welcome Back</li>
-            <li className="w-[260px] sm:w-[280px]  border-[2px] border-green-dark rounded-md p-[6px] inline-flex space-x-2 items-center flex-col lg:flex-row mt-4 lg:mt-0">
+            <li className="w-[260px] sm:w-[280px] border-[2px] border-green-dark rounded-md p-[6px] inline-flex space-x-2 items-center flex-col lg:flex-row mt-4 lg:mt-0">
               <button
-                className={`hover:bg-green-dark hover:text-white w-full lg:w-[140px] py-2.5 rounded-[5px] text-lg ${activeTab === "Super Admin" ? "bg-green-dark text-white" : "bg-transparent text-green-dark"}`}
+                className={`hover:bg-green-dark hover:text-white w-full lg:w-[140px] py-2.5 rounded-[5px] text-lg ${activeTab === "SuperAdmin" ? "bg-green-dark text-white" : "bg-transparent text-green-dark"}`}
                 onClick={() => setActiveTab("SuperAdmin")}
               >
                 Super Admin

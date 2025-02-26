@@ -16,7 +16,7 @@ import PrivacyPolicy from './pages/privacyPolicy';
 import Explore from './pages/Explore';
 import ContactUs from './pages/contact-us';
 import Blog from './pages/Blog';
-import Admin from "./pages/AllDashboards/SuperAdmin/index.jsx";
+import SuperAdmin from "./pages/AllDashboards/SuperAdmin/index.jsx";
 import AdminDashboardRoute from './pages/AllDashboards/Routes/AdminDashboardroute';
 import Partners from "./pages/AllDashboards/PartnersDashboard/Index.jsx";
 import PartnersDashboardLayout from './pages/AllDashboards/components/Layouts/PartnersDashboardLayout';
@@ -73,8 +73,8 @@ function MainApp() {
               <Route path="/mental-health" element={<MentalHealthPage />} />
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/blog" element={<Blog />} />
-              <Route path="/admin" element={<AdminDashboardRoute />}>
-              <Route index element={<Admin />} />
+              <Route path="/superadmin" element={<AdminDashboardRoute />}>
+                <Route index element={<SuperAdmin />} />
                 <Route path="waitinglist" element={<WaitingList />} />
                 <Route path="doctorslist" element={<DoctorsList />} />
               </Route>

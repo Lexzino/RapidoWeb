@@ -88,7 +88,7 @@ const AccountCreate = () => {
             </button>
 
             {/* Render Login or Signup */}
-            <div className="flex-grow flex items-center justify-center overflow-y-auto">
+            <div className="flex-grow flex overflow-y-auto p-4">
               {activePopup === "login" ? (
                 <Login className="w-full h-full" /> // Ensure Login fills the space
               ) : (
