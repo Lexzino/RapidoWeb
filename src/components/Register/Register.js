@@ -32,7 +32,7 @@ export default function Signup() {
     specialty
   } = formData;
 
-  const BASE_URL = "http://localhost:4000/api/auth/superadmin-signup";
+  const BASE_URL = "http://localhost:10000/api/auth/superadmin-signup";
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
