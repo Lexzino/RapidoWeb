@@ -67,33 +67,39 @@ module.exports = withMT({
           vdark: "#DADADA",
         },
       },
+      //Optional: Add spacing utilities for finer control
+      spacing: {
+        '18' : '4.5rem', // 72px
+        '22' : '5.5rem', //88px
+      },
     },
     screens: {
-      xs: "0px",
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-      "2xl": "1440px",
+      'xs': '320px',  // Tiny phones (better than 0px)
+      'sm': '640px',  // Small tablets/phones
+      'md': '768px',  // Tablets
+      'lg': '1024px', // Small laptops
+      'xl': '1280px', // Standard desktops
+      '2xl': '1536px', // Large desktops
+      '3xl': '1920px', // Extra-wide screens
     },
     fontSize: {
-      xs: "10px",
-      sm: "12px",
-      tiny: "14px",
-      base: "15px",
-      lg: "16px",
-      xl: "18px",
-      "2xl": "20px",
-      "3xl": "22px",
-      "4xl": "24px",
-      "5xl": "25px",
-      "6xl": "30px",
-      "7xl": "35px",
-      "8xl": "36px",
-      "9xl": "38px",
-      "10xl": "40px",
-      "11xl": "45px",
-      "12xl": "65px",
+      'xs': ['10px', { lineHeight: '14px' }],    // Tiny text
+      'sm': ['12px', { lineHeight: '16px' }],    // Small
+      'tiny': ['14px', { lineHeight: '20px' }],  // Base mobile
+      'base': ['15px', { lineHeight: '22px' }],  // Default
+      'lg': ['16px', { lineHeight: '24px' }],    // Slightly larger
+      'xl': ['18px', { lineHeight: '26px' }],    // Medium headings
+      '2xl': ['20px', { lineHeight: '28px' }],   // Larger headings
+      '3xl': ['22px', { lineHeight: '30px' }],
+      '4xl': ['24px', { lineHeight: '32px' }],
+      '5xl': ['25px', { lineHeight: '34px' }],
+      '6xl': ['30px', { lineHeight: '38px' }],   // Big headings
+      '7xl': ['35px', { lineHeight: '42px' }],
+      '8xl': ['36px', { lineHeight: '44px' }],
+      '9xl': ['38px', { lineHeight: '46px' }],
+      '10xl': ['40px', { lineHeight: '48px' }],
+      '11xl': ['45px', { lineHeight: '52px' }],
+      '12xl': ['65px', { lineHeight: '72px' }],  // Huge titles
     },
   },
   plugins: [],
